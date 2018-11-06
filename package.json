@@ -1,0 +1,40 @@
+{
+  "name": "charizone",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "othman-shamla"
+  },
+  "scripts": {
+    "client": "cd client && npm run start",
+    "server": "nodemon server/index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "react:test": "cd client && npm run test",
+    "test": "tape ./server/tests/index.js | tap-spec"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "react",
+    "create-react-app",
+    "react-dom",
+    "react-router-dom",
+    "react-scripts",
+    "tape",
+    "supertest"
+  ]
+}
