@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './HomePage';
 import Header from './Header';
+import Comparison from './Comparison';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/compare" component={Comparison} />
           </Switch>
         </div>
       </BrowserRouter>
