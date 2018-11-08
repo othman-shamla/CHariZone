@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './HomePage';
 import Header from './Header';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/footer" component={Footer} />
           </Switch>
         </div>
       </BrowserRouter>
