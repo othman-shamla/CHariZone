@@ -68,6 +68,9 @@ class SearchReaslt extends Component {
   capitalFirst = string =>
     string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
+  stringIsMore = string =>
+    string.length > 170 ? `${string.slice(0, 170)} more..` : string;
+
   render() {
     const { data } = this.state;
     return (
@@ -83,7 +86,7 @@ class SearchReaslt extends Component {
                 classification={item.classification}
                 website={item.website}
                 name={this.capitalFirst(item.name)}
-                text={this.capitalFirst(item.text)}
+                text={this.capitalFirst(this.stringIsMore(item.text))}
               />
             );
           })}
