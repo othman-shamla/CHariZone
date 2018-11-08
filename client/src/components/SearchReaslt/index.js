@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
 import './style.css';
+import CardResult from './CardResult';
 
 class SearchReaslt extends Component {
   render() {
-    return <div>SearchReaslt</div>;
+    return (
+      <React.Fragment>
+        <div>SearchReaslt</div>
+        <CardResult />
+      </React.Fragment>
+    );
   }
 }
 
