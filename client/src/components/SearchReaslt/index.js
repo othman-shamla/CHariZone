@@ -66,10 +66,25 @@ class SearchReaslt extends Component {
   };
 
   render() {
+    const { data } = this.state;
     return (
       <React.Fragment>
-        <div>SearchReaslt</div>
-        <CardResult />
+        <div className="result-cards">
+          {data.slice(0, 3).map(item => {
+            return (
+              <CardResult
+                isActive={item.isActive}
+                // onClick={() => this.changeActive(item.id)}
+                key={item.id}
+                logo={item.logo}
+                classification={item.classification}
+                website={item.website}
+                name={item.name}
+                text={item.text}
+              />
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }
