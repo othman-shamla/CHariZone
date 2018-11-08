@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "eslint-plugin-prettier": "^3.0.0",
+    "font-awesome": "^4.7.0",
     "prettier": "^1.15.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
