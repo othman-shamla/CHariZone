@@ -6,6 +6,7 @@ import './App.css';
 import HomePage from './HomePage';
 import Header from './Header';
 import Footer from './Footer';
+import SearchReaslt from './SearchReaslt';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/search" component={SearchReaslt} />
           </Switch>
         </div>
       </BrowserRouter>
