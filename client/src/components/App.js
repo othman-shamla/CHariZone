@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './HomePage';
 import Header from './Header';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
