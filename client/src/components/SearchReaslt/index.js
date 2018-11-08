@@ -71,6 +71,25 @@ class SearchReaslt extends Component {
   stringIsMore = string =>
     string.length > 170 ? `${string.slice(0, 170)} more..` : string;
 
+  changeActive = id => {
+    const data = this.state.data.map(x => {
+      if (id === x.id) {
+        if (x.isActive || this.state.count < 3) {
+          x.isActive = !x.isActive;
+          if (x.isActive === true) {
+            this.state.count = this.state.count += 1;
+          } else {
+            this.state.count = this.state.count -= 1;
+          }
+        } else {
+          return x;
+        }
+      }
+      return x;
+    });
+    this.setState({ data });
+  };
+
   render() {
     const { data } = this.state;
     return (
@@ -80,7 +99,7 @@ class SearchReaslt extends Component {
             return (
               <CardResult
                 isActive={item.isActive}
-                // onClick={() => this.changeActive(item.id)}
+                onClick={() => this.changeActive(item.id)}
                 key={item.id}
                 logo={item.logo}
                 classification={item.classification}
