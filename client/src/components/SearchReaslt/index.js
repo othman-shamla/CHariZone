@@ -65,6 +65,9 @@ class SearchReaslt extends Component {
     count: 0,
   };
 
+  capitalFirst = string =>
+    string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+
   render() {
     const { data } = this.state;
     return (
@@ -79,8 +82,8 @@ class SearchReaslt extends Component {
                 logo={item.logo}
                 classification={item.classification}
                 website={item.website}
-                name={item.name}
-                text={item.text}
+                name={this.capitalFirst(item.name)}
+                text={this.capitalFirst(item.text)}
               />
             );
           })}
