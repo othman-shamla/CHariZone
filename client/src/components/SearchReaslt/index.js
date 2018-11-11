@@ -5,6 +5,8 @@ import './style.css';
 import CardResult from './CardResult';
 import More from './More';
 import HeaderSearch from './HeaderSearch';
+import Header from '../Header';
+import Footer from '../Footer';
 
 class SearchReaslt extends Component {
   state = {
@@ -105,6 +107,7 @@ class SearchReaslt extends Component {
     const { data, activeMore } = this.state;
     return (
       <React.Fragment>
+        <Header />
         <HeaderSearch numberOfResult={data.length} />
         <div className="result-cards">
           {data.slice(0, 3).map(item => (
@@ -139,6 +142,7 @@ class SearchReaslt extends Component {
                 text={this.capitalFirst(this.stringIsMore(item.text))}
               />
             ))}
+        <Footer />
       </React.Fragment>
     );
   }
