@@ -1,0 +1,30 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react';
+
+import './style.css';
+
+class More extends Component {
+  state = {};
+
+  render() {
+    const { getAllData, specificٍSize } = this.props;
+
+    return (
+      <React.Fragment>
+        {specificٍSize && (
+          <p
+            role="button"
+            className="more"
+            onClick={() => getAllData()}
+            onKeyDown={this.handleKeyDown}
+          >
+            more ...
+          </p>
+        )}
+      </React.Fragment>
+    );
+  }
+}
+
+export default More;
