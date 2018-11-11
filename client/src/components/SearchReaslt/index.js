@@ -72,14 +72,15 @@ class SearchReaslt extends Component {
     string.length > 170 ? `${string.slice(0, 170)} more..` : string;
 
   changeActive = id => {
-    const data = this.state.data.map(x => {
+    const { count, data } = this.state;
+    const dataAfter = data.map(x => {
       if (id === x.id) {
-        if (x.isActive || this.state.count < 3) {
+        if (x.isActive || count < 3) {
           x.isActive = !x.isActive;
           if (x.isActive === true) {
-            this.state.count = this.state.count += 1;
+            this.setState(prevState => ({ count: prevState.count + 1 }));
           } else {
-            this.state.count = this.state.count -= 1;
+            this.setState(prevState => ({ count: prevState.count - 1 }));
           }
         } else {
           return x;
@@ -87,7 +88,7 @@ class SearchReaslt extends Component {
       }
       return x;
     });
-    this.setState({ data });
+    this.setState({ data: dataAfter });
   };
 
   render() {
@@ -95,20 +96,18 @@ class SearchReaslt extends Component {
     return (
       <React.Fragment>
         <div className="result-cards">
-          {data.slice(0, 3).map(item => {
-            return (
-              <CardResult
-                isActive={item.isActive}
-                onClick={() => this.changeActive(item.id)}
-                key={item.id}
-                logo={item.logo}
-                classification={item.classification}
-                website={item.website}
-                name={this.capitalFirst(item.name)}
-                text={this.capitalFirst(this.stringIsMore(item.text))}
-              />
-            );
-          })}
+          {data.slice(0, 3).map(item => (
+            <CardResult
+              isActive={item.isActive}
+              onClick={() => this.changeActive(item.id)}
+              key={item.id}
+              logo={item.logo}
+              classification={item.classification}
+              website={item.website}
+              name={this.capitalFirst(item.name)}
+              text={this.capitalFirst(this.stringIsMore(item.text))}
+            />
+          ))}
         </div>
       </React.Fragment>
     );
