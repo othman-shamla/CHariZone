@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './style.css';
 import CardResult from './CardResult';
 import More from './More';
+import HeaderSearch from './HeaderSearch';
 
 class SearchReaslt extends Component {
   state = {
@@ -104,6 +105,7 @@ class SearchReaslt extends Component {
     const { data, activeMore } = this.state;
     return (
       <React.Fragment>
+        <HeaderSearch numberOfResult={data.length} />
         <div className="result-cards">
           {data.slice(0, 3).map(item => (
             <CardResult
