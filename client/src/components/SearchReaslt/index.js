@@ -91,6 +91,8 @@ class SearchReaslt extends Component {
     this.setState({ data: dataAfter });
   };
 
+  specificٍSize = array => array.length > 3;
+
   render() {
     const { data } = this.state;
     return (
