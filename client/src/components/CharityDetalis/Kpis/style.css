@@ -1,0 +1,21 @@
+.kpi--tables{
+  display: flex;
+  justify-content: space-around;
+}
+
+.flagImg {
+  height: 40px;
+}
+
+.kpi--tables table tr td:first-child{
+  width: 170px;
+}
+
+.kpi--tables table tr td{
+  padding-bottom: 15px;
+}
+
+.kpi--tables table tr td:last-child{
+  text-align: center;
+}
+
