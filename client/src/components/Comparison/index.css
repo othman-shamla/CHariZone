@@ -80,6 +80,25 @@
   background-color:#DEDEDE;
   height: 500px;
 }
+.table-logo{
+    width: 80%;
+  height: 50px;
+  background-color: yellow;
+  margin: 25px auto;
+  box-sizing: border-box;
+  padding: 9px;
+}
+.table-img{
+  margin: 0 auto;
+      display: block;
+}
+.table-column{
+  width: 80%;
+  height:80%;
+  background-color: pink;
+  margin: 0 auto;
+
+}
 .content-div{
   display:inline-block;
   width:79.9%;
