@@ -1,7 +1,9 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
 import './style.css';
 import CardResult from './CardResult';
+import More from './More';
 
 class SearchReaslt extends Component {
   state = {
@@ -63,6 +65,7 @@ class SearchReaslt extends Component {
       },
     ],
     count: 0,
+    activeMore: false,
   };
 
   capitalFirst = string =>
@@ -91,8 +94,14 @@ class SearchReaslt extends Component {
     this.setState({ data: dataAfter });
   };
 
+  specificٍSize = array => array.length > 3;
+
+  getAllData = () => {
+    this.setState({ activeMore: true });
+  };
+
   render() {
-    const { data } = this.state;
+    const { data, activeMore } = this.state;
     return (
       <React.Fragment>
         <div className="result-cards">
@@ -109,6 +118,25 @@ class SearchReaslt extends Component {
             />
           ))}
         </div>
+        <More
+          specificٍSize={this.specificٍSize(data)}
+          getAllData={() => this.getAllData()}
+        />
+        {activeMore &&
+          data
+            .slice(3, data.length)
+            .map(item => (
+              <CardResult
+                isActive={item.isActive}
+                onClick={() => this.changeActive(item.id)}
+                key={item.id}
+                logo={item.logo}
+                classification={item.classification}
+                website={item.website}
+                name={this.capitalFirst(item.name)}
+                text={this.capitalFirst(this.stringIsMore(item.text))}
+              />
+            ))}
       </React.Fragment>
     );
   }
