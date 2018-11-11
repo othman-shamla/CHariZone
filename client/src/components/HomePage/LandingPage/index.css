@@ -99,7 +99,7 @@ z-index: 10;
     position: absolute;
     width: 100vw;
     height: 95vh;
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.9);
 
 }
 .logo{
@@ -137,7 +137,7 @@ z-index: 10;
     outline: none;
 }
 .search h3{
-    margin-left: 85px;
+    margin-left: 113px;
     margin-top: 15px;
     color: white;
     cursor: pointer;
