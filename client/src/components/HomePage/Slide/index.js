@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './index.css';
 
-class Slide extends Component {
-  render() {
-    return <div className="slider" />;
-  }
-}
+const Slide = () => (
+  <div className="slider"/>
+);
+
 export default Slide;
