@@ -49,11 +49,20 @@ class Comparison extends Component {
             </span>
           </div>
           <div className="compare-div">
-            <div className="column-div" />
+            <div className="column-div">
+              <div className="table-logo">
+                <img
+                  alt="table logo"
+                  className="table-img"
+                  src="https://imgur.com/5n3hJuH.png"
+                />
+              </div>
+              <div className="table-column" />
+            </div>
             <div className="content-div">
-            <div className="charity-column" />
-            <div className="charity-column" />
-            <div className="charity-column" />
+              <div className="charity-column" />
+              <div className="charity-column" />
+              <div className="charity-column" />
             </div>
           </div>
         </div>
