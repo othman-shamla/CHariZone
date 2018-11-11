@@ -1,0 +1,19 @@
+.box--kpi {
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F7;
+}
+
+.kpi {
+  max-width: 320px;
+  min-width: 320px;
+}
+
+.title--kpi {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+}
