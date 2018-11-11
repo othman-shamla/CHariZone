@@ -1,0 +1,52 @@
+.ending-section{
+    text-align: center;
+    background-color: #181818;
+    margin: -25px auto;
+    width: 100vw;
+    height:60vh; 
+}
+.contact-us{
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    text-align: center;
+}
+.contact-us .input{
+ display: block;
+ margin: 0 auto;
+ margin-top: 20px;
+ width: 300px;
+ height: 35px;
+ border-radius: 5px;
+ border: none;
+ outline: none;
+ padding: 5px;
+}
+.contact-us textarea{
+    height: 90px !important;
+    padding: 5px;
+}
+.contact-us button{
+    font-family: "Spectral";
+    margin: 20px;
+    width: 70px;
+    padding: 11px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F89963;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    color: #2A2A2A;
+}
+.contact-us button:hover{
+    background-color: #FFD4BB;
+    transform: scale(1.05);
+    transition: all .5s;
+}
+.contact-us h2{
+    padding-top: 20px;
+    color: white;
+    font-size: 30px;
+}
