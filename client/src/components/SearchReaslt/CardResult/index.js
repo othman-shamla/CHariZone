@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+// component to card in charity result search
 import React, { Component } from 'react';
 
 import './style.css';
