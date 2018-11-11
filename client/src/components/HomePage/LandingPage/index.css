@@ -1,0 +1,172 @@
+.icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: fixed;
+    right: -40px;
+    top: -40px;
+    background-color: #F89963;   
+    transition: all 1s; 
+    z-index: 13;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.4);
+    cursor: pointer;
+}
+.icon:hover{
+    background-color: #f9b085;
+    transition: all .5s;
+}
+.hamburger{
+ width: 40px;
+ height:5px;
+ position: fixed;
+ top: 45px;
+ right: 25px;
+ background-color: #fff;
+ box-shadow: 0 2px 5px rgba(0,0,0,.2);
+ transition: .5s;
+ z-index: 11;
+}
+.hamburger:before, .hamburger:after{
+    content: '';
+    width: 40px;
+    height:5px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transition: .5s;
+    z-index: 11;
+}
+.hamburger:before{
+top:14px;
+} 
+.hamburger:after{
+top: -14px;
+}
+.icon.change .hamburger {
+    background: rgba(0,0,0,0);
+    box-shadow: none;
+}
+.icon.change{
+    height: 700px;
+    width: 500px;
+    position: fixed;
+    right: -200px;
+    top: -100px;
+    
+    transition: all 1s;
+}
+.icon.change .hamburger:before{
+        top:0;
+        transform: rotate(45deg);
+}
+
+.icon.change .hamburger:after{
+    top:0;
+    transform: rotate(-45deg);
+}
+.items a {
+    text-decoration: none;
+    color: #181818;
+    font-weight: 700;
+    padding-bottom: 60px;
+    font-size: 20px;
+    display: block;
+}
+.items{
+   visibility: hidden;
+}
+.change .items{
+position: absolute;
+visibility: visible;
+transition-delay: .5s;
+top: 190px;
+left: 50px;
+z-index: 10;
+}
+
+.change .items a:hover{
+    color: white;
+    transform: scale(1.1);
+}
+.landing-page{
+    width: 100%;
+    height:95vh;
+    background: url(http://www.charity-works.co.uk/wp-content/uploads/2015/11/partner_logos-1.jpg);
+    
+}
+.landing-page::after{
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 95vh;
+    background: rgba(0,0,0,.8);
+
+}
+.logo{
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    text-align: center;
+    z-index: 13;
+    margin: -16px auto;
+}
+.logoOne{
+    font-size: 48px;
+    color: white;
+}
+.subLogo{
+    font-size: 25px;
+    color: #F89963;
+    margin-top: 10px;
+    margin-left: 250px;
+    position: relative;
+}
+.search {
+    z-index:13;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+.search input {
+    width: 390px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding:10px;
+    font-size: 18px;
+    outline: none;
+}
+.search h3{
+    margin-left: 85px;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 23px;
+}
+.search h3:hover{
+    color: #F89963;
+}
+.search button {
+    font-family: "Spectral";
+    margin: 20px;
+    width: 70px;
+    padding: 11px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F89963;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    
+}
+.search button:hover{
+    background-color: #f9b085;
+    transform: scale(1.05);
+    transition: all .5s;
+}
+.fa-search{
+    font-size: 15px;
+    color: white;
+}
