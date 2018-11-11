@@ -1,10 +1,20 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
 import './style.css';
 
 class CardResult extends Component {
   render() {
-    const { key, name, text, isActive, logo, classification, website } = this.props;
+    const {
+      key,
+      name,
+      text,
+      isActive,
+      logo,
+      classification,
+      website,
+      onClick,
+    } = this.props;
     return (
       <div className="container" key={key}>
         <div className="card-details">
@@ -14,7 +24,7 @@ class CardResult extends Component {
             <button
               type="button"
               className={isActive ? 'btn active' : 'btn'}
-              //   onClick={() => this.props.onClick()}
+              onClick={() => onClick()}
             >
               <span className="add">ADD</span>
               <span className="add-cart">
