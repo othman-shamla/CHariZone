@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
 import './style.css';
@@ -63,6 +64,7 @@ class SearchReaslt extends Component {
       },
     ],
     count: 0,
+    activeMore: false,
   };
 
   capitalFirst = string =>
@@ -92,6 +94,10 @@ class SearchReaslt extends Component {
   };
 
   specificٍSize = array => array.length > 3;
+
+  getAllData = () => {
+    this.setState({ activeMore: true });
+  };
 
   render() {
     const { data } = this.state;
