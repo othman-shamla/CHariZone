@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './style.css';
 import CardResult from './CardResult';
 import More from './More';
+import CharityCount from './CharityCount';
 
 class SearchReaslt extends Component {
   state = {
@@ -101,9 +102,10 @@ class SearchReaslt extends Component {
   };
 
   render() {
-    const { data, activeMore } = this.state;
+    const { data, activeMore, count } = this.state;
     return (
       <React.Fragment>
+        <CharityCount count={count} />
         <div className="result-cards">
           {data.slice(0, 3).map(item => (
             <CardResult
