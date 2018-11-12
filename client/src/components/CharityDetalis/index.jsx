@@ -16,9 +16,8 @@ class CharityDetalis extends Component {
     });
   }
 
-  render() {
-    const { tabs } = this.state;
-    let Contant = <div>fdgf</div>;
+  renderTab = (tabs) => {
+    let Contant = <div></div>;
     if(tabs === 2 ){
       Contant = <Contact 
       charityNumber="1010943"
@@ -47,6 +46,10 @@ class CharityDetalis extends Component {
         'ARTS/CULTURE/HERITAGE/SCIENCE',
         'AMATEUR SPORT' ].map(x=>x.toLowerCase())} />;
     }
+  }
+
+  render() {
+    const { tabs } = this.state;
     
     return (
       <div style={{marginLeft:50}}>
