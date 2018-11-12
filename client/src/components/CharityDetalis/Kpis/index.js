@@ -26,7 +26,6 @@ const Kpis = () => (
             <td>
               <div className="progressBar">
                 <CircularProgressbar
-                  styles={{ path: { stroke: '#f89963'},text: { fill: '#f89963', }}}
                   strokeWidth="13"
                   percentage={11.3}
                   text="11.3%"
@@ -37,7 +36,6 @@ const Kpis = () => (
           <tr>
             <td>3Y AVERAGE FUNDRAISING EFFECIENCY</td>
             <td><CircularProgressbar
-                  styles={{ path: { stroke: '#f89963'},text: { fill: '#f89963', }}}
                   strokeWidth="13"
                   percentage={4.3}
                   text="4.3%"
@@ -46,7 +44,6 @@ const Kpis = () => (
           <tr>
             <td>Doner Dependency</td>
             <td ><CircularProgressbar
-                  styles={{ path: { stroke: '#f89963'},text: { fill: '#f89963', }}}
                   strokeWidth="13"
                   percentage={10.1}
                   text="10.1%"

@@ -19,3 +19,10 @@
   text-align: center;
 }
 
+.CircularProgressbar-path { 
+  stroke: #f89963; 
+}
+
+.CircularProgressbar-text { 
+  fill: #f89963;
+}
