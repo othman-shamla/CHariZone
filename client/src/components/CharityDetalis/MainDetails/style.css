@@ -1,0 +1,73 @@
+.mainDetails table tr td:first-child {
+  background-color: #ffd4bb;
+  margin: 0 0px;
+  padding: 0px 60px;
+  margin-bottom: 20px;
+}
+
+.mainDetails td span:first-child {
+  padding-top: 10px;
+}
+
+.mainDetails {
+  margin-left: 40px;
+}
+
+.mainDetails tr td:first-child {
+  padding-top: 20px;
+  position: relative;
+}
+
+.mainDetails tr td:first-child span{
+  position: absolute;
+  top: 0;
+  left:10px;
+}
+
+.mainDetails tr td:first-child span{
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left:10px;
+}
+
+.mainDetails tr td:last-child span:last-child{
+  margin-bottom: 15px;
+}
+
+.mainDetails .header--item {
+  padding-left: 10px;
+}
+
+.mainDetails.header--items {
+  margin-left:20px; 
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainDetails .header--items span {
+  margin-left : 20px; 
+
+}
+
+.mainDetails.header--items:last-child {
+  margin-bottom: 10px;
+}
+
+.mainDetails table {
+  border-spacing: 0px;
+}
+
+.mainDetails table tr {
+  padding-bottom: 20px;
+  margin-bottom: 20px; 
+}
+
+.row {
+  display: flex;
+}
+
+.header {
+  padding-left: 15px;
+}
