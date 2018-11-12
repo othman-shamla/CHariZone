@@ -5,8 +5,8 @@ class Header extends Component {
   render() {
     return (
       <div className="header-container">
-        <div className="logo">
-          <span className="name">
+        <div className="div-logo">
+          <span className="span-name">
             <h1>
               chari<span className="colored-name">zone</span>
             </h1>

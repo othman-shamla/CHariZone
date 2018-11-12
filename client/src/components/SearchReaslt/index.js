@@ -5,6 +5,7 @@ import './style.css';
 import CardResult from './CardResult';
 import More from './More';
 import HeaderSearch from './HeaderSearch';
+import CharityCount from './CharityCount';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -104,33 +105,15 @@ class SearchReaslt extends Component {
   };
 
   render() {
-    const { data, activeMore } = this.state;
+    const { data, activeMore, count } = this.state;
     return (
       <React.Fragment>
         <Header />
-        <HeaderSearch numberOfResult={data.length} />
-        <div className="result-cards">
-          {data.slice(0, 3).map(item => (
-            <CardResult
-              isActive={item.isActive}
-              onClick={() => this.changeActive(item.id)}
-              key={item.id}
-              logo={item.logo}
-              classification={item.classification}
-              website={item.website}
-              name={this.capitalFirst(item.name)}
-              text={this.capitalFirst(this.stringIsMore(item.text))}
-            />
-          ))}
-        </div>
-        <More
-          specificٍSize={this.specificٍSize(data)}
-          getAllData={() => this.getAllData()}
-        />
-        {activeMore &&
-          data
-            .slice(3, data.length)
-            .map(item => (
+        <div className="body">
+          <HeaderSearch numberOfResult={data.length} />
+          <CharityCount count={count} />
+          <div className="result-cards">
+            {data.slice(0, 3).map(item => (
               <CardResult
                 isActive={item.isActive}
                 onClick={() => this.changeActive(item.id)}
@@ -142,7 +125,27 @@ class SearchReaslt extends Component {
                 text={this.capitalFirst(this.stringIsMore(item.text))}
               />
             ))}
-        <Footer />
+          </div>
+          <More
+            specificٍSize={this.specificٍSize(data)}
+            getAllData={() => this.getAllData()}
+          />
+          {activeMore &&
+            data
+              .slice(3, data.length)
+              .map(item => (
+                <CardResult
+                  isActive={item.isActive}
+                  onClick={() => this.changeActive(item.id)}
+                  key={item.id}
+                  logo={item.logo}
+                  classification={item.classification}
+                  website={item.website}
+                  name={this.capitalFirst(item.name)}
+                  text={this.capitalFirst(this.stringIsMore(item.text))}
+                />
+              ))}
+        </div>
       </React.Fragment>
     );
   }
