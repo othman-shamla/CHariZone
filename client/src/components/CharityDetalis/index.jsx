@@ -51,7 +51,7 @@ class CharityDetalis extends Component {
     const { tabs } = this.state;
     const Contant = this.renderTab(tabs);
     return (
-      <div style={{marginLeft:50}}>
+      <div style={{margin:"0px auto",width:"80%"}}>
         <CharityHeader 
           changeTab={this.changeTab} 
           tabs={tabs}
