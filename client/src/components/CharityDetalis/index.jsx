@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 
-import Header from './Header';
+import CharityHeader from './CharityHeader';
 import MainDetails  from "./MainDetails";
 import Kpis  from "./Kpis";
 import Contact  from "./Contact";
@@ -17,9 +17,8 @@ class CharityDetalis extends Component {
   }
 
   renderTab = (tabs) => {
-    let Contant = <div></div>;
     if(tabs === 2 ){
-      Contant = <Contact 
+      return <Contact 
       charityNumber="1010943"
       phoneNumber="0158275599"
       faxNumber="faxNumber"
@@ -29,9 +28,9 @@ class CharityDetalis extends Component {
       areaOfOperation={['scotland','northern urland','thorougout england and wales']}
         />;
     } else if (tabs === 3 ) {
-      Contant = <Kpis />;
+      return <Kpis />;
     } else {
-      Contant = <MainDetails
+      return <MainDetails
         objective={"TO HELP AND EDUCATE YOUNG PERSONS THROUGH THEIR LEISURE-TIME AND HOLIDAY ACTIVITIES.".toLocaleLowerCase()}
         who={[ 'CHILDREN/YOUNG PEOPLE',
         'PEOPLE WITH DISABILITIES',
@@ -50,10 +49,10 @@ class CharityDetalis extends Component {
 
   render() {
     const { tabs } = this.state;
-    
+    const Contant = this.renderTab(tabs);
     return (
       <div style={{marginLeft:50}}>
-        <Header 
+        <CharityHeader 
           changeTab={this.changeTab} 
           tabs={tabs}
           name="name"/>
