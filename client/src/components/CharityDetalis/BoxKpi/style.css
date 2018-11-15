@@ -1,19 +1,43 @@
-.box--kpi {
+.kpi--box {
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 1);
-  padding: 20px;
   display: flex;
   flex-direction: column;
   background-color: #F7F7F7;
 }
 
-.kpi {
-  max-width: 320px;
-  min-width: 320px;
+.kpi--titleBox {
+  background-color: #F89963;
 }
 
-.title--kpi {
+.kpi {
+  margin-bottom: 50px;
+}
+
+.kpi--title {
   display: block;
-  text-align: center;
-  padding: 20px;
+  padding-left: 20px;
   font-size: 22px;
+}
+
+.kpi--children {
+  padding: 20px;
+}
+
+.kpi--row {
+  display: grid;
+  width: 85%;
+  margin: 0 auto;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 5%;
+}
+.kpi--row span{
+  display: inline-block;
+  padding-top: 15px;
+}
+
+.kpi--item {
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }

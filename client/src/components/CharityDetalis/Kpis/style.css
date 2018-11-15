@@ -1,6 +1,6 @@
 .kpi--tables{
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .flagImg {
@@ -11,18 +11,32 @@
   width: 170px;
 }
 
-.kpi--tables table tr td{
+.kpi--tables table tr td {
   padding-bottom: 15px;
 }
 
 .kpi--tables table tr td:last-child{
   text-align: center;
 }
+.CircularProgressbar{
+  width: 60px;
+}
 
-.CircularProgressbar-path { 
+.CircularProgressbar-path {
   stroke: #f89963; 
 }
 
 .CircularProgressbar-text { 
   fill: #f89963;
+}
+
+.kpi--item .progressBar{
+  max-width: 80px;
+  min-width: 80px;
+}
+
+.kpi--item {
+  min-width: 120px;
+  min-height: 80px
+  
 }
