@@ -1,41 +1,33 @@
-.header-container{
-position: absolute;
-top:0;
-bottom: 0;
-right:0;
-left:0;
-width:100%;
-height: 110px;
-background-color: #000000;
-overflow:hidden;
+.header-container {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  width:100%;
+  height: 110px;
+  background-color: #000000;
+  overflow:hidden;
+}
 
+.div-logo {
+  margin:5px 10px;
+  width: 70%;
 }
-.icon{
-border-radius: 50%;
-width: 150px;
-height: 150px;
-background-color: #F89963;
-position: absolute;
-top:-40px;
-right: -65px;
 
+.span-name {
+  color: #ffff;
+  font-size: 18px;
+  color: white;
+  text-transform:uppercase;
+  font-family: "Spectral",sans-serif;
 }
-.logo{
-margin:5px 10px;
-width: 70%;
 
-}
-.name{
-color: #ffff;
-font-size: 18px;
-color: white;
-text-transform:uppercase;
-font-family: "Spectral",sans-serif;
-}
-.colored-name{
+.colored-name {
   color: #F89963;
 }
-.description{
+
+.description {
   display: inline-block;
   font-family: "Spectral",sans-serif;
   color: #F89963;
