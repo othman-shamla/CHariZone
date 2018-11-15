@@ -81,7 +81,7 @@ class Category extends Component {
     string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
   stringIsMore = string =>
-    string.length > 175 ? `${string.slice(0, 175)} more..` : string;
+    string.length > 160 ? `${string.slice(0, 160)} more..` : string;
 
   render() {
     const { data, detales } = this.state;
