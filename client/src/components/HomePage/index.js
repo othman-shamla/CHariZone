@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
 import './index.css';
+import LandingPage from './LandingPage';
+import Works from './Works';
+import Slide from './Slide';
+import ContactUs from './ContactUs';
+import Footer from './Footer';
 
-class HomePage extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Welcome to React</h1>
-      </div>
-    );
-  }
-}
-
+const HomePage = () => (
+  <div>
+    <LandingPage />
+    <Works />
+    <Slide />
+    <ContactUs />
+    <Footer />
+  </div>
+);
 export default HomePage;

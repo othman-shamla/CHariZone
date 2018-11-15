@@ -1,0 +1,31 @@
+.table {
+  margin: 20px;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 1);
+  padding: 20px;
+}
+
+.table td {
+  padding-bottom:15px;
+}
+
+.table tr td:first-child {
+  min-width: 150px;
+  position: relative;
+}
+
+.table tr td:first-child span{
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left:10px;
+}
+
+.box{
+  min-width: 400px;
+  margin: 20px;
+}
+
+.header--items {
+  display: flex;
+  flex-direction: column;
+}

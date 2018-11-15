@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+// import 'font-awesome/css/font-awesome.css';
 import './App.css';
 
 import HomePage from './HomePage';
+import SearchReaslt from './SearchReaslt';
+import CharityDetalis from './CharityDetalis';
+import Category from './Category';
 import Header from './Header';
 import Footer from './Footer';
 import Comparison from './Comparison';
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/compare" component={Comparison} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    );
-  }
-}
-
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/search" component={SearchReaslt} />
+	      <Route exact path='/charity' component={CharityDetalis} />
+        <Route exact path="/category" component={Category} />
+          <Route exact path="/compare" component={Comparison} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 export default App;
