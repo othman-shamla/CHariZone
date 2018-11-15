@@ -9,118 +9,133 @@ import './style.css';
 const returnFlag = flag => {
   if (flag === 'positive') {
     return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/greenFlag.jpg" />
-  } else if (flag === 'neutral') {
+  } if (flag === 'neutral') {
     return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/blackFlag.jpg" />
-  } else {
-    return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/redFlag.png" />
   }
+  return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/redFlag.png" />
 }
 
 const Kpis = () => (
   <div className="kpi--tables">
     <BoxKpi name="Financial">
-      <table>
-        <tbody>
-          <tr>
-            <td>EMR</td>
-            <td>
-              <div className="progressBar">
-                <CircularProgressbar
-                  strokeWidth="13"
-                  percentage={11.3}
-                  text="11.3%"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3Y AVERAGE FUNDRAISING EFFECIENCY</td>
-            <td><CircularProgressbar
-                  strokeWidth="13"
-                  percentage={4.3}
-                  text="4.3%"
-                /></td>
-          </tr>
-          <tr>
-            <td>Doner Dependency</td>
-            <td ><CircularProgressbar
-                  strokeWidth="13"
-                  percentage={10.1}
-                  text="10.1%"
-                /></td>
-          </tr>
-          <tr>
-            <td>ECR</td>
-            <td >1.9</td>
-          </tr>
-          <tr>
-            <td>CurrR</td>
-            <td>-</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="kpi--row">
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>EMR</span>
+            <div className="progressBar">
+              <CircularProgressbar
+                strokeWidth="13"
+                percentage={11.3}
+                text="11.3%" />
+            </div>
+          </div>
+          <div className="kpi--item">
+            <span>3Y AVERAGE FUNDRAISING EFFECIENCY</span>
+            <div className="progressBar">
+              <CircularProgressbar
+                strokeWidth="13"
+                percentage={4.3}
+                text="4.3%"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>ECR</span>
+            <span>1.9</span>
+          </div>
+          <div className="kpi--item">
+            <span>CurrR</span>
+            <span>-</span>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>Doner Dependency</span>
+            <div className="progressBar">
+              <CircularProgressbar
+                strokeWidth="13"
+                percentage={10.1}
+                text="10.1%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </BoxKpi>
     <BoxKpi name="Governance">
-      <table>
-        <tbody>
-          <tr>
-            <td>NUMBER OF TRUSTEES</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Trustees Biography</td>
-            <td>yes</td>
-          </tr>
-          <tr>
-            <td>T: ToB</td>
-            <td> {returnFlag('neutral')}</td>
-          </tr>
-          <tr>
-            <td>Executive Compensation</td>
-            <td>150-160</td>
-          </tr>
-          <tr>
-            <td>Policy:General Data Protection Regulations</td>
-            <td>{returnFlag('neutral')}</td>
-          </tr>
-          <tr>
-            <td>Policy: Whistleblowing</td>
-            <td>{returnFlag('neutral')}</td>
-          </tr>
-          <tr>
-            <td>Policy: Health & Safety</td>
-            <td>{returnFlag('neutral')}</td>
-          </tr>
-          <tr>
-            <td>Safe Guarding</td>
-            <td>{returnFlag('neutral')}</td>
-          </tr>
-          <tr>
-            <td>Fundraising Promise</td>
-            <td>{returnFlag('positive')}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="kpi--row">
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>NUMBER OF TRUSTEES</span>
+            <span>--</span>
+          </div>
+          <div className="kpi--item">
+            <span>Executive Compensation</span>
+            <span>150-160</span>
+          </div>
+          <div className="kpi--item">
+            <span>Policy: Health & Safety</span>
+            <span>{returnFlag('neutral')}</span>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>Trustees Biography</span>
+            <span>yes</span>
+          </div>
+          <div className="kpi--item">
+            <span>Policy:General Data Protection Regulations</span>
+            <span>{returnFlag('neutral')}</span>
+          </div>
+          <div className="kpi--item">
+            <span>Safe Guarding</span>
+            <span>{returnFlag('neutral')}</span>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>T: ToB</span>
+            <span>{returnFlag('neutral')}</span>
+          </div>
+          <div className="kpi--item">
+            <span>Policy: Whistleblowing</span>
+            <span>{returnFlag('neutral')}</span>
+          </div>
+          <div className="kpi--item">
+            <span>Fundraising Promise</span>
+            <span>{returnFlag('positive')}</span>
+          </div>
+        </div>
+      </div>
     </BoxKpi>
     <BoxKpi name="impact">
-      <table>
-        <tbody>
-          <tr>
-            <td>Impact Reporting</td>
-            <td>{returnFlag('positive')}</td>
-          </tr>
-          <tr>
-            <td>Impact: Results Reporting </td>
-            <td>{returnFlag('positive')}</td>
-          </tr>
-          <tr>
-            <td>Mention Of Theory</td>
-            <td>{returnFlag('positive')}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="kpi--row">
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>Impact Reporting</span>
+            <span>{returnFlag('positive')}</span>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>Impact: Results Reporting </span>
+            <span>{returnFlag('positive')}</span>
+          </div>
+        </div>
+        <div className="kpi--column">
+          <div className="kpi--item">
+            <span>Mention Of Theory</span>
+            <span>{returnFlag('positive')}</span>
+          </div>
+        </div>
+      </div>
     </BoxKpi>
   </div>
 );
+if (module.hot) {
+  module.hot.accept();
 
+}
 export default Kpis;
