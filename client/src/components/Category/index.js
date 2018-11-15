@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 
 import './style.css';
 
+import Header from '../Header';
+
 class Category extends Component {
   // state = {  }
   render() {
-    return <h1>Category</h1>;
+    return (
+      <React.Fragment>
+        <Header />
+      </React.Fragment>
+    );
   }
 }
 
