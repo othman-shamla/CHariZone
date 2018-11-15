@@ -7,6 +7,9 @@ import HomePage from './HomePage';
 import SearchReaslt from './SearchReaslt';
 import CharityDetalis from './CharityDetalis';
 import Category from './Category';
+import Header from './Header';
+import Footer from './Footer';
+import Comparison from './Comparison';
 
 const App = () => (
   <BrowserRouter>
@@ -16,6 +19,7 @@ const App = () => (
         <Route exact path="/search" component={SearchReaslt} />
 	      <Route exact path='/charity' component={CharityDetalis} />
         <Route exact path="/category" component={Category} />
+          <Route exact path="/compare" component={Comparison} />
       </Switch>
     </div>
   </BrowserRouter>
