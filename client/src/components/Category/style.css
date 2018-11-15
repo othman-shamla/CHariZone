@@ -1,0 +1,13 @@
+.body-category {
+    margin-top: 140px;
+    display: flex;
+}
+
+.result-card {
+  width: 60%;
+}
+
+.category-details {
+    width: 40%;
+    padding: 2%;
+}
