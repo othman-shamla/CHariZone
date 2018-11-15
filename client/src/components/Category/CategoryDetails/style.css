@@ -1,0 +1,14 @@
+.category-div {
+    border: 1px solid #eee;
+    text-align: center;
+    border-radius: 1%;
+    margin-top: 15%;
+}
+
+.category-title {
+    margin-top: 5%;
+}
+
+.category-text {
+    margin: 20px;
+}
