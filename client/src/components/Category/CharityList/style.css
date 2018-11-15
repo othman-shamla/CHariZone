@@ -9,7 +9,7 @@
     overflow: hidden;
     margin: 1em auto;
     height: 25vh;
-    width: 95%;
+    width: 89%;
     font-family: "Spectral";
   }
   
@@ -20,7 +20,7 @@
     padding: 30px;
     height: 100%;
     float: left;
-    width: 50%;
+    width: 45%;
   }
   
   .container-charity .card-details h1 {
@@ -121,7 +121,7 @@
     overflow: hidden;
     height: 100%;
     float: right;
-    width: 40%;
+    width: 45%;
     display: inline-block;
   }
   
@@ -163,7 +163,7 @@
   }
   
   .info ul li:hover {
-    transform: translateX(20px) scale(1.1);
+    transform: translateX(15px) scale(1.08);
   }
   
   .card-image:hover img {
