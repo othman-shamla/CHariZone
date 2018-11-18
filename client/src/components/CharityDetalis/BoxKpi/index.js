@@ -6,9 +6,11 @@ const BoxKpi = props => {
   const { name, children } = props;
   return (
     <div className="kpi">
-      <span className="title--kpi">{name}</span>
-      <div className="box--kpi" name="primei">
-        {children}
+      <div className="kpi--box">
+        <div className="kpi--titleBox">
+          <span className="kpi--title">{name}</span>
+        </div>
+        <div className="kpi--children">{children}</div>
       </div>
     </div>
   );
