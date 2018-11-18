@@ -7,21 +7,21 @@ class Slide extends React.Component {
 galleryItems = (imgLinks) => {
 imgLinks = [
   {link: 'http://cdn.onlinewebfonts.com/svg/img_544040.png', title: 'General' },
-  {link: 'http://cdn.onlinewebfonts.com/svg/img_142809.png', title: 'Education'},
-  {link: 'http://icons.iconarchive.com/icons/medicalwp/medical/256/Health-Sign-icon.png', title: 'Health' },
+  {link: 'https://image.flaticon.com/icons/svg/182/182327.svg', title: 'Education'},
+  {link: 'https://image.flaticon.com/icons/svg/1021/1021799.svg', title: 'Health' },
   {link: 'http://cdn.onlinewebfonts.com/svg/img_491768.png', title: 'Disability' },
   {link: 'https://image.flaticon.com/icons/svg/883/883403.svg', title: 'Overseas Aid' },
   {link: 'https://static.thenounproject.com/png/221476-200.png', title: 'Poverty Relief' },
   {link: 'https://cdn2.iconfinder.com/data/icons/apple-inspire-black/100/Apple-83-512.png', title: 'Housing' },
-  {link: 'https://banner2.kisspng.com/20180421/otq/kisspng-computer-icons-prayer-5adac4a8574a65.4281847415242866323576.jpg', title: 'Religious activities' },
+  {link: 'https://image.flaticon.com/icons/svg/182/182482.svg', title: 'Religious activities' },
   {link: 'https://png.pngtree.com/svg/20170718/paint_plate_690441.png', title: 'Art/culture' },
   {link: 'https://image.flaticon.com/icons/svg/53/53283.svg', title: 'Amateur sport' },
   {link: 'https://cdn2.iconfinder.com/data/icons/font-awesome/1792/paw-512.png', title: 'Animals' },
-  {link: ' https://banner2.kisspng.com/20180824/jjx/kisspng-ecology-natural-environment-conservation-computer-tree-svg-png-icon-free-download-498949-online-5b7fe654ef2802.5403373415351086929796.jpg', title: 'Environment' },
+  {link: ' https://image.flaticon.com/icons/svg/1231/1231898.svg', title: 'Environment' },
   {link: ' https://cdn1.iconfinder.com/data/icons/monocromatic-vol-1/24/economy-down-512.png', title: 'Economic' },
   {link: 'https://png2.kisspng.com/20180710/cks/kisspng-medal-computer-icons-five-pointed-star-symbol-bronze-medal-icon-5b449cd10984f7.516293541531223249039.png', title: 'Armed Forces' },
   {link: ' https://www.directlink.coop/img/icons/111069-trading/svg/imbalanced-scale.svg', title: 'Human rights' },
-  {link: 'https://banner2.kisspng.com/20180810/bbo/kisspng-camping-clip-art-outdoor-recreation-computer-icons-camp-fire-svg-png-icon-free-download-498244-o-5b6d8e5bb79b69.8237060915339065237521.jpg', title: 'Recreation' },
+  {link: 'https://image.flaticon.com/icons/svg/992/992604.svg', title: 'Recreation' },
   {link: 'http://cdn.onlinewebfonts.com/svg/img_191941.png', title: 'Others' },
 
 ];
