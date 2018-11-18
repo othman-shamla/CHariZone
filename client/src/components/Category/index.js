@@ -1,14 +1,12 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
 import './style.css';
-import CardResult from './CardResult';
-import More from './More';
-import HeaderSearch from './HeaderSearch';
-import CharityCount from './CharityCount';
-import Header from '../Header';
 
-class SearchReaslt extends Component {
+import Header from '../Header';
+import CharityList from './CharityList';
+import CategoryDetails from './CategoryDetails';
+
+class Category extends Component {
   state = {
     data: [
       {
@@ -67,55 +65,33 @@ class SearchReaslt extends Component {
           'We care for over 3,000 kids across the world but no two are the same, so we take care to understand and meet each of their individual needs, from food and healthcare, to loving parents and quality education. We help them reach their full potential, stand on their own two feet and change their futures. We?ve transformed thousands of kids? lives, and we are only just getting started.',
       },
     ],
-    count: 0,
-    activeMore: false,
+    detales: [
+      {
+        id: 1,
+        title: 'Education',
+        text:
+          'The Department for Education is responsible for children’s services and education,' +
+          'including early years, schools, higher and further education policy,' +
+          'apprenticeships and wider skills in England.',
+      },
+    ],
   };
 
   capitalFirst = string =>
     string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
   stringIsMore = string =>
-    string.length > 170 ? `${string.slice(0, 170)} more..` : string;
-
-  changeActive = id => {
-    const { count, data } = this.state;
-    const dataAfter = data.map(x => {
-      if (id === x.id) {
-        if (x.isActive || count < 3) {
-          x.isActive = !x.isActive;
-          if (x.isActive === true) {
-            this.setState(prevState => ({ count: prevState.count + 1 }));
-          } else {
-            this.setState(prevState => ({ count: prevState.count - 1 }));
-          }
-        } else {
-          return x;
-        }
-      }
-      return x;
-    });
-    this.setState({ data: dataAfter });
-  };
-
-  specificٍSize = array => array.length > 3;
-
-  getAllData = () => {
-    this.setState({ activeMore: true });
-  };
+    string.length > 160 ? `${string.slice(0, 160)} more..` : string;
 
   render() {
-    const { data, activeMore, count } = this.state;
+    const { data, detales } = this.state;
     return (
       <React.Fragment>
         <Header />
-        <div className="body">
-          <HeaderSearch numberOfResult={data.length} />
-          <CharityCount count={count} />
-          <div className="result-cards">
-            {data.slice(0, 3).map(item => (
-              <CardResult
-                isActive={item.isActive}
-                onClick={() => this.changeActive(item.id)}
+        <div className="body-category">
+          <div className="result-card">
+            {data.map(item => (
+              <CharityList
                 key={item.id}
                 logo={item.logo}
                 classification={item.classification}
@@ -125,29 +101,17 @@ class SearchReaslt extends Component {
               />
             ))}
           </div>
-          <More
-            specificٍSize={this.specificٍSize(data)}
-            getAllData={() => this.getAllData()}
-          />
-          {activeMore &&
-            data
-              .slice(3, data.length)
-              .map(item => (
-                <CardResult
-                  isActive={item.isActive}
-                  onClick={() => this.changeActive(item.id)}
-                  key={item.id}
-                  logo={item.logo}
-                  classification={item.classification}
-                  website={item.website}
-                  name={this.capitalFirst(item.name)}
-                  text={this.capitalFirst(this.stringIsMore(item.text))}
-                />
-              ))}
+          <div className="category-details">
+            <CategoryDetails
+              id={detales[0].id}
+              title={detales[0].title}
+              text={detales[0].text}
+            />
+          </div>
         </div>
       </React.Fragment>
     );
   }
 }
 
-export default SearchReaslt;
+export default Category;

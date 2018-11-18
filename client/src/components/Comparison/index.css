@@ -1,0 +1,234 @@
+.compare-body {
+  background-color: #F7F7F7;
+  padding: 5px;
+}
+
+.compare-box {
+  position: relative;
+  margin: 40px auto;
+  width: 60%;
+}
+
+.charty-names {
+  background-color: #FFF;
+  height: 100px;
+  width: 600px;
+  padding: 40px 20px;
+  box-shadow: 1px 1px 10px 1px #5a6e7b47;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* border: 1px dashed #F89963; */
+}
+.page-desc{
+align-self: flex-start;
+margin-top: 25px;
+}
+.charityc-name{
+  font-weight: 300;
+  text-transform:uppercase;
+border-bottom: 1px solid #ccc;
+
+}
+.charityc-name-hovered{
+background-color: #FB956B;
+padding: 2px ;
+border-radius: 5px;
+}
+.circule {
+  position: absolute;
+  text-align: center;
+  top: -30px;
+  left: 44px;
+  display: inline-block;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  background-color: #FFF;
+  box-shadow: -3px 0px 4px 0px #5a6e7b47;
+}
+.charity-counter{
+  position: absolute;
+  top: 2px;
+  left:57px;
+  height: 30px;
+  width: 30px;
+  background-color:#D76F35;
+  border-radius: 50%;
+}
+.compare-num{
+  color: #FFF;
+}
+.counter-img {
+  position: absolute;
+  top: 16px;
+  left: 11px;
+}
+
+.compare-container {
+  width: 80%;
+  text-align: center;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.logos {
+  height: 50px;
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo-span {
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color: #D76F35;
+  line-height: 5;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+.logo-span:hover {
+  transform: scale(1.1, 1.1);
+  background: #FB956B;
+  border: solid 1px #D76F35;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 2px #5a6e7b47;
+}
+
+.compare-div {
+  background-color: #FFF;
+  margin: 0 auto;
+  height: 500px;
+  width: 800px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* box-shadow: 1px 1px 3px 2px #5a6e7b47; */
+  border: 1px solid #F89963;
+  display: flex;
+}
+
+.column-div {
+  display: inline-block;
+  width: 20%;
+  background-color: #DEDEDE;
+  height: 500px;
+}
+
+.table-logo {
+  width: 80%;
+  height: 50px;
+  /* background-color: yellow; */
+  margin: 10px auto;
+  box-sizing: border-box;
+  padding: 9px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-img {
+  margin: 0 auto;
+  display: block;
+}
+
+.table-column {
+  width: 80%;
+  height: 80%;
+  /* background-color: pink; */
+  margin: 0 auto;
+  padding-top: 4px;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+}
+
+.table-cell {
+  width: 80%;
+  height: 40px;
+  /* background-color: yellow; */
+  box-sizing: border-box;
+  margin: 3px auto;
+  padding-top: 12px;
+}
+
+.table-cell h5:hover {
+  color: #F89963;
+}
+
+/*  *********************************** INFO BUBBLE********************************** */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip:hover {
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/*  *********************************** END********************************** */
+
+.content-div {
+  display: flex;
+  width: 79.9%;
+  background-color: #E7E7E7;
+  height: 500px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-left: .7px dashed #F89963;
+}
+
+.charity-column {
+  /* box-shadow: 1px 1px 3px 2px #5a6e7b47; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  margin: 25px 25px;
+  width: 20%;
+  background-color: #FFF;
+  height: 450px;
+  flex-direction: column;
+  /* border:1px solid #F89963; */
+  transition: all 0.3s ease-out;
+}
+
+.charity-column:hover {
+  transform: scale(1.2, 1.05);
+  /* height: 465px;
+    width: 25%; */
+}
+
+.column-cell {
+  /* background-color: blue; */
+  margin: 3px 0;
+  border-bottom: 1px dashed #F89963;
+}
