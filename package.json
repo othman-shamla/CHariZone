@@ -11,7 +11,9 @@
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
     "react:test": "cd client && npm run test",
-    "test": "tape ./server/tests/index.js | tap-spec"
+    "test": "tape ./server/tests/index.js | tap-spec",
+    "client:init": "cd client && npm i",
+    "heroku-postbuild": "npm run client:init && npm run build"
   },
   "dependencies": {
     "express": "^4.16.3"
