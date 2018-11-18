@@ -9,7 +9,7 @@
     align-items: center;
 }
 .slider {
-    /* margin: 0 auto; */
+    margin: 0 auto;
 }
 .alice-carousel{
     margin-left: 200px;
@@ -32,4 +32,8 @@
 }
 .alice-carousel__prev-btn{
     margin-top: 30px;
+}
+
+.alice-carousel__stage-item *{
+    text-align: center;
 }
