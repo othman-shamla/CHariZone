@@ -4,6 +4,8 @@ import CharityHeader from './CharityHeader';
 import MainDetails  from "./MainDetails";
 import Kpis  from "./Kpis";
 import Contact  from "./Contact";
+import Header from '../Header';
+import Footer from '../Footer';
 
 class CharityDetalis extends Component {
   state = {
@@ -18,7 +20,7 @@ class CharityDetalis extends Component {
 
   renderTab = (tabs) => {
     if(tabs === 2 ){
-      return <Contact 
+      return <Contact
       charityNumber="1010943"
       phoneNumber="0158275599"
       faxNumber="faxNumber"
@@ -51,15 +53,19 @@ class CharityDetalis extends Component {
     const { tabs } = this.state;
     const Contant = this.renderTab(tabs);
     return (
-      <div style={{margin:"0px auto",width:"80%"}}>
-        <CharityHeader 
-          changeTab={this.changeTab} 
+      <React.Fragment>
+        <Header />
+      <div style={{margin:"110px auto",width:"80%"}}>
+        <CharityHeader
+          changeTab={this.changeTab}
           tabs={tabs}
           name="name"/>
         {Contant}
       </div>
+      <Footer />
+        </React.Fragment>
     );
   }
 }
- 
+
 export default CharityDetalis;

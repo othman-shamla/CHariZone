@@ -18,7 +18,7 @@
     color: #fff;
     width: 50px;
     height: 30px;
-    border-radius: 10%;
+    border-radius: 5px;
     border: none;
     position: absolute;
     right: 0;
@@ -26,6 +26,7 @@
     outline: none;
     cursor: pointer;
     font-size: 15px;
+    font-weight: 800;
 }
 
 .div-header button:active {
@@ -33,6 +34,7 @@
 }
 
 .div-header p {
+  line-height: 3;
     display: inline-block;
     color: #999;
     position: absolute;

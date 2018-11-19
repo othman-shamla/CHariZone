@@ -7,6 +7,7 @@ import More from './More';
 import HeaderSearch from './HeaderSearch';
 import CharityCount from './CharityCount';
 import Header from '../Header';
+import Footer from '../Footer';
 
 class SearchReaslt extends Component {
   state = {
@@ -145,6 +146,8 @@ class SearchReaslt extends Component {
                 />
               ))}
         </div>
+          <Footer />
+
       </React.Fragment>
     );
   }
