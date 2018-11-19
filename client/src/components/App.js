@@ -10,6 +10,7 @@ import Category from './Category';
 import Header from './Header';
 import Footer from './Footer';
 import Comparison from './Comparison';
+import Filter from './Filter';
 
 const App = () => (
   <BrowserRouter>
@@ -20,6 +21,7 @@ const App = () => (
 	      <Route exact path='/charity' component={CharityDetalis} />
         <Route exact path="/category" component={Category} />
           <Route exact path="/compare" component={Comparison} />
+          <Route exact path="/filter" component={Filter} />
       </Switch>
     </div>
   </BrowserRouter>
