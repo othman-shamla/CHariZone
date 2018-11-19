@@ -1,4 +1,5 @@
 .compare-body {
+  margin-top: 107px;
   background-color: #F7F7F7;
   padding: 5px;
 }
@@ -79,7 +80,7 @@ border-radius: 5px;
 
 .logos {
   height: 50px;
-  width: 350px;
+  width: 200px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -91,14 +92,21 @@ border-radius: 5px;
   height: 50px;
   width: 50px;
   background-color: #D76F35;
+    border: solid .5px #FB956B;
   line-height: 5;
   cursor: pointer;
   transition: all 0.4s ease-out;
 }
+.logo-span:first-child{
+  border-top-left-radius: 5px;
+}
+.logo-span:last-child{
+  border-top-right-radius: 5px;
+}
 
 .logo-span:hover {
   transform: scale(1.1, 1.1);
-  background: #FB956B;
+  background-color: #FB956B;
   border: solid 1px #D76F35;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 2px #5a6e7b47;
@@ -222,9 +230,8 @@ border-radius: 5px;
 }
 
 .charity-column:hover {
-  transform: scale(1.2, 1.05);
-  /* height: 465px;
-    width: 25%; */
+  transform: scale(1.08, 1.08);
+box-shadow: 0 1px 15px 2px #FB956B;
 }
 
 .column-cell {
