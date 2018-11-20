@@ -7,13 +7,18 @@ import Slide from './Slide';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
 
-const HomePage = () => (
-  <div>
-    <LandingPage />
-    <Works />
-    <Slide />
-    <ContactUs />
-    <Footer />
-  </div>
-);
+class HomePage extends Component {
+  render() {
+    return (
+      <>
+        <LandingPage />
+        <Works />
+        <Slide />
+        <ContactUs />
+        <Footer />
+      </>
+    );
+  }
+}
+
 export default HomePage;

@@ -3,40 +3,41 @@ import './index.css';
 
 class Filter extends Component {
   render() {
+    const { Hide }  = this.props;
     return (
       <React.Fragment>
         <div className="modal">
           <div className="modal-content">
-            <span className="close">&times;</span>
+            <span className="close" onClick={Hide} >&times;</span>
             <p className="modal-desc">Filter charities By:</p>
             <div className="filter">
-            <div className="part1">
-              <label className="container-modal">
-                Income
-                <input type="radio" name="radio" />
-                <span className="checkmark" />
-              </label>
-            </div>
-            <div className="numbers">
-              <label htmlFor="from">
-                From
-                <input type="number" name="from" className="from" />
-                <span>&euro;</span>
-              </label>
-<br/>
-              <label htmlFor="to">
-                To
-                <input type="number" name="to" className="to" />
-                <span>&euro;</span>
-              </label>
-            </div>
+              <div className="part1">
+                <label className="container-modal">
+                  One
+                  <input type="checkbox"/>
+                  <span className="checkmark" />
+                </label>
+              </div>
+              <div className="numbers">
+                <label htmlFor="from">
+                  From
+                  <input type="number" name="from" className="from" />
+                  <span>&euro;</span>
+                </label>
+                <br />
+                <label htmlFor="to">
+                  To
+                  <input type="number" name="to" className="to" />
+                  <span>&euro;</span>
+                </label>
+              </div>
             </div>
 
             <div className="filter">
               <div className="part2">
                 <label className="container-modal">
-                  Expenditure
-                  <input type="radio" name="radio" />
+                  One
+                  <input type="checkbox" />
                   <span className="checkmark" />
                 </label>
               </div>
@@ -47,7 +48,7 @@ class Filter extends Component {
                   <input type="number" name="from" className="from" />{' '}
                   <span>&euro;</span>
                 </label>
-                <br/>
+                <br />
                 <label htmlFor="to">
                   To
                   <input type="number" name="to" className="to" />
@@ -56,12 +57,19 @@ class Filter extends Component {
               </div>
             </div>
 
-
-          <div className="filter">
+            <div className="filter">
               <div className="part2">
+                {
+                  // RADIO BUTTON
+                  // <label className="container-modal">
+                  //   Category
+                  //   <input type="radio" name="radio" />
+                  //   <span className="checkmark" />
+                  // </label>
+                }
                 <label className="container-modal">
-                  Category
-                  <input type="radio" name="radio" />
+                  One
+                  <input type="checkbox"  />
                   <span className="checkmark" />
                 </label>
               </div>
@@ -79,11 +87,9 @@ class Filter extends Component {
               </div>
             </div>
 
-           <div className="button-div">
-              <button className="search-button" > Search</button>
+            <div className="button-div">
+              <button className="search-button"> Search</button>
             </div>
-
-
           </div>
         </div>
       </React.Fragment>
