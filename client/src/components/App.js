@@ -14,7 +14,7 @@ import Filter from './Filter';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search" component={SearchReaslt} />
@@ -23,7 +23,7 @@ const App = () => (
           <Route exact path="/compare" component={Comparison} />
           <Route exact path="/filter" component={Filter} />
       </Switch>
-    </div>
+    </>
   </BrowserRouter>
 );
 export default App;
