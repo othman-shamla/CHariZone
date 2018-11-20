@@ -5,7 +5,7 @@ import LandingPage from './LandingPage';
 import Works from './Works';
 import Slide from './Slide';
 import ContactUs from './ContactUs';
-import Footer from './Footer';
+import Footer from '../Footer';
 
 class HomePage extends Component {
   render() {
