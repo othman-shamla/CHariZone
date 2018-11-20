@@ -5,8 +5,8 @@
     position: fixed;
     right: -40px;
     top: -40px;
-    background-color: #F89963;
-    transition: all 1s;
+    background-color: rgba(248, 153, 99, .9);   
+    transition: all 0.5s; 
     z-index: 20;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.4);
     cursor: pointer;
@@ -85,7 +85,7 @@ z-index: 10;
 }
 
 .change .items a:hover{
-    color: white;
+    color: #EFF0F2;
     transform: scale(1.1);
 }
 .landing-page{
@@ -108,7 +108,7 @@ z-index: 10;
 }
 .logoOne{
     font-size: 48px;
-    color: white;
+    color: #EFF0F2;
 }
 .subLogo{
     font-size: 25px;
@@ -135,7 +135,7 @@ z-index: 10;
 .search h3{
     margin-left: 113px;
     margin-top: 15px;
-    color: white;
+    color: #EFF0F2;
     cursor: pointer;
     letter-spacing: 2px;
     font-size: 23px;

@@ -5,12 +5,29 @@ import './index.css';
 const ContactUS = () => (
   <React.Fragment>
     <section className="ending-section">
-      <div className="contact-us">
-        <h2>Contact US</h2>
-        <input type="text" placeholder="Title" className="input" />
-        <input type="text" placeholder="Email" className="input" />
-        <textarea placeholder="Message" className="input" />
-        <button type="button">Send</button>
+    
+    <div className="overlay">
+    <h1 className="contactTitle">CONTACT US</h1>
+    <div className="contactUs">
+      <input type="text" placeholder="Enter Message Title" className="inputField" />
+      <input type="text" placeholder="Enter Your Email" className="inputField" />
+      <textarea placeholder="Enter Your Message" className="inputField textArea" />
+      <button type="button" className="contactButton">Send</button>
+    </div>
+    <div className="contactUs">
+    <div className="contact-div">
+      <img src="https://imgur.com/vPSLDju.png"/>
+      <h3>+999-9999-9999</h3>
+      </div>
+      <div className="contact-div">
+          <img src="https://imgur.com/tkLsAgy.png"/>
+          <h3>sara-cahriZone@gmail.com</h3>
+          </div>
+          <div className="contact-div">
+          <img src="https://imgur.com/hahEuHs.png"/>
+          <h3>@ChariZone</h3>
+          </div>
+    </div>
       </div>
     </section>
   </React.Fragment>
