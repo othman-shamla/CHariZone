@@ -1,9 +1,10 @@
+require('env2')('./config.env');
 const Airtable = require("airtable");
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
-  apiKey: "keyXOKIUjFwpxFeeA"
+  apiKey: process.env.APIKEY
 });
-const base = Airtable.base("appddZ82zrrbFkLQP");
+const base = Airtable.base(process.env.BASE);
 
 exports.get = (req, res) => {
   const { incfrom, incto, exform, exto, category } = req.query;
