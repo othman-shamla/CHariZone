@@ -16,6 +16,7 @@
     "heroku-postbuild": "npm run client:init && npm run build"
   },
   "dependencies": {
+    "airtable": "^0.5.7",
     "express": "^4.16.3"
   },
   "devDependencies": {
