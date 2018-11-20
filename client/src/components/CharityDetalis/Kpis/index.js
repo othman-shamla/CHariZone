@@ -8,11 +8,11 @@ import './style.css';
 
 const returnFlag = flag => {
   if (flag === 'positive') {
-    return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/greenFlag.jpg" />
+    return <img className="flagImg" src="https://imgur.com/GmAnTas.png" />
   } if (flag === 'neutral') {
-    return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/blackFlag.jpg" />
+    return <img className="flagImg" src="https://imgur.com/cO7uPgA.png" />
   }
-  return <img className="flagImg" src="https://files.gitter.im/othman-shamla/G4W7/redFlag.png" />
+  return <img className="flagImg" src="https://imgur.com/JrMn3j9.png" />
 }
 
 const Kpis = () => (
