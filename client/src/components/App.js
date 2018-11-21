@@ -7,8 +7,6 @@ import HomePage from './HomePage';
 import SearchReaslt from './SearchReaslt';
 import CharityDetalis from './CharityDetalis';
 import Category from './Category';
-import Header from './Header';
-import Footer from './Footer';
 import Comparison from './Comparison';
 import Filter from './HomePage/LandingPage/Filter';
 

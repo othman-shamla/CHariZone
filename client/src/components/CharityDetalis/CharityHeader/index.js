@@ -14,10 +14,10 @@ const CharityHeader = props => {
         id="charity--img"
         src="https://files.gitter.im/othman-shamla/gvyl/image.png"
       />
-      <span id="charity--name">ACTION FOR CHILDREN</span>
+      <span id="charity--name">{name}</span>
       <div className="tabs">
         <ul>
-          {['MAIN DETAILS', 'CONTACT', 'KPIS'].map((x, i) => (
+          {['MAIN DETAILS', 'CONTACT', 'CHARITY INSIGHT'].map((x, i) => (
             <li
               onClick={() => changeTab(i + 1)}
               className={tabs === i + 1 ? 'tabActive' : ''}
