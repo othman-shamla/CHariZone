@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable prettier/prettier */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
@@ -7,16 +8,37 @@ import BoxKpi from '../BoxKpi';
 import './style.css';
 
 const returnFlag = flag => {
-  if (flag === 'positive') {
+  console.log('falg : ', flag);
+  if (flag === '1') {
     return <img className="flagImg" src="https://imgur.com/GmAnTas.png" />
-  } if (flag === 'neutral') {
+  } if (flag === '0') {
     return <img className="flagImg" src="https://imgur.com/cO7uPgA.png" />
   }
   return <img className="flagImg" src="https://imgur.com/JrMn3j9.png" />
 }
 
-const Kpis = () => (
-  <div className="kpi--tables">
+const Kpis = (props) => {
+  const {
+    EMR,
+    averageFundraising,
+    Ecr,
+    Currr,
+    donerDependency,
+    numberOfTrustees,
+    executiveCompensation,
+    policyHealth,
+    trusteesBiography,
+    policyGeneral,
+    safeGuarding,
+    tob,
+    policyWhistleblowing,
+    fundraisingPromise,
+    impactReporting,
+    impactResults,
+    mentionOfTheory,
+  } = props;
+
+  return (<div className="kpi--tables">
     <BoxKpi name="Financial">
       <div className="kpi--row">
         <div className="kpi--column">
@@ -25,8 +47,8 @@ const Kpis = () => (
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={11.3}
-                text="11.3%" />
+                percentage={EMR.replace('%','')}
+                text={EMR} />
             </div>
           </div>
           <div className="kpi--item">
@@ -34,8 +56,8 @@ const Kpis = () => (
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={4.3}
-                text="4.3%"
+                percentage={averageFundraising.replace('%','')}
+                text={averageFundraising}
               />
             </div>
           </div>
@@ -43,11 +65,11 @@ const Kpis = () => (
         <div className="kpi--column">
           <div className="kpi--item">
             <span>ECR</span>
-            <span>1.9</span>
+            <span>{Ecr}</span>
           </div>
           <div className="kpi--item">
             <span>CurrR</span>
-            <span>-</span>
+            <span>{Currr}</span>
           </div>
         </div>
         <div className="kpi--column">
@@ -56,8 +78,8 @@ const Kpis = () => (
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={10.1}
-                text="10.1%"
+                percentage={donerDependency.replace('%','')}
+                text={donerDependency}
               />
             </div>
           </div>
@@ -69,43 +91,43 @@ const Kpis = () => (
         <div className="kpi--column">
           <div className="kpi--item">
             <span>NUMBER OF TRUSTEES</span>
-            <span>--</span>
+            <span>{numberOfTrustees}</span>
           </div>
           <div className="kpi--item">
             <span>Executive Compensation</span>
-            <span>150-160</span>
+            <span>{executiveCompensation}</span>
           </div>
           <div className="kpi--item">
             <span>Policy: Health & Safety</span>
-            <span>{returnFlag('neutral')}</span>
+            <span>{returnFlag(policyHealth)}</span>
           </div>
         </div>
         <div className="kpi--column">
           <div className="kpi--item">
-            <span>Trustees Biography</span>
-            <span>yes</span>
+            <span>Trustees Biography  </span>
+            <span>{trusteesBiography}</span>
           </div>
           <div className="kpi--item">
             <span>Policy:General Data Protection Regulations</span>
-            <span>{returnFlag('neutral')}</span>
+            <span>{returnFlag(policyGeneral)}</span>
           </div>
           <div className="kpi--item">
             <span>Safe Guarding</span>
-            <span>{returnFlag('neutral')}</span>
+            <span>{returnFlag(safeGuarding)}</span>
           </div>
         </div>
         <div className="kpi--column">
           <div className="kpi--item">
             <span>T: ToB</span>
-            <span>{returnFlag('neutral')}</span>
+            <span>{returnFlag(tob)}</span>
           </div>
           <div className="kpi--item">
             <span>Policy: Whistleblowing</span>
-            <span>{returnFlag('neutral')}</span>
+            <span>{returnFlag(policyWhistleblowing)}</span>
           </div>
           <div className="kpi--item">
             <span>Fundraising Promise</span>
-            <span>{returnFlag('positive')}</span>
+            <span>{returnFlag(fundraisingPromise)}</span>
           </div>
         </div>
       </div>
@@ -115,27 +137,24 @@ const Kpis = () => (
         <div className="kpi--column">
           <div className="kpi--item">
             <span>Impact Reporting</span>
-            <span>{returnFlag('positive')}</span>
+            <span>{returnFlag(impactReporting)}</span>
           </div>
         </div>
         <div className="kpi--column">
           <div className="kpi--item">
             <span>Impact: Results Reporting </span>
-            <span>{returnFlag('positive')}</span>
+            <span>{returnFlag(impactResults)}</span>
           </div>
         </div>
         <div className="kpi--column">
           <div className="kpi--item">
             <span>Mention Of Theory</span>
-            <span>{returnFlag('positive')}</span>
+            <span>{returnFlag(mentionOfTheory)}</span>
           </div>
         </div>
       </div>
     </BoxKpi>
-  </div>
-);
-if (module.hot) {
-  module.hot.accept();
-
+  </div>);
 }
+
 export default Kpis;
