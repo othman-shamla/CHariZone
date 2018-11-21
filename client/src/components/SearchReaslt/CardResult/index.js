@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 // component to card in charity result search
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 
 class CardResult extends Component {
   render() {
     const {
-      key,
+      idChirty,
+      key0,
       name,
       text,
       isActive,
@@ -17,9 +19,9 @@ class CardResult extends Component {
       onClick,
     } = this.props;
     return (
-      <div className="container" key={key}>
+      <div className="container" key={key0}>
         <div className="card-details">
-          <h1>{name}</h1>
+          <Link className="link-card" to={`/charity/${idChirty}`}>{name}</Link>
           <p className="information">" {text} "</p>
           <div className="control">
             <button
