@@ -45,6 +45,7 @@ const items = this.galleryItems();
 return (
 <div className="movingSlider">
 <p className="main"> Categories</p>
+<a name="Slider" title="slider"/>
 <AliceCarousel  items={items} duration={400} autoPlay startIndex={0} fadeOutAnimation mouseDragEnabled playButtonDisabled autoPlayInterval={2000} autoPlayDirection="rtl" responsive={{ 0: { items: 5 }, }} disableAutoPlayOnAction onSlideChange={this.onSlideChange} dotsDisabled onSlideChanged={this.onSlideChanged} className="actualSlider"/>
 </div>
 );
