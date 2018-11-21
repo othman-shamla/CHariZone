@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
@@ -60,8 +61,10 @@ class SearchReaslt extends Component {
   };
 
   getData = () => {
+    const { history } = this.props;
+    const keyword = history.location.search.split('?')[1];
     const array = [];
-    fetch('/api/v1/search?q=ch')
+    fetch(`/api/v1/search?q=${keyword}`)
       .then(response => response.json())
       .then(response => {
         const { data } = response;
