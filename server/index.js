@@ -1,9 +1,10 @@
-const express = require('express');
+/* eslint-disable linebreak-style */
 require('env2')('./config.env');
+const express = require('express');
 
 const app = express();
 const port = process.env.PORT || 4000;
-
+const path = require('path');
 const controllers = require('./controllers');
 
 app.use('/api/v1', controllers);
@@ -14,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   // Serve build version of the app.
   app.use(express.static(path.join(__dirname, 'client/build')));
   // Return all requests to our React app.
-  app.get('*', function(req, res) {
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
