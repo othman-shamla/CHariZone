@@ -7,17 +7,16 @@ class LandingPage extends Component {
   state = {
     toggle: false,
     AdvanceSearch: false,
-    defaultShow:true,
+    defaultShow: true,
   };
 
   showAdvanceModel = () => {
-    this.setState({ AdvanceSearch: true,
-    defaultShow:false });
-  };
-  hideAdvanceModel = () => {
-    this.setState({ AdvanceSearch: false,defaultShow:true });
+    this.setState({ AdvanceSearch: true, defaultShow: false });
   };
 
+  hideAdvanceModel = () => {
+    this.setState({ AdvanceSearch: false, defaultShow: true });
+  };
 
   move() {
     this.setState(prevState => ({
@@ -36,46 +35,50 @@ class LandingPage extends Component {
       <React.Fragment>
         <header>
           <nav>
-            <div  role="button"
+            <div
+              role="button"
               className={toggle ? 'icon change' : 'icon'}
-              onClick={() => this.move()}>
+              onClick={() => this.move()}
+            >
               <div className="hamburger" />
               <div className="items" id="items">
-                <a href="#">HOW IT WORKS</a>
-                <a href="#">CATEGORIES</a>
-                <a href="#">ADVANCED SEARCH</a>
-                <a href="#">CONTACT US</a>
+                <a href="#Works">HOW IT WORKS</a>
+                <a href="#Slider">CATEGORIES</a>
+                <a href="/search">ADVANCED SEARCH</a>
+                <a href="#Contact">CONTACT US</a>
               </div>
             </div>
           </nav>
         </header>
         <section className="landing-page">
-        <div className="rgba">
-
-        {this.state.defaultShow && <div className="to-hide">
-        <div className="logo">
-          <div className="logoOne">
-            <p>
-              CHARI
-              <span style={spanStyle}>ZONE</span>
-            </p>
-          </div>
-          <div className="subLogo">
-            <p>All charities in one place</p>
-          </div>
-        </div>
-        <div className="search">
-          <input placeholder="By Keyword, Name" />
-          <button type="button">
-            <i className="fa fa-search" />
-          </button>
-          <h3 onClick={this.showAdvanceModel}>Advanced Search</h3>
-        </div>
-        </div>}
-            { this.state.AdvanceSearch && <Filter Hide={this.hideAdvanceModel}/ > }
+          <div className="rgba">
+            {this.state.defaultShow && (
+              <div className="to-hide">
+                <div className="logo">
+                  <div className="logoOne">
+                    <p>
+                      CHARI
+                      <span style={spanStyle}>ZONE</span>
+                    </p>
+                  </div>
+                  <div className="subLogo">
+                    <p>All charities in one place</p>
+                  </div>
+                </div>
+                <div className="search">
+                  <input placeholder="By Keyword, Name" />
+                  <button type="button">
+                    <i className="fa fa-search" />
+                  </button>
+                  <h3 onClick={this.showAdvanceModel}>Advanced Search</h3>
+                </div>
               </div>
+            )}
+            {this.state.AdvanceSearch && (
+              <Filter Hide={this.hideAdvanceModel} />
+            )}
+          </div>
         </section>
-
       </React.Fragment>
     );
   }
