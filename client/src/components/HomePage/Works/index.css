@@ -1,86 +1,57 @@
 .about-us{
     width: 100vw;
-    height:90vh;   
+    height:85vh;  
+    text-align: center;
+    background-image: url(https://image.freepik.com/free-photo/paper-textured-background_53876-30486.jpg);
+    font-family: "Spectral";
 }
-.inner-about{
-    width: 600px;
-    height: 240px;
-    background-color: #F89963;
+.innerCards{
+    width: 70%;
+    height:60%;
+    display:flex;
+    align-content: center;
     margin: 0 auto;
     position: relative;
-    top: 130px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%,-85%);
+}
+.cardTitle{
+    position: relative;
+    top: 30px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+}
+.inner{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    margin: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #fff;
+}
+.inner:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+.iconContainer{
+    background-color: #FF9752;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    margin-top: -20px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    margin-bottom: -60px;
 }
-.inner-about h2{
-    font-family: 'Spectral';
-    font-size: 30px;
-    letter-spacing: 12%;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px #333;
-    padding-top: 25px;
+.cardIcon{
+    width:40px;
+    height:40px;
+    margin-top: 12px;
+    
 }
-.inner-about p{
-    font-family: 'Spectral';
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 5%;
-    padding: 15px;
-}
-.circle1{
-    width: 235px;
-    height: 235px;
-    background-color: #F89963;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
-    position: relative;
-    left: -50px;
-   bottom: -200px;
-    border-radius: 50%;
-    z-index: 10;
-}
-.circle2 {
-    width: 150px;
-    height: 150px;
-    background-color: #000; 
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.8);
-    position: relative;
-    top: 10px;
-    left: 130px;
-    border-radius: 50%;
-    z-index: 11;
-}
-.circle1:hover{
-    background-color: #FF7C32;
-    transform: scale(1.05);
-    transition: all .5s;
-}
-.circle2:hover{
-    background-color: #181818;
-    transform: scale(1.05);
-    transition: all .5s;
-}
-.circle4:hover{
-background-color: #F89963;
-    transform: scale(1.05);
-    transition: all .5s;
-}
-.circle4{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #F7AE85; 
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
-    position: relative;
-    top: -350px;
-    left: 100px;
-}
-.hide {
-    width: 100%;
-    height: 75px;
-    position: relative;
-    top: -116px;
-    background-color: #FFD4BB;
-     /* z-index: 12; */
-     z-index: 15;
-}
+
