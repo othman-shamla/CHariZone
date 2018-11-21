@@ -3,7 +3,7 @@
   z-index: 50;
   margin: 0 auto;
   width: 450px;
-  height: 550px;
+  height: 450px;
   background-color: #FAFAFA;
   padding: 20px 20px;
   border-radius: 5px;
@@ -13,14 +13,14 @@
   align-self: center;
   background-color: #FAFAFA;
   padding: 20px 20px;
-  border: 3px solid #D76F35;
+  border: 3px solid #FF915D;
   border-radius: 5px;
   height: 89%;
     z-index: 50;
 }
 
 .close {
-  color: #D76F35;
+  color: #FF915D;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -33,7 +33,9 @@
   cursor: pointer;
 }
 .modal-desc{
+  color: #757575;
   text-transform: capitalize;
+  border-bottom: 1px dashed #FF915D;
 }
 
 /* *********************     START OF CUSTOME checkmark CSS  *********************** */
@@ -77,7 +79,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container-modal  input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #FF915D;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -108,9 +110,9 @@
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 40px;
-  margin-bottom: 60px;
+    margin-bottom: 44px;
 }
 
 .numbers {
@@ -144,11 +146,12 @@
 }
 
 .select-catgery{
+    font-family: 'Spectral SC', serif;
   background: #ffffff;
     padding: 7px 36px;
     outline: none;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 500;
 
 }
 .option-category{
@@ -164,7 +167,7 @@
   border-radius: 5px;
   border: none;
   color: #000;
-  background-color: #D76F35;
+  background-color: #FF915D;
   display: block;
   font-size: 16px;
 }

@@ -13,7 +13,7 @@ class Filter extends Component {
             <div className="filter">
               <div className="part1">
                 <label className="container-modal">
-                  One
+                Income
                   <input type="checkbox"/>
                   <span className="checkmark" />
                 </label>
@@ -36,7 +36,7 @@ class Filter extends Component {
             <div className="filter">
               <div className="part2">
                 <label className="container-modal">
-                  One
+                  Expenditure
                   <input type="checkbox" />
                   <span className="checkmark" />
                 </label>
@@ -68,7 +68,7 @@ class Filter extends Component {
                   // </label>
                 }
                 <label className="container-modal">
-                  One
+                  Category
                   <input type="checkbox"  />
                   <span className="checkmark" />
                 </label>
@@ -77,11 +77,11 @@ class Filter extends Component {
               <div className="numbers2">
                 <select name="" id="" className="select-catgery">
                   <option value="0">Select catgery:</option>
-                  <option value="1" className="Children">
-                    Audi
+                  <option value="1" className="opition-div">
+                    Children
                   </option>
-                  <option value="2" className="Women">
-                    BMW
+                  <option value="2" className="opition-div">
+                    Women
                   </option>
                 </select>
               </div>
