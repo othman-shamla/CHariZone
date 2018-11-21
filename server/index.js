@@ -1,4 +1,5 @@
 const express = require('express');
+require('env2')('./config.env');
 
 const app = express();
 const port = process.env.PORT || 4000;
