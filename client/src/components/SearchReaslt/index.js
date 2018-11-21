@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
+import swal from 'sweetalert';
 import './style.css';
 import CardResult from './CardResult';
 import More from './More';
@@ -82,7 +83,8 @@ class SearchReaslt extends Component {
           return array.push(object);
         });
         this.setState({ data: array });
-      });
+      })
+      .catch(err => swal('Oops!', 'Something went wrong!', 'error'));
   };
 
   componentDidMount = () => {
