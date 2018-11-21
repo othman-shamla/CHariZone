@@ -8,7 +8,6 @@ import SearchReaslt from './SearchReaslt';
 import CharityDetalis from './CharityDetalis';
 import Category from './Category';
 import Comparison from './Comparison';
-import Filter from './HomePage/LandingPage/Filter';
 
 const App = () => (
   <BrowserRouter>
@@ -19,7 +18,6 @@ const App = () => (
 	      <Route exact path='/charity' component={CharityDetalis} />
         <Route exact path="/category" component={Category} />
         <Route exact path="/compare" component={Comparison} />
-        <Route exact path="/filter" component={Filter} />
       </Switch>
     </>
   </BrowserRouter>
