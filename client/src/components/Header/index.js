@@ -19,11 +19,13 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="div-logo">
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <span className="span-name">
             <h1>
               chari<span className="colored-name">zone</span>
             </h1>
           </span>
+          </Link>
           <span className="description">
             <h2> all charities in one place</h2>
           </span>
