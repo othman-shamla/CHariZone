@@ -7,9 +7,15 @@ const HeaderSearch = props => {
   const { numberOfResult } = props;
   return (
     <div className="div-header">
-      <h1>Search Results</h1>
-      <button type="button">Filter</button>
-      <p>{numberOfResult} Results Found</p>
+      {+numberOfResult > 0 ? (
+        <React.Fragment>
+          <h1>Search Results</h1>
+          <button type="button">Filter</button>
+          <p>{numberOfResult} Results Found</p>
+        </React.Fragment>
+      ) : (
+        <h1>Oppes no result!</h1>
+      )}
     </div>
   );
 };
