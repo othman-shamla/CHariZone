@@ -6,7 +6,7 @@ const ContactUS = () => (
   <React.Fragment>
     <section className="ending-section">
       <div className="overlay">
-        <h1 className="contactTitle">CONTACT US</h1>
+        <h1 className="titleTitle">CONTACT US</h1>
         <a name="Contact" title="slider" />
         <div className="contactUs">
           <input
