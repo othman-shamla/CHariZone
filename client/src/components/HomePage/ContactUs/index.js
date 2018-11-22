@@ -10,14 +10,14 @@ const ContactUS = () => (
         <a name="Contact" title="slider" />
         <div className="contactInnerContainer">
         <div className="contactUs">
-          <input
+        <input
             type="text"
-            placeholder="Enter Message Title"
+            placeholder="Enter Your Email"
             className="inputField"
           />
           <input
             type="text"
-            placeholder="Enter Your Email"
+            placeholder="Enter Message Title"
             className="inputField"
           />
           <textarea
