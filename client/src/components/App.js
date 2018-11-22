@@ -19,7 +19,6 @@ const App = () => (
       <Route exact path="/charity" component={CharityDetalis} />
       <Route exact path="/category" component={Category} />
       <Route exact path="/compare" component={Comparison} />
-      <Route exact path="/filter" component={Filter} />
       <Route path="/not-found" component={NotFound} />
       <Redirect to="/not-found" />
     </Switch>
