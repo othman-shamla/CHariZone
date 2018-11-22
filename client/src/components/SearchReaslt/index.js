@@ -80,9 +80,9 @@ class SearchReaslt extends Component {
           object.id = index + 1;
           object.idChirty = item.regno;
           object.name = item.name;
-          object.classification = item.What['0'];
           object.website = item.WebsiteAddress;
-          object.text = item.Objective;
+          object.classification = item.what['0'];
+          object.text = item.objective;
           object.logo =
             'https://www.atlrewards.net/cwa-nearby-areas-portlet/images/nologo.png';
           object.isActive = false;
