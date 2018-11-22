@@ -13,7 +13,7 @@ exports.get = (req, res) => {
       return res.sendStatus(503);
     }
     if (records.length === 0) {
-      return res.status(404).send('No Charity Found');
+      return res.send({ error: 'No Charity Found' });
     }
     return res.send({ data: records.map(record => record.fields) });
   });
