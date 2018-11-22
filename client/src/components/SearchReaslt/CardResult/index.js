@@ -21,7 +21,9 @@ class CardResult extends Component {
     return (
       <div className="container" key={key0}>
         <div className="card-details">
-          <Link className="link-card" to={`/charity/${idChirty}`}>{name}</Link>
+          <Link className="link-card" to={`/charity/${idChirty}`}>
+            {name}
+          </Link>
           <p className="information">" {text} "</p>
           <div className="control">
             <button
