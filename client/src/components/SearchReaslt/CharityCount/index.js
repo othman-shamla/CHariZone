@@ -6,8 +6,10 @@ import './style.css';
 
 const CharityCount = props => {
   const { count, select } = props;
+  let str = '/compare?';
+  str += `${select.map((x, i) => `charity${i}=${x}`).join('&')}`;
   return (
-    <Link to={`/Comparison/${select}`}>
+    <Link to={str}>
       <div className="count-charity">
         <img
           className="img-charity"
