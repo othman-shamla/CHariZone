@@ -2,11 +2,38 @@ import CircularProgressbar from 'react-circular-progressbar';
 import React, { Component } from 'react';
 import './index.css';
 
-import CompareTable from './CompareTable';
+import Governance from './Governance';
+import Financial from './Financial';
+import Impact from './Impact';
+import HomeInfo from './HomeInfo'
 import Header from '../Header';
 import Footer from '../Footer';
 
 class Comparison extends Component {
+  state = {
+  tabs: 1
+}
+changeTab = (tab) => {
+   this.setState({
+     tabs: tab,
+   });
+ }
+
+ renderTab = () => {
+if(this.state.tabs === 2 ){
+  return <Financial/>;
+}
+else if(this.state.tabs==3){
+  return <Governance />;
+}
+else if(this.state.tabs==4){
+  return <Impact/>;
+}
+else {
+  return <HomeInfo/>;
+}
+
+ }
   render() {
     const percentage = 66;
     return (
@@ -36,7 +63,7 @@ class Comparison extends Component {
 
           <div className="compare-container">
             <div className="logos">
-              <span className="basic-logo logo-span">
+              <span className="basic-logo logo-span" onClick={() => this.changeTab(1)}>
                 <img
                   alt="basic logo"
                   className="basic-img"
@@ -44,21 +71,21 @@ class Comparison extends Component {
                 />
               </span>
 
-              <span className="financial-logo logo-span">
+              <span className="financial-logo logo-span" onClick={() => this.changeTab(2)}>
                 <img
                   alt="financial logo"
                   className="financial-img"
                   src="https://imgur.com/byldMLA.png"
                 />
               </span>
-              <span className="governance-logo logo-span">
+              <span className="governance-logo logo-span" onClick={() => this.changeTab(3)}>
                 <img
                   alt="governance logo"
                   className="governance-img"
                   src="https://imgur.com/uK6GWci.png"
                 />
               </span>
-              <span className="impact-logo logo-span">
+              <span className="impact-logo logo-span" onClick={() => this.changeTab(4)}>
                 <img
                   alt="impact logo"
                   className="impact-img"
@@ -66,7 +93,7 @@ class Comparison extends Component {
                 />
               </span>
             </div>
-            <CompareTable />
+        {this.renderTab()}
           </div>
         </div>
         <Footer />
