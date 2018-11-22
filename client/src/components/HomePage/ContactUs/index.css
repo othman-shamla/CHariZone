@@ -46,6 +46,7 @@
 }
 .inputField::placeholder{
     color: white;
+    font-family: "Spectral";
 }
 .textArea{
     height: 30%;
