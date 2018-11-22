@@ -8,6 +8,7 @@ const ContactUS = () => (
       <div className="overlay">
         <h1 className="titleTitle">CONTACT US</h1>
         <a name="Contact" title="slider" />
+        <div className="contactInnerContainer">
         <div className="contactUs">
           <input
             type="text"
@@ -39,6 +40,7 @@ const ContactUS = () => (
           <div className="contact-div">
             <img src="https://imgur.com/hahEuHs.png" alt="icon"/>
             <h3>@ChariZone</h3>
+          </div>
           </div>
         </div>
       </div>
