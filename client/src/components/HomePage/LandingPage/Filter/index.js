@@ -1,33 +1,105 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import './index.css';
 
 class Filter extends Component {
+  state = {
+    fromInc: -1,
+    toInc: -1,
+    fromEx: -1,
+    toEx: -1,
+    income: false,
+    expend: false,
+    category: false,
+  };
+
+  handleChange = event => {
+    const { target } = event;
+    let value;
+    if (target.type === 'checkbox') {
+      value = target.checked;
+    } else {
+      value = target.value;
+    }
+    this.setState({ [target.name]: value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    let url = '';
+    const {
+      fromInc,
+      toInc,
+      fromEx,
+      toEx,
+      income,
+      expend,
+      category,
+    } = this.state;
+    if (income && expend && category) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income && category) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category=-1`;
+    } else if (expend && category) {
+      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income && expend) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category=-1`;
+    } else if (expend) {
+      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else {
+      url = `/search?incfrom=-1&incto=-1&exform=-1&exto=-1&category=-1`;
+    }
+    // return <Link to={url} />;
+  };
+
   render() {
-    const { Hide }  = this.props;
+    const { Hide } = this.props;
+    const { fromInc, toInc, fromEx, toEx, income, expend } = this.state;
     return (
       <React.Fragment>
-        <div className="modal">
+        <form className="modal" onSubmit={this.handleSubmit}>
           <div className="modal-content">
-            <span className="close" onClick={Hide} >&times;</span>
+            <span className="close" onClick={Hide}>
+              &times;
+            </span>
             <p className="modal-desc">Filter charities By:</p>
             <div className="filter">
               <div className="part1">
                 <label className="container-modal">
-                Income
-                  <input type="checkbox"/>
+                  Income
+                  <input
+                    type="checkbox"
+                    name="income"
+                    checked={income}
+                    onChange={this.handleChange}
+                  />
                   <span className="checkmark" />
                 </label>
               </div>
               <div className="numbers">
                 <label htmlFor="from">
                   From
-                  <input type="number" name="from" className="from" />
+                  <input
+                    name="fromInc"
+                    value={fromInc}
+                    onChange={this.handleChange}
+                    type="number"
+                    className="from"
+                  />
                   <span>&euro;</span>
                 </label>
                 <br />
                 <label htmlFor="to">
                   To
-                  <input type="number" name="to" className="to" />
+                  <input
+                    name="toInc"
+                    value={toInc}
+                    onChange={this.handleChange}
+                    type="number"
+                    className="to"
+                  />
                   <span>&euro;</span>
                 </label>
               </div>
@@ -37,7 +109,12 @@ class Filter extends Component {
               <div className="part2">
                 <label className="container-modal">
                   Expenditure
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    name="expend"
+                    checked={expend}
+                    onChange={this.handleChange}
+                  />
                   <span className="checkmark" />
                 </label>
               </div>
@@ -45,13 +122,25 @@ class Filter extends Component {
               <div className="numbers2">
                 <label htmlFor="from">
                   From
-                  <input type="number" name="from" className="from" />{' '}
+                  <input
+                    name="fromEx"
+                    value={fromEx}
+                    onChange={this.handleChange}
+                    type="number"
+                    className="from"
+                  />{' '}
                   <span>&euro;</span>
                 </label>
                 <br />
                 <label htmlFor="to">
                   To
-                  <input type="number" name="to" className="to" />
+                  <input
+                    name="toEx"
+                    value={toEx}
+                    onChange={this.handleChange}
+                    type="number"
+                    className="to"
+                  />
                   <span>&euro;</span>
                 </label>
               </div>
@@ -69,7 +158,12 @@ class Filter extends Component {
                 }
                 <label className="container-modal">
                   Category
-                  <input type="checkbox"  />
+                  <input
+                    type="checkbox"
+                    name="category"
+                    // checked={category}
+                    onChange={this.handleChange}
+                  />
                   <span className="checkmark" />
                 </label>
               </div>
@@ -88,10 +182,12 @@ class Filter extends Component {
             </div>
 
             <div className="button-div">
-              <button className="search-button"> Search</button>
+              <button className="search-button" type="submit">
+                Search
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </React.Fragment>
     );
   }
