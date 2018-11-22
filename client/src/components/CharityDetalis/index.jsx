@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
@@ -50,9 +49,9 @@ class CharityDetalis extends Component {
     },
   };
 
-  componentWillMount() {
-    const { id } = this.props.match.params.id;
-    fetch(`api/v1/charity/${id}}`)
+  componentDidMount() {
+    const { id } = this.props.match.params;
+    fetch(`/api/v1/charity/${id}`)
       .then(response => response.json())
       .then(json => {
         const {
@@ -159,17 +158,16 @@ class CharityDetalis extends Component {
   };
 
   render() {
-    const { tabs, name } = this.state;
+    const {
+      tabs,
+      charity: { name },
+    } = this.state;
     const Contant = this.renderTab(tabs);
     return (
       <React.Fragment>
         <Header />
         <div style={{ margin: '110px auto', width: '80%' }}>
-          <CharityHeader
-            changeTab={this.changeTab}
-            tabs={tabs}
-            name={name}
-          />
+          <CharityHeader changeTab={this.changeTab} tabs={tabs} name={name} />
           {Contant}
         </div>
         <Footer />
