@@ -62,7 +62,7 @@ class LandingPage extends Component {
               <div className="items" id="items">
                 <a href="#Works">HOW IT WORKS</a>
                 <a href="#Slider">CATEGORIES</a>
-                <a href="/search">ADVANCED SEARCH</a>
+                <a href="#advanced">ADVANCED SEARCH</a>
                 <a href="#Contact">CONTACT US</a>
               </div>
             </div>
@@ -95,6 +95,7 @@ class LandingPage extends Component {
                     </button>
                   </Link>
                   <h3 onClick={this.showAdvanceModel}>Advanced Search</h3>
+                  <a name="advanced" title="advanced"/>
                 </div>
               </div>
             )}
