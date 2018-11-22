@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 .footerHomePage {
     width: 100%;
-    height: 60;    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    height: 30px;    
+    background-image: linear-gradient( rgba(0, 0, 0,1), rgba(0, 0, 0,1));
   display: inline-flex;
   justify-content: center;
   color: #EFF0F2;
   font-family: "Pacifico";
   font-weight: 100;
+  padding-top: 5px;
   }

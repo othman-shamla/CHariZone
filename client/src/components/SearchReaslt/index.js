@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
+import ReactLoading from 'react-loading';
 import swal from 'sweetalert';
 import './style.css';
 import CardResult from './CardResult';
@@ -17,6 +18,7 @@ class SearchReaslt extends Component {
     count: 0,
     activeMore: false,
     select: [],
+    isData: false,
   };
 
   capitalFirst = string =>
@@ -68,23 +70,29 @@ class SearchReaslt extends Component {
     fetch(`/api/v1/search?q=${keyword}`)
       .then(response => response.json())
       .then(response => {
+        if (response.error) {
+          this.setState({ isData: true });
+          return;
+        }
         const { data } = response;
         data.map((item, index) => {
           const object = {};
           object.id = index + 1;
           object.idChirty = item.regno;
           object.name = item.name;
-          object.classification = item.What['0'];
           object.website = item.WebsiteAddress;
-          object.text = item.Objective;
+          object.classification = item.what['0'];
+          object.text = item.objective;
           object.logo =
             'https://www.atlrewards.net/cwa-nearby-areas-portlet/images/nologo.png';
           object.isActive = false;
           return array.push(object);
         });
-        this.setState({ data: array });
+        this.setState({ data: array, isData: true });
       })
-      .catch(err => swal('Oops!', 'Something went wrong!', 'error'));
+      .catch(err => {
+        swal('Oops!', 'Something went wrong!', 'error');
+      });
   };
 
   componentDidMount = () => {
@@ -92,50 +100,63 @@ class SearchReaslt extends Component {
   };
 
   render() {
-    const { data, activeMore, count, select } = this.state;
+    const { data, activeMore, count, select, isData } = this.state;
     return (
       <React.Fragment>
         <Header />
         <div className="body">
-          <HeaderSearch numberOfResult={data.length} />
-          <CharityCount count={count} select={select} />
-          <div className="result-cards">
-            {data.slice(0, 3).map(item => (
-              <CardResult
-                idChirty={item.idChirty}
-                key0={item.id}
-                isActive={item.isActive}
-                onClick={() => this.changeActive(item.id)}
-                logo={item.logo}
-                classification={item.classification}
-                website={item.website}
-                name={this.capitalFirst(item.name)}
-                text={this.capitalFirst(this.stringIsMore(item.text))}
+          {!isData ? (
+            <div className="loading-bubbles">
+              <ReactLoading
+                type="bubbles"
+                color="#f76009"
+                height="20%"
+                width="20%"
               />
-            ))}
-          </div>
-          {!activeMore && (
-            <More
-              specificٍSize={this.specificٍSize(data)}
-              getAllData={() => this.getAllData()}
-            />
-          )}
-          {activeMore &&
-            data
-              .slice(3, data.length)
-              .map(item => (
-                <CardResult
-                  idChirty={item.idChirty}
-                  key0={item.id}
-                  isActive={item.isActive}
-                  onClick={() => this.changeActive(item.id)}
-                  logo={item.logo}
-                  classification={item.classification}
-                  website={item.website}
-                  name={this.capitalFirst(item.name)}
-                  text={this.capitalFirst(this.stringIsMore(item.text))}
+            </div>
+          ) : (
+            <React.Fragment>
+              <HeaderSearch numberOfResult={data.length} />
+              <CharityCount count={count} select={select} />
+              <div className="result-cards">
+                {data.slice(0, 3).map(item => (
+                  <CardResult
+                    idChirty={item.idChirty}
+                    key0={item.id}
+                    isActive={item.isActive}
+                    onClick={() => this.changeActive(item.id)}
+                    logo={item.logo}
+                    classification={item.classification}
+                    website={item.website}
+                    name={this.capitalFirst(item.name)}
+                    text={this.capitalFirst(this.stringIsMore(item.text))}
+                  />
+                ))}
+              </div>
+              {!activeMore && (
+                <More
+                  specificٍSize={this.specificٍSize(data)}
+                  getAllData={() => this.getAllData()}
                 />
-              ))}
+              )}
+              {activeMore &&
+                data
+                  .slice(3, data.length)
+                  .map(item => (
+                    <CardResult
+                      idChirty={item.idChirty}
+                      key0={item.id}
+                      isActive={item.isActive}
+                      onClick={() => this.changeActive(item.id)}
+                      logo={item.logo}
+                      classification={item.classification}
+                      website={item.website}
+                      name={this.capitalFirst(item.name)}
+                      text={this.capitalFirst(this.stringIsMore(item.text))}
+                    />
+                  ))}
+            </React.Fragment>
+          )}
         </div>
         <Footer />
       </React.Fragment>
