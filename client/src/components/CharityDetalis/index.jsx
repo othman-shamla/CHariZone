@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 
 import CharityHeader from './CharityHeader';
@@ -52,24 +53,15 @@ class CharityDetalis extends Component {
       .then(response => response.json())
       .then(json => {
         const {
-          regno: charityNumber, // done
-          who,
-          what,
-          how,
+          regno,
           EmailAddress,
           PublicTelephoneNumber,
           WebsiteAddress,
         } = json.data;
-        console.log(json.data);
-
-        console.log(json.data.objective);
         delete json.data.regno;
         this.setState({
           charity: {
-            charityNumber,
-            who,
-            what,
-            how,
+            charityNumber: regno,
             email: EmailAddress,
             phoneNumber: PublicTelephoneNumber,
             website: WebsiteAddress,
@@ -78,7 +70,6 @@ class CharityDetalis extends Component {
             ...json.data,
           },
         });
-        // console.log(JSON.stringify(myJson));
       });
   }
 
