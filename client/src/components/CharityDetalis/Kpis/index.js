@@ -64,22 +64,20 @@ const Kpis = (props) => {
         </div>
         <div className="kpi--column">
           <div className="kpi--item">
-<<<<<<< Updated upstream
             <span>ECR</span>
             <span>{Ecr}</span>
           </div>
           <div className="kpi--item">
             <span>CurrR</span>
             <span>{Currr}</span>
-=======
             <span>EFFICIENCY & CAPACITY RATIO
-</span>
+            </span>
             <span>1.9</span>
           </div>
           <div className="kpi--item">
             <span>Current Ratio</span>
             <span>-</span>
->>>>>>> Stashed changes
+
           </div>
         </div>
         <div className="kpi--column">
