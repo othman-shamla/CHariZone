@@ -170,6 +170,7 @@ border-radius: 5px;
 
 .table-cell h5:hover {
   color: #F89963;
+  cursor: context-menu;
 }
 
 /*  *********************************** INFO BUBBLE********************************** */

@@ -2,9 +2,9 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 class Slide extends React.Component {
-
   galleryItems = imgLinks => {
     imgLinks = [
       {
@@ -92,7 +92,9 @@ class Slide extends React.Component {
           onDragStart={this.handleOnDragStart}
           className="yours-custom-class"
         />
-        <h4 className="yours-custom-class">{imgLinks[index].title}</h4>
+        <Link to={`category?category=${imgLinks[index].title}`}>
+          <h4 className="yours-custom-class">{imgLinks[index].title}</h4>
+        </Link>
       </div>
     ));
   };
@@ -120,8 +122,6 @@ class Slide extends React.Component {
           onSlideChanged={this.onSlideChanged}
           className="actualSlider"
         />
-    
-
       </div>
     );
   }
