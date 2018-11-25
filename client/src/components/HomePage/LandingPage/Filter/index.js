@@ -6,6 +6,7 @@ class Filter extends Component {
     const { Hide }  = this.props;
     return (
       <React.Fragment>
+      <div className="cover">
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={Hide} >&times;</span>
@@ -22,13 +23,13 @@ class Filter extends Component {
                 <label htmlFor="from">
                   From
                   <input type="number" name="from" className="from" />
-                  <span>&euro;</span>
+                  <span className="euro1">&euro;</span>
                 </label>
                 <br />
                 <label htmlFor="to">
                   To
                   <input type="number" name="to" className="to" />
-                  <span>&euro;</span>
+                  <span className="euro2">&euro;</span>
                 </label>
               </div>
             </div>
@@ -46,13 +47,13 @@ class Filter extends Component {
                 <label htmlFor="from">
                   From
                   <input type="number" name="from" className="from" />{' '}
-                  <span>&euro;</span>
+                  <span className="euro3">&euro;</span>
                 </label>
                 <br />
                 <label htmlFor="to">
                   To
                   <input type="number" name="to" className="to" />
-                  <span>&euro;</span>
+                  <span className="euro4">&euro;</span>
                 </label>
               </div>
             </div>
@@ -92,6 +93,7 @@ class Filter extends Component {
             </div>
           </div>
         </div>
+          </div>
       </React.Fragment>
     );
   }
