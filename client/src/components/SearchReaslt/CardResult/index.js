@@ -31,9 +31,13 @@ class CardResult extends Component {
               className={isActive ? 'btn active' : 'btn'}
               onClick={() => onClick()}
             >
-              <span className="add">ADD</span>
+              <span className="add">{!isActive ? 'ADD' : 'DEL'}</span>
               <span className="add-cart">
-                <i className="fa fa-plus-square" aria-hidden="true" />
+                {!isActive ? (
+                  <i className="fa fa-plus-square" aria-hidden="true" />
+                ) : (
+                  <i className="fa fa-minus-square" aria-hidden="true" />
+                )}
               </span>
               <span className="compare">Compare</span>
             </button>
