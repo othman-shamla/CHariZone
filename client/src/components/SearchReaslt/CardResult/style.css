@@ -137,7 +137,7 @@
   position: absolute;
   line-height: 2;
   text-align: left;
-  cursor: no-drop;
+  cursor: default !important;
   color: #fff;
   height: 100%;
   width: 100%;
