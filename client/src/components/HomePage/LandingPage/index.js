@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Joi from 'joi-browser';
-import swal from 'sweetalert';
 import './index.css';
 import Filter from './Filter';
 
@@ -13,20 +12,9 @@ class LandingPage extends Component {
     keyword: '',
   };
 
-  validate = value => {
-    const schema = Joi.string().alphanum();
-    const { error } = Joi.validate(value, schema);
-    return error ? error.details[0].message : null;
-  };
-
   handleChange = event => {
     const { value } = event.target;
-    const error = this.validate(value);
-    if (error) {
-      swal('Oops!', 'Error in input felid ', 'error');
-    } else {
-      this.setState({ keyword: value });
-    }
+    this.setState({ keyword: value });
   };
 
   showAdvanceModel = () => {
@@ -45,7 +33,6 @@ class LandingPage extends Component {
 
   render() {
     const { toggle, defaultShow, keyword } = this.state;
-    // const { Show } = this.props;
     const spanStyle = {
       color: '#F89963',
     };
