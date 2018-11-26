@@ -14,7 +14,7 @@ class More extends Component {
       <React.Fragment>
         {specificٍSize && (
           <button
-            role="button"
+            type="button"
             className="more"
             onClick={() => getAllData()}
             onKeyDown={this.handleKeyDown}
