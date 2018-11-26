@@ -15,52 +15,52 @@ const Contact = props => {
   } = props;
   return (
     <div>
-      <div className="box">
-        <table className="table">
+      <div className="mainDetails">
+        <table>
           <tbody>
             <tr>
               <td>
-                <span>Charity Number</span>
+                <span className="header">Charity Number</span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{charityNumber}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Phone Number </span>
+                <span className="header">Phone Number </span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{phoneNumber}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Fax Number </span>
+                <span className="header">Fax Number </span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{faxNumber}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Email </span>
+                <span className="header">Email </span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{email}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Website </span>
+                <span className="header">Website </span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{website}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Address </span>
+                <span className="header">Address </span>
               </td>
               <td className="header--items">
                 {address.map((x, i) => (
@@ -70,7 +70,7 @@ const Contact = props => {
             </tr>
             <tr>
               <td>
-                <span>Area Of Opereration </span>
+                <span className="header">Area Of Opereration </span>
               </td>
               <td className="header--items">
                 {areaOfOperation.map((x, i) => (
