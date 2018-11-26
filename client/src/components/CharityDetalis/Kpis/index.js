@@ -69,10 +69,10 @@ const Kpis = (props) => {
           </div>
           <div className="kpi--item">
             <span>CurrR</span>
-            <span>{Currr}</span>
-            <span>EFFICIENCY & CAPACITY RATIO
+            <span>{`${Currr}`.substr(0, 5)}</span>
+            {/* <span>EFFICIENCY & CAPACITY RATIO
             </span>
-            <span>1.9</span>
+            <span>1.9</span> */}
           </div>
           <div className="kpi--item">
             <span>Current Ratio</span>
