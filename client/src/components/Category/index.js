@@ -32,11 +32,17 @@ class Category extends Component {
         found: true,
       });
     }
+    const str = category.split(' ')[0];
     fetch(
-      `/api/v1/filter?incfrom=-1&incto=-1&exform=-1&exto=-1&category='${category}'`
+      `/api/v1/filter?incfrom=-1&incto=-1&exform=-1&exto=-1&category='${str}'`
     )
       .then(res => res.json())
       .then(result => {
+        if (result.err) {
+          this.setState({
+            found: true,
+          });
+        }
         const data = result.data.map((x, i) => {
           const obj = {};
           obj.regno = x.regno;
@@ -50,6 +56,13 @@ class Category extends Component {
           obj.text = x.objective;
           return obj;
         });
+        console.log('data . length ', data.length);
+        if (data.length === 0) {
+          console.log('no charity found');
+          this.setState({
+            found: true,
+          });
+        }
 
         const detales = [
           {
@@ -75,7 +88,7 @@ class Category extends Component {
       <React.Fragment>
         <Header />
         {found ? (
-          <h1> category not found </h1>
+          <h1 className="notFound"> No charity found here </h1>
         ) : (
           <div className="body-category">
             <div className="result-card">
