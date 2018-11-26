@@ -10,7 +10,6 @@ const HeaderSearch = props => {
       {+numberOfResult > 0 ? (
         <React.Fragment>
           <h1>Search Results</h1>
-          <button type="button">Filter</button>
           <p>{numberOfResult} Results Found</p>
         </React.Fragment>
       ) : (

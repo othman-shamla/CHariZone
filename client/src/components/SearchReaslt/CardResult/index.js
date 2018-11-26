@@ -43,26 +43,28 @@ class CardResult extends Component {
             </button>
           </div>
         </div>
-        <div className="card-image">
-          <img src={logo} alt="Logo defult" />
-          <div className="info">
-            <h2>The Description</h2>
-            <ul>
-              <li>
-                <strong>Name: </strong>
-                {name}
-              </li>
-              <li>
-                <strong>Classification: </strong>
-                {classification}
-              </li>
-              <li>
-                <strong>Website: </strong>
-                {website}
-              </li>
-            </ul>
+        <Link to={`/charity/${idChirty}`}>
+          <div className="card-image">
+            <img src={logo} alt="Logo defult" />
+            <div className="info">
+              <h2>The Description</h2>
+              <ul>
+                <li>
+                  <strong>Name: </strong>
+                  {name}
+                </li>
+                <li>
+                  <strong>Classification: </strong>
+                  {classification}
+                </li>
+                <li>
+                  <strong>Website: </strong>
+                  {website}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }
