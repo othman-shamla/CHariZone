@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
 
 import CharityHeader from './CharityHeader';
 import MainDetails from './MainDetails';
@@ -47,6 +48,7 @@ class CharityDetalis extends Component {
       impactResults: '',
       mentionOfTheory: '',
     },
+    loading: true,
   };
 
   componentDidMount() {
@@ -62,6 +64,7 @@ class CharityDetalis extends Component {
         } = json.data;
         delete json.data.regno;
         this.setState({
+          loading: false,
           charity: {
             charityNumber: regno,
             email: EmailAddress,
@@ -128,7 +131,7 @@ class CharityDetalis extends Component {
         <Kpis
           EMR={EMR}
           averageFundraising={averageFundraising}
-          Ect={Ecr}
+          Ecr={Ecr}
           Currr={Currr}
           donerDependency={donerDependency}
           numberOfTrustees={numberOfTrustees}
@@ -161,16 +164,34 @@ class CharityDetalis extends Component {
     const {
       tabs,
       charity: { name },
+      loading,
     } = this.state;
     const Contant = this.renderTab(tabs);
     return (
       <React.Fragment>
         <Header />
-        <div style={{ margin: '110px auto', width: '80%' }}>
-          <CharityHeader changeTab={this.changeTab} tabs={tabs} name={name} />
-          {Contant}
-        </div>
-        <Footer />
+        {loading ? (
+          <div className="loading-bubbles">
+            <ReactLoading
+              type="bubbles"
+              color="#f76009"
+              height="20%"
+              width="20%"
+            />
+          </div>
+        ) : (
+          <>
+            <div style={{ margin: '110px auto', width: '80%' }}>
+              <CharityHeader
+                changeTab={this.changeTab}
+                tabs={tabs}
+                name={name}
+              />
+              {Contant}
+            </div>
+            <Footer />
+          </>
+        )}
       </React.Fragment>
     );
   }
