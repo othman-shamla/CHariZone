@@ -1,9 +1,96 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './index.css';
 
 class Filter extends Component {
+  state = {
+    categoryList: [
+      'General',
+      'Education',
+      'Health',
+      'Disability',
+      'Overseas Aid',
+      'Poverty Relief',
+      'Housing',
+      'Religious activities',
+      'Art/culture',
+      'Amateur sport',
+      'Animals',
+      'Environment',
+      'Economic',
+      'Armed Forces',
+      'Human rights',
+      'Recreation',
+      'Others',
+    ],
+    fromInc: -1,
+    toInc: -1,
+    fromEx: -1,
+    toEx: -1,
+    income: false,
+    expend: false,
+    category: false,
+  };
+
+  handleChange = event => {
+    const { target } = event;
+    let values;
+    if (target.type === 'checkbox') {
+      values = target.checked;
+    } else {
+      values = target.value;
+    }
+    this.setState({ [target.name]: values });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    let url = '';
+    const {
+      fromInc,
+      toInc,
+      fromEx,
+      toEx,
+      income,
+      expend,
+      category,
+    } = this.state;
+
+    if (income && expend && category) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income && category) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category=-1`;
+    } else if (expend && category) {
+      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income && expend) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else if (income) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category=-1`;
+    } else if (expend) {
+      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category=-1`;
+    } else {
+      url = `/search?incfrom=-1&incto=-1&exform=-1&exto=-1&category=-1`;
+    }
+
+    console.log(url);
+    return <Redirect to={url} />;
+  };
+
   render() {
     const { Hide } = this.props;
+    const {
+      categoryList,
+      fromInc,
+      toInc,
+      fromEx,
+      toEx,
+      income,
+      expend,
+      category,
+      disabled,
+    } = this.state;
+
     return (
       <React.Fragment>
         <div className="cover">
@@ -15,22 +102,42 @@ class Filter extends Component {
               <p className="modal-desc">Filter charities By:</p>
               <div className="filter">
                 <div className="part1">
-                  <label className="container-modal">
+                  <label htmlFor="income" className="container-modal">
                     Income
-                    <input type="checkbox" />
+                    <input
+                      id="income"
+                      type="checkbox"
+                      name="income"
+                      checked={income}
+                      onChange={this.handleChange}
+                    />
                     <span className="checkmark" />
                   </label>
                 </div>
                 <div className="numbers">
                   <label htmlFor="from">
                     From
-                    <input type="number" name="from" className="from" />
+                    <input
+                      name="fromInc"
+                      value={fromInc}
+                      onChange={this.handleChange}
+                      type="number"
+                      className="from"
+                      disabled={!income ? 'disabled' : ''}
+                    />
                     <span className="euro1">&euro;</span>
                   </label>
                   <br />
                   <label htmlFor="to">
                     To
-                    <input type="number" name="to" className="to" />
+                    <input
+                      name="toInc"
+                      value={toInc}
+                      onChange={this.handleChange}
+                      type="number"
+                      className="to"
+                      disabled={!income ? 'disabled' : ''}
+                    />
                     <span className="euro2">&euro;</span>
                   </label>
                 </div>
@@ -38,9 +145,15 @@ class Filter extends Component {
 
               <div className="filter">
                 <div className="part2">
-                  <label className="container-modal">
+                  <label htmlFor="expend" className="container-modal">
                     Expenditure
-                    <input type="checkbox" />
+                    <input
+                      id="expend"
+                      type="checkbox"
+                      name="expend"
+                      checked={expend}
+                      onChange={this.handleChange}
+                    />
                     <span className="checkmark" />
                   </label>
                 </div>
@@ -48,13 +161,27 @@ class Filter extends Component {
                 <div className="numbers2">
                   <label htmlFor="from">
                     From
-                    <input type="number" name="from" className="from" />{' '}
+                    <input
+                      name="fromEx"
+                      value={fromEx}
+                      onChange={this.handleChange}
+                      type="number"
+                      className="from"
+                      disabled={!expend ? 'disabled' : ''}
+                    />
                     <span className="euro3">&euro;</span>
                   </label>
                   <br />
                   <label htmlFor="to">
                     To
-                    <input type="number" name="to" className="to" />
+                    <input
+                      name="toEx"
+                      value={toEx}
+                      onChange={this.handleChange}
+                      type="number"
+                      className="to"
+                      disabled={!expend ? 'disabled' : ''}
+                    />
                     <span className="euro4">&euro;</span>
                   </label>
                 </div>
@@ -62,36 +189,44 @@ class Filter extends Component {
 
               <div className="filter">
                 <div className="part2">
-                  {
-                    // RADIO BUTTON
-                    // <label className="container-modal">
-                    //   Category
-                    //   <input type="radio" name="radio" />
-                    //   <span className="checkmark" />
-                    // </label>
-                  }
-                  <label className="container-modal">
+                  <label htmlFor="category" className="container-modal">
                     Category
-                    <input type="checkbox" />
+                    <input
+                      id="category"
+                      type="checkbox"
+                      name="category"
+                      checked={category}
+                      onChange={this.handleChange}
+                    />
                     <span className="checkmark" />
                   </label>
                 </div>
 
                 <div className="numbers2">
-                  <select name="" id="" className="select-catgery">
+                  <select
+                    name=""
+                    id=""
+                    className="select-catgery"
+                    disabled={!category ? 'disabled' : ''}
+                  >
                     <option value="0">Select catgery:</option>
-                    <option value="1" className="opition-div">
-                      Children
-                    </option>
-                    <option value="2" className="opition-div">
-                      Women
-                    </option>
+                    {categoryList.map(item => (
+                      <option value={item} className="opition-div">
+                        {item}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
 
               <div className="button-div">
-                <button className="search-button"> Search</button>
+                <button
+                  className="search-button"
+                  type="submit"
+                  onClick={this.handleSubmit}
+                >
+                  Search
+                </button>
               </div>
             </div>
           </div>
