@@ -61,7 +61,7 @@
   outline: none;
   border: none;
   color: #eee;
-  padding: 0;
+  padding-bottom: 45px;
   margin: 0;
   height: 30px;
 }
@@ -74,7 +74,7 @@
   font-family: "Farsan", cursive;
   transition: transform 0.3s;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0px 20px;
   font-size: 1.2em;
   margin: 0;
 }
@@ -103,6 +103,7 @@
 .btn .compare {
   z-index: 3;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .btn:hover .add {
