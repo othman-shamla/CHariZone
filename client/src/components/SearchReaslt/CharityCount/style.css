@@ -6,9 +6,10 @@
     display: flex;
     background: #ccc;
     border-radius: 50%;
-    height: 75px;
-    width: 75px;
-    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+    height: 65px;
+    width: 105px;
+    box-shadow: 0 5px 20px 1px rgba(128, 128, 128, 0.31);
+    transform: 1s;
 }
 
 .count {
@@ -23,13 +24,28 @@
     font-size: 20px;
     position: absolute;
     right: 5%;
-    bottom: 10%;
+    bottom: -5%;
 }
 
-.img-charity {
-    height: 60px;
-    width: 60px;
+.compare-charity {
     position: absolute;
-    right: 8%;
-    bottom: 5%;
+    color: #000;
+    box-shadow: 0ch;
+    right: 4px;
+    top: 14px;
+}
+
+.count-charity:hover {
+    transform: scale(1.1);
+    background-color:  #f89963; ;
+
+}
+
+.count-charity:hover h2{
+    color: #fff;
+}
+
+.count-charity:hover .count{
+    background-color: #ccc;
+    color: #000;
 }
