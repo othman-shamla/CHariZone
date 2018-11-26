@@ -13,11 +13,14 @@ const returnFlag = flag => {
     return <img className="flagImg" src="https://imgur.com/GmAnTas.png" />
   } if (flag === '0') {
     return <img className="flagImg" src="https://imgur.com/cO7uPgA.png" />
+  } if (flag === '-1') {
+    return <img className="flagImg" src="https://imgur.com/JrMn3j9.png" />
   }
-  return <img className="flagImg" src="https://imgur.com/JrMn3j9.png" />
+  return <span>-</span>
 }
 
 const Kpis = (props) => {
+
   const {
     EMR,
     averageFundraising,
@@ -37,7 +40,6 @@ const Kpis = (props) => {
     impactResults,
     mentionOfTheory,
   } = props;
-
   return (<div className="kpi--tables">
     <BoxKpi name="Financial">
       <div className="kpi--row">
@@ -47,7 +49,7 @@ const Kpis = (props) => {
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={EMR.replace('%','')}
+                percentage={EMR.replace('%', '')}
                 text={EMR} />
             </div>
           </div>
@@ -56,7 +58,7 @@ const Kpis = (props) => {
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={averageFundraising.replace('%','')}
+                percentage={averageFundraising.replace('%', '')}
                 text={averageFundraising}
               />
             </div>
@@ -65,7 +67,13 @@ const Kpis = (props) => {
         <div className="kpi--column">
           <div className="kpi--item">
             <span>ECR</span>
-            <span>{Ecr}</span>
+            <div className="progressBar">
+              <CircularProgressbar
+                strokeWidth="13"
+                percentage={Ecr.replace('%', '')}
+                text={Ecr}
+              />
+            </div>
           </div>
           <div className="kpi--item">
             <span>CurrR</span>
@@ -86,7 +94,7 @@ const Kpis = (props) => {
             <div className="progressBar">
               <CircularProgressbar
                 strokeWidth="13"
-                percentage={donerDependency.replace('%','')}
+                percentage={donerDependency.replace('%', '')}
                 text={donerDependency}
               />
             </div>
