@@ -6,17 +6,18 @@
     font-family: "Spectral";
 }
 
-.div-header h1{
+.div-header h1 {
     display: inline-block;
     position: absolute;
     left: 0;
 }
+
 .div-header button:active {
     background-color: rgb(216, 84, 7);
 }
 
 .div-header p {
-  line-height: 3;
+    line-height: 3;
     display: inline-block;
     color: #999;
     position: absolute;
