@@ -47,8 +47,9 @@ exports.get = (req, res) => {
   }
   airtable(obj, (err, records) => {
     if (err) {
-      return res.sendStatus(503);
+      return res.send({ data: null, err });
     }
-    return res.send({ data: records.map(record => record.fields) });
+    const data =  records.map(record => record.fields);
+    return res.send({ data, err: null });
   });
 };
