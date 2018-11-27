@@ -84,15 +84,15 @@ class Slide extends React.Component {
 
     return imgLinks.map((img, index) => (
       <div>
-        <img
-          style={{ height: '50px', width: '50px' }}
-          alt={imgLinks[index]}
-          key={img.id}
-          src={imgLinks[index].link}
-          onDragStart={this.handleOnDragStart}
-          className="yours-custom-class"
-        />
         <Link to={`category?category=${imgLinks[index].title}`}>
+          <img
+            style={{ height: '50px', width: '50px' }}
+            alt={imgLinks[index]}
+            key={img.id}
+            src={imgLinks[index].link}
+            onDragStart={this.handleOnDragStart}
+            className="yours-custom-class"
+          />
           <h4 className="yours-custom-class">{imgLinks[index].title}</h4>
         </Link>
       </div>

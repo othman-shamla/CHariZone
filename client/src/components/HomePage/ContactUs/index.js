@@ -7,7 +7,6 @@ const ContactUS = () => (
     <section className="ending-section">
       <div className="overlay">
         <h1 className="titleTitle">CONTACT US</h1>
-        <a name="Contact" title="slider" />
         <div className="contactInnerContainer">
           <div className="contactUs">
             <form
@@ -33,7 +32,7 @@ const ContactUS = () => (
               />
               <button type="submit" className="contactButton">
                 Send
-            </button>
+              </button>
             </form>
           </div>
           <div className="contactUs">
