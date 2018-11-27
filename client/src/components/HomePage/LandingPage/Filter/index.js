@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import './index.css';
 
 class Filter extends Component {
@@ -72,9 +71,8 @@ class Filter extends Component {
     } else {
       url = `/search?incfrom=-1&incto=-1&exform=-1&exto=-1&category=-1`;
     }
-
-    console.log(url);
-    return <Redirect to={url} />;
+    const { history } = this.props;
+    history.push(url);
   };
 
   render() {
