@@ -8,7 +8,6 @@ import BoxKpi from '../BoxKpi';
 import './style.css';
 
 const returnFlag = flag => {
-  console.log('falg : ', flag);
   if (flag === '1') {
     return <img className="flagImg" src="https://imgur.com/GmAnTas.png" />
   } if (flag === '0') {

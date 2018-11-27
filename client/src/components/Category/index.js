@@ -57,9 +57,7 @@ class Category extends Component {
           obj.text = x.objective;
           return obj;
         });
-        console.log('data . length ', data.length);
         if (data.length === 0) {
-          console.log('no charity found');
           this.setState({
             found: true,
           });
