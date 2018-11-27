@@ -8,24 +8,39 @@ const ContactUS = () => (
       <div className="overlayContact">
         <h1 className="titleTitle">CONTACT US</h1>
         <div className="contactInnerContainer">
+
           <div className="contactUsSection">
-            <input
-              type="text"
-              placeholder="Enter Your Email"
-              className="inputFieldContect"
-            />
-            <input
-              type="text"
-              placeholder="Enter Message Title"
-              className="inputFieldContect"
-            />
-            <textarea
-              placeholder="Enter Your Message"
-              className="inputFieldContect textAreaContact"
-            />
-            <button type="button" className="contactButton">
-              Send
-            </button>
+            {/* TODO == add client email */}
+            <form
+              action="https://formspree.io/Sam8O.o@hotmail.com"
+              method="POST"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
+                className="inputFieldContect"
+              />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://charizone0.herokuapp.com/contact-thanks"
+              />
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter Message Title"
+                className="inputFieldContect"
+              />
+              <textarea
+                name="message"
+                placeholder="Enter Your Message"
+                className="inputFieldContect textArea"
+              />
+              <button type="submit" className="contactButton">
+                Send
+              </button>
+            </form>
           </div>
           <div className="contactUsSection">
             <div className="contact-div">
