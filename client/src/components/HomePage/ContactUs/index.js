@@ -10,6 +10,7 @@ const ContactUS = () => (
         <a name="Contact" title="slider" />
         <div className="contactInnerContainer">
           <div className="contactUs">
+            {/* TODO == add client email */}
             <form
               action="https://formspree.io/example@example.com"
               method="POST"
@@ -19,6 +20,11 @@ const ContactUS = () => (
                 name="email"
                 placeholder="Enter Your Email"
                 className="inputField"
+              />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://charizone0.herokuapp.com/contact-thanks"
               />
               <input
                 type="text"
