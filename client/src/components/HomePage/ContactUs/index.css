@@ -31,7 +31,7 @@
     font-weight: 400;
 
 }
-.inputField{
+.inputFieldContect{
     display: block;
     width: 90%;
     height: 13%;
@@ -44,11 +44,11 @@
     margin: 10px auto;
     color: white;
 }
-.inputField::placeholder{
+.inputFieldContect::placeholder{
     color: white;
     font-family: "Spectral";
 }
-.textArea{
+.textAreaContact{
     height: 30%;
     padding-top: 9px;
 }
