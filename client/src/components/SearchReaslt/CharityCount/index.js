@@ -11,14 +11,16 @@ const CharityCount = props => {
   return (
     <Link to={str}>
       <div className="count-charity">
-        <h2 className="compare-charity">Compare</h2>
-        {/* <img
-          className="img-charity"
-          src="https://image.flaticon.com/icons/svg/1170/1170651.svg"
-          alt="img charity"
-        /> */}
-        <div className="count">
-          <strong>{count}</strong>
+        <div className="tooltip">
+          <img
+            className="img-charity"
+            src="https://image.flaticon.com/icons/svg/1170/1170651.svg"
+            alt="img charity"
+          />
+          <div className="count">
+            <strong>{count}</strong>
+          </div>
+          <span className="tooltiptext">Compare</span>
         </div>
       </div>
     </Link>
