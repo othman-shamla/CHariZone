@@ -50,13 +50,26 @@ class CharityDetalis extends Component {
       mentionOfTheory: '',
     },
     loading: true,
+    found: false,
   };
 
   componentDidMount() {
     const { id } = this.props.match.params;
+    if (!/[0-9]/g.test(id)) {
+      return this.setState({
+        loading: false,
+        found: true,
+      });
+    }
     fetch(`/api/v1/charity/${id}`)
       .then(response => response.json())
       .then(json => {
+        if (json.err === 'NO-CHARITY') {
+          return this.setState({
+            loading: false,
+            found: true,
+          });
+        }
         const {
           regno,
           EmailAddress,
@@ -171,10 +184,14 @@ class CharityDetalis extends Component {
 
   renderContent() {
     const {
+      found,
       tabs,
       charity: { name },
     } = this.state;
     const Contant = this.renderTab(tabs);
+    if (found) {
+      return <h1 style={{ margin: '160px' }}>No charity Found</h1>;
+    }
     return (
       <>
         <div style={{ margin: '110px auto', width: '80%' }}>

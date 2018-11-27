@@ -76,7 +76,6 @@ class SearchReaslt extends Component {
       const { keyword } = values;
       url = `/api/v1/search?q=${keyword}`;
     }
-    console.log('url : ', url);
     fetch(url)
       .then(response => response.json())
       .then(response => {
