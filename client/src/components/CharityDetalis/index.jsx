@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
@@ -160,39 +161,38 @@ class CharityDetalis extends Component {
     );
   };
 
-  render() {
+  renderLoadingBubbles() {
+    return (
+      <div className="loading-bubbles">
+        <ReactLoading type="bubbles" color="#f76009" height="20%" width="20%" />
+      </div>
+    );
+  }
+
+  renderContent() {
     const {
       tabs,
       charity: { name },
-      loading,
     } = this.state;
     const Contant = this.renderTab(tabs);
     return (
-      <React.Fragment>
+      <>
+        <div style={{ margin: '110px auto', width: '80%' }}>
+          <CharityHeader changeTab={this.changeTab} tabs={tabs} name={name} />
+          {Contant}
+        </div>
+        <Footer />
+      </>
+    );
+  }
+
+  render() {
+    const { loading } = this.state;
+    return (
+      <>
         <Header />
-        {loading ? (
-          <div className="loading-bubbles">
-            <ReactLoading
-              type="bubbles"
-              color="#f76009"
-              height="20%"
-              width="20%"
-            />
-          </div>
-        ) : (
-          <>
-            <div style={{ margin: '110px auto', width: '80%' }}>
-              <CharityHeader
-                changeTab={this.changeTab}
-                tabs={tabs}
-                name={name}
-              />
-              {Contant}
-            </div>
-            <Footer />
-          </>
-        )}
-      </React.Fragment>
+        {loading ? this.renderLoadingBubbles() : this.renderContent()}
+      </>
     );
   }
 }
