@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 
+import queryString from 'query-string';
 import ReactLoading from 'react-loading';
 import swal from 'sweetalert';
 import './style.css';
@@ -64,10 +65,19 @@ class SearchReaslt extends Component {
   };
 
   getData = () => {
-    const { history } = this.props;
-    const keyword = history.location.search.split('?')[1];
+    const { search } = this.props.location;
+    const values = queryString.parse(search);
     const array = [];
-    fetch(`/api/v1/search?q=${keyword}`)
+    let url = '';
+    if (values.category) {
+      const { category, exform, exto, incfrom, incto } = values;
+      url = `/api/v1/filter?incfrom=${incfrom}&incto=${incto}&exform=${exform}&exto=${exto}&category=${category}`;
+    } else {
+      const { keyword } = values;
+      url = `/api/v1/search?q=${keyword}`;
+    }
+    console.log('url : ', url);
+    fetch(url)
       .then(response => response.json())
       .then(response => {
         if (response.error) {
@@ -95,7 +105,7 @@ class SearchReaslt extends Component {
       });
   };
 
-  componentDidMount = () => {
+  componentWillMount = () => {
     this.getData();
   };
 
