@@ -31,6 +31,7 @@ class Filter extends Component {
     expend: false,
     category: false,
     valueSelect: -1,
+    error: '',
   };
 
   handleChange = event => {
@@ -60,8 +61,14 @@ class Filter extends Component {
       expend,
       category,
       valueSelect,
+      error,
     } = this.state;
 
+    if (income || expend) {
+      if (fromInc > toInc || fromEx > toEx) {
+        return this.setState({ error: 'Error Input To less than Form ' });
+      }
+    }
     if (income && expend && category) {
       url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category='${valueSelect}'`;
     } else if (income && category) {
@@ -95,6 +102,7 @@ class Filter extends Component {
       expend,
       category,
       valueSelect,
+      error,
     } = this.state;
 
     return (
@@ -226,6 +234,7 @@ class Filter extends Component {
                   </select>
                 </div>
               </div>
+              <div>{error}</div>
 
               <div className="button-div">
                 <button
