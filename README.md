@@ -1,5 +1,8 @@
 # ChariZone
 
+## Our prototype:
+https://www.figma.com/file/OZGMpcwVUtuntrbTPcYVMgx4/ChariZone?node-id=0%3A1
+
 ## What:
 Charizone is a platoform that has all charities UK based with the aim of presenting their information and data to 
 the user in a friendly and convenient manner so that the process of donation and browsing charities is easier and faster.
