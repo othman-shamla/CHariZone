@@ -29,7 +29,7 @@ class Category extends Component {
     const values = queryString.parse(search);
     const { category } = values;
     if (!category) {
-      this.setState({
+      return this.setState({
         found: true,
       });
     }
