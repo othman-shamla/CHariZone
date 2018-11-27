@@ -10,6 +10,7 @@ import Header from '../Header';
 import CharityList from './CharityList';
 import CategoryDetails from './CategoryDetails';
 import Footer from '../Footer';
+
 class Category extends Component {
   state = {
     found: false,
