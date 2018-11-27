@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/prop-types */
 import CircularProgressbar from 'react-circular-progressbar';
 import React, { Component } from 'react';
@@ -63,15 +65,15 @@ class Comparison extends Component {
   };
 
   render() {
+    const { tabs } = this.state;
     return (
       <React.Fragment>
         <Header />
         <div className="compare-body">
-
           <div className="compare-container">
             <div className="logos">
               <span
-                className="basic-logo logo-span"
+                className={`logo-span ${tabs === 1 ? 'basic-logo' : ''}`}
                 onClick={() => this.changeTab(1)}
               >
                 <img
@@ -79,11 +81,11 @@ class Comparison extends Component {
                   className="basic-img"
                   src="https://imgur.com/labp2lA.png"
                 />
-                 <span>Home</span>
+                <span>Home</span>
               </span>
 
               <span
-                className="financial-logo logo-span"
+                className={`logo-span ${tabs === 2 ? 'basic-logo' : ''}`}
                 onClick={() => this.changeTab(2)}
               >
                 <img
@@ -91,10 +93,10 @@ class Comparison extends Component {
                   className="financial-img"
                   src="https://imgur.com/byldMLA.png"
                 />
-                 <span>Financial</span>
+                <span>Financial</span>
               </span>
               <span
-                className="governance-logo logo-span"
+                className={`logo-span ${tabs === 3 ? 'basic-logo' : ''}`}
                 onClick={event => this.changeTab(3)}
               >
                 <img
@@ -102,10 +104,10 @@ class Comparison extends Component {
                   className="governance-img"
                   src="https://imgur.com/uK6GWci.png"
                 />
-                 <span>Governance</span>
+                <span>Governance</span>
               </span>
               <span
-                className="impact-logo logo-span"
+                className={`logo-span ${tabs === 4 ? 'basic-logo' : ''}`}
                 onClick={() => this.changeTab(4)}
               >
                 <img
@@ -113,10 +115,10 @@ class Comparison extends Component {
                   className="impact-img"
                   src="https://imgur.com/1jG8geW.png"
                 />
-                 <span>Impact</span>
+                <span>Impact</span>
               </span>
             </div>
-          
+
             {this.renderTab()}
           </div>
         </div>
