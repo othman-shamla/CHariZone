@@ -6,10 +6,9 @@
     display: flex;
     background: #ccc;
     border-radius: 50%;
-    height: 65px;
-    width: 105px;
-    box-shadow: 0 5px 20px 1px rgba(128, 128, 128, 0.31);
-    transform: 1s;
+    height: 75px;
+    width: 75px;
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
 }
 
 .count {
@@ -23,29 +22,14 @@
     color: #fff;
     font-size: 20px;
     position: absolute;
-    right: 5%;
-    bottom: -5%;
+    bottom: 10%;
+    left: 50px;
 }
 
-.compare-charity {
+.img-charity {
+    height: 60px;
+    width: 60px;
     position: absolute;
-    color: #000;
-    box-shadow: 0ch;
-    right: 4px;
-    top: 14px;
-}
-
-.count-charity:hover {
-    transform: scale(1.1);
-    background-color:  #f89963; ;
-
-}
-
-.count-charity:hover h2{
-    color: #fff;
-}
-
-.count-charity:hover .count{
-    background-color: #ccc;
-    color: #000;
+    bottom: 5%;
+    left: 10px;
 }
