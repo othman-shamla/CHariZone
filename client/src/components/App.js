@@ -8,8 +8,8 @@ import SearchReaslt from './SearchReaslt';
 import CharityDetalis from './CharityDetalis';
 import Category from './Category';
 import Comparison from './Comparison';
-import Filter from './HomePage/LandingPage/Filter';
 import NotFound from './NotFound';
+import confirmationPage from './confirmationPage';
 
 const App = () => (
   <BrowserRouter>
@@ -20,6 +20,7 @@ const App = () => (
       <Route exact path="/category" component={Category} />
       <Route exact path="/compare" component={Comparison} />
       <Route path="/not-found" component={NotFound} />
+      <Route path="/contact-thanks" component={confirmationPage} />
       <Redirect to="/not-found" />
     </Switch>
   </BrowserRouter>
