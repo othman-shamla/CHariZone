@@ -5,10 +5,11 @@ import './index.css';
 const ContactUS = () => (
   <React.Fragment>
     <section className="ending-section">
-      <div className="overlay">
+      <div className="overlayContact">
         <h1 className="titleTitle">CONTACT US</h1>
         <div className="contactInnerContainer">
-          <div className="contactUs">
+
+          <div className="contactUsSection">
             {/* TODO == add client email */}
             <form
               action="https://formspree.io/Sam8O.o@hotmail.com"
@@ -18,7 +19,7 @@ const ContactUS = () => (
                 type="email"
                 name="email"
                 placeholder="Enter Your Email"
-                className="inputField"
+                className="inputFieldContect"
               />
               <input
                 type="hidden"
@@ -29,19 +30,19 @@ const ContactUS = () => (
                 type="text"
                 name="title"
                 placeholder="Enter Message Title"
-                className="inputField"
+                className="inputFieldContect"
               />
               <textarea
                 name="message"
                 placeholder="Enter Your Message"
-                className="inputField textArea"
+                className="inputFieldContect textArea"
               />
               <button type="submit" className="contactButton">
                 Send
               </button>
             </form>
           </div>
-          <div className="contactUs">
+          <div className="contactUsSection">
             <div className="contact-div">
               <img src="https://imgur.com/vPSLDju.png" alt="icon" />
               <h3>+999-9999-9999</h3>
