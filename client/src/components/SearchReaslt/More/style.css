@@ -1,9 +1,13 @@
 .more {
-    color: #999;
+    color: #EDEDEE;
+    background-color: #FF9752;
     display: block;
     font-size: 20px;
     cursor: pointer;
-  margin-top: 40px;
+    margin-top: 40px;
     margin-left: 75%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
 }
-
