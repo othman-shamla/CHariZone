@@ -9,6 +9,7 @@ import './style.css';
 import Header from '../Header';
 import CharityList from './CharityList';
 import CategoryDetails from './CategoryDetails';
+import Footer from '../Footer';
 
 class Category extends Component {
   state = {
@@ -111,6 +112,7 @@ class Category extends Component {
                 text={detales.length === 0 ? '' : detales[0].text}
               />
             </div>
+            <Footer />
           </div>
         )}
       </React.Fragment>

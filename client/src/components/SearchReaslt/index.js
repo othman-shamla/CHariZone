@@ -157,8 +157,8 @@ class SearchReaslt extends Component {
                   ))}
             </React.Fragment>
           )}
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }
