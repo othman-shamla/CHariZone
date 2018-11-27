@@ -5,11 +5,10 @@ import './index.css';
 const ContactUS = () => (
   <React.Fragment>
     <section className="ending-section">
-      <div className="overlay">
+      <div className="overlayContact">
         <h1 className="titleTitle">CONTACT US</h1>
-        <a name="Contact" title="slider" />
         <div className="contactInnerContainer">
-          <div className="contactUs">
+          <div className="contactUsSection">
             <input
               type="text"
               placeholder="Enter Your Email"
@@ -28,7 +27,7 @@ const ContactUS = () => (
               Send
             </button>
           </div>
-          <div className="contactUs">
+          <div className="contactUsSection">
             <div className="contact-div">
               <img src="https://imgur.com/vPSLDju.png" alt="icon" />
               <h3>+999-9999-9999</h3>

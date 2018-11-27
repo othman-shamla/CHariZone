@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Joi from 'joi-browser';
 import './index.css';
 import Filter from './Filter';
 
@@ -33,6 +33,7 @@ class LandingPage extends Component {
 
   render() {
     const { toggle, defaultShow, keyword } = this.state;
+    const { history } = this.props;
     const spanStyle = {
       color: '#F89963',
     };
@@ -75,7 +76,7 @@ class LandingPage extends Component {
                     value={keyword}
                     onChange={this.handleChange}
                   />
-                  <Link to={`/search?${keyword}`}>
+                  <Link to={`/search?keyword=${keyword}`}>
                     <button type="button">
                       <i className="fa fa-search" />
                     </button>
@@ -86,7 +87,7 @@ class LandingPage extends Component {
               </div>
             )}
             {this.state.AdvanceSearch && (
-              <Filter Hide={this.hideAdvanceModel} />
+              <Filter Hide={this.hideAdvanceModel} history={history} />
             )}
           </div>
         </section>

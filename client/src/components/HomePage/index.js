@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 
 import './index.css';
@@ -9,9 +10,10 @@ import Footer from './Footer';
 
 class HomePage extends Component {
   render() {
+    const { history } = this.props;
     return (
       <>
-        <LandingPage />
+        <LandingPage history={history} />
         <Works />
         <Slide />
         <ContactUs />

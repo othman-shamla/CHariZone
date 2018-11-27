@@ -9,14 +9,6 @@ class HomeInfo extends Component {
     return (
       <div className="compare-div">
         <div className="column-div">
-          <div className="table-logo">
-            <img
-              alt="table logo"
-              className="table-img"
-              src="https://imgur.com/NRD930M.png"
-            />
-            <h4>Home</h4>
-          </div>
           <div className="table-column">
             <div className="table-cell">
               <h5 >
