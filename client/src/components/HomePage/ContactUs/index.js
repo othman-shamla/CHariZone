@@ -11,7 +11,7 @@ const ContactUS = () => (
           <div className="contactUs">
             {/* TODO == add client email */}
             <form
-              action="https://formspree.io/example@example.com"
+              action="https://formspree.io/Sam8O.o@hotmail.com"
               method="POST"
             >
               <input
