@@ -34,14 +34,14 @@
 .inputFieldContect{
     display: block;
     width: 90%;
-    height: 13%;
+    height: 50px;
     outline: none;
-    border: .5px white solid;
+    border: .5px rgb(255, 255, 255) solid;
     padding-left: 7px;
     font-size: 15px ;
     border-radius: 7px;
     background-color: rgba(0,0,0,.3);
-    margin: 10px auto;
+    margin: 15px auto;
     color: white;
 }
 .inputFieldContect::placeholder{
@@ -49,12 +49,12 @@
     font-family: "Spectral";
 }
 .textAreaContact{
-    height: 30%;
+    height: 90px;
     padding-top: 9px;
 }
 .contactButton{
     font-family: "Spectral";
-    margin: 20px;
+    margin: 10px;
     width: 110px;
     padding: 7px;
     border: none;

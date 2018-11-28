@@ -8,7 +8,7 @@ const ContactUS = () => (
       <div className="overlayContact">
         <h1 className="titleTitle">CONTACT US</h1>
         <div className="contactInnerContainer">
-
+        <a name="Contact" title="Contact" />
           <div className="contactUsSection">
             {/* TODO == add client email */}
             <form
@@ -35,7 +35,7 @@ const ContactUS = () => (
               <textarea
                 name="message"
                 placeholder="Enter Your Message"
-                className="inputFieldContect textArea"
+                className="inputFieldContect textAreaContact"
               />
               <button type="submit" className="contactButton">
                 Send
