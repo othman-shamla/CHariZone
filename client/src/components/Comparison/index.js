@@ -61,7 +61,7 @@ class Comparison extends Component {
     if (tabs === 4) {
       return <Impact arrayOfCharity={arrayOfCharity} />;
     }
-    return <HomeInfo />;
+    return <HomeInfo arrayOfCharity={arrayOfCharity} />;
   };
 
   render() {
