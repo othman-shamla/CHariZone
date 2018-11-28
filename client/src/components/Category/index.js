@@ -9,7 +9,6 @@ import './style.css';
 import Header from '../Header';
 import CharityList from './CharityList';
 import CategoryDetails from './CategoryDetails';
-import Footer from '../HomePage/Footer';
 
 class Category extends Component {
   state = {
