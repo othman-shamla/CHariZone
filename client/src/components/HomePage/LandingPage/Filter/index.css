@@ -45,7 +45,7 @@
 }
 
 .modal-desc {
-  color: #757575;
+  color: #000;
   text-transform: capitalize;
   /* border-bottom: 4px dashed #FF915D; */
 }
@@ -160,6 +160,7 @@
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 44px;
+  color: #444;
 }
 
 .numbers {
@@ -235,4 +236,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.active-check {
+  color: #000;
 }
