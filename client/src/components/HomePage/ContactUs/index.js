@@ -8,12 +8,7 @@ const ContactUS = () => (
       <div className="overlay">
         <h1 className="titleTitle">CONTACT US</h1>
         <div className="contactInnerContainer">
-<<<<<<< HEAD
           <div className="contactUs">
-=======
-        <a name="Contact" title="Contact" />
-          <div className="contactUsSection">
->>>>>>> fixes to contactUs/home page and charity details profilr
             {/* TODO == add client email */}
             <form
               action="https://formspree.io/Sam8O.o@hotmail.com"
@@ -39,11 +34,7 @@ const ContactUS = () => (
               <textarea
                 name="message"
                 placeholder="Enter Your Message"
-<<<<<<< HEAD
                 className="inputField textArea"
-=======
-                className="inputFieldContect textAreaContact"
->>>>>>> fixes to contactUs/home page and charity details profilr
               />
               <button type="submit" className="contactButton">
                 Send
