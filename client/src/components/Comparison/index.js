@@ -12,7 +12,7 @@ import Financial from './Financial';
 import Impact from './Impact';
 import HomeInfo from './HomeInfo';
 import Header from '../Header';
-import Footer from '../Footer';
+import Footer from '../HomePage/Footer';
 
 class Comparison extends Component {
   state = {
