@@ -2,13 +2,17 @@
     position: relative;
     top: 100px;
     min-height: 100%;
-    margin-bottom: 110px;
-    padding-bottom: 50px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.result-cards {
+    min-height: 61vh;
 }
 
 .loading-bubbles {
     margin-left: 43%;
     margin-top: 10%;
     text-align: center;
-    height: 52vh;
+    height: 61vh;
 }
