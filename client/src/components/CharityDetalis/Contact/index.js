@@ -34,14 +34,14 @@ const Contact = props => {
                 <span>{phoneNumber}</span>
               </td>
             </tr>
-            <tr>
+            {/* <tr>
               <td>
                 <span className="header">Fax Number </span>
               </td>
               <td className="header--items">
                 <span>{faxNumber}</span>
               </td>
-            </tr>
+            </tr> */}
             <tr>
               <td>
                 <span className="header">Email </span>
@@ -55,7 +55,9 @@ const Contact = props => {
                 <span className="header">Website </span>
               </td>
               <td className="header--items">
-                <span>{website}</span>
+                <span>
+                  <a href="{website}">{website}</a>
+                </span>
               </td>
             </tr>
             <tr>

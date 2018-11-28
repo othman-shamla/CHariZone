@@ -68,7 +68,7 @@ top: -14px;
     text-decoration: none;
     color: #181818;
     font-weight: 700;
-    padding-bottom: 60px;
+    padding-bottom: 75px;
     font-size: 20px;
     display: block;
 }
@@ -79,7 +79,7 @@ top: -14px;
 position: absolute;
 visibility: visible;
 transition-delay: .5s;
-top: 190px;
+top: 230px;
 left: 50px;
 z-index: 10;
 }
