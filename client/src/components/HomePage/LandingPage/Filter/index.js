@@ -23,14 +23,14 @@ class Filter extends Component {
       'Recreation',
       'Others',
     ],
-    fromInc: -1,
-    toInc: -1,
-    fromEx: -1,
-    toEx: -1,
+    fromInc: '',
+    toInc: '',
+    fromEx: '',
+    toEx: '',
     income: false,
     expend: false,
     category: false,
-    valueSelect: -1,
+    valueSelect: '',
     error: '',
   };
 
@@ -113,10 +113,18 @@ class Filter extends Component {
               <span className="close" onClick={Hide}>
                 &times;
               </span>
-              <p className="modal-desc">Filter charities By:</p>
+              <h2 className="modal-desc">Filter charities By:</h2>
+              <hr />
               <div className="filter">
                 <div className="part1">
-                  <label htmlFor="income" className="container-modal">
+                  <label
+                    htmlFor="income"
+                    className={
+                      income
+                        ? 'container-modal active-check'
+                        : 'container-modal'
+                    }
+                  >
                     Income
                     <input
                       id="income"
@@ -129,7 +137,10 @@ class Filter extends Component {
                   </label>
                 </div>
                 <div className="numbers">
-                  <label htmlFor="from">
+                  <label
+                    htmlFor="income"
+                    className={income ? ' active-check' : null}
+                  >
                     From
                     <input
                       name="fromInc"
@@ -142,7 +153,10 @@ class Filter extends Component {
                     <span className="euro1">&euro;</span>
                   </label>
                   <br />
-                  <label htmlFor="to">
+                  <label
+                    htmlFor="income"
+                    className={income ? ' active-check' : null}
+                  >
                     To
                     <input
                       name="toInc"
@@ -159,7 +173,14 @@ class Filter extends Component {
 
               <div className="filter">
                 <div className="part2">
-                  <label htmlFor="expend" className="container-modal">
+                  <label
+                    htmlFor="expend"
+                    className={
+                      expend
+                        ? 'container-modal active-check'
+                        : 'container-modal'
+                    }
+                  >
                     Expenditure
                     <input
                       id="expend"
@@ -173,7 +194,10 @@ class Filter extends Component {
                 </div>
 
                 <div className="numbers2">
-                  <label htmlFor="from">
+                  <label
+                    htmlFor="expend"
+                    className={expend ? ' active-check' : null}
+                  >
                     From
                     <input
                       name="fromEx"
@@ -186,7 +210,10 @@ class Filter extends Component {
                     <span className="euro3">&euro;</span>
                   </label>
                   <br />
-                  <label htmlFor="to">
+                  <label
+                    htmlFor="expend"
+                    className={expend ? ' active-check' : null}
+                  >
                     To
                     <input
                       name="toEx"
@@ -203,7 +230,14 @@ class Filter extends Component {
 
               <div className="filter">
                 <div className="part2">
-                  <label htmlFor="category" className="container-modal">
+                  <label
+                    htmlFor="category"
+                    className={
+                      category
+                        ? 'container-modal active-check'
+                        : 'container-modal'
+                    }
+                  >
                     Category
                     <input
                       id="category"
