@@ -13,7 +13,7 @@ const HeaderSearch = props => {
           <p>{numberOfResult} Results Found</p>
         </React.Fragment>
       ) : (
-        <h1>Oppes no result!</h1>
+        <h1>Oops no results found for this keyword!</h1>
       )}
     </div>
   );
