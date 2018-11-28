@@ -25,11 +25,19 @@ class LandingPage extends Component {
     this.setState({ AdvanceSearch: false, defaultShow: true });
   };
 
-  move() {
+  move = () => {
     this.setState(prevState => ({
       toggle: !prevState.toggle,
     }));
-  }
+  };
+
+  handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      const { keyword } = this.state;
+      const { history } = this.props;
+      history.push(`/search?keyword=${keyword}`);
+    }
+  };
 
   render() {
     const { toggle, defaultShow, keyword } = this.state;
@@ -73,8 +81,10 @@ class LandingPage extends Component {
                 <div className="search">
                   <input
                     placeholder="By Keyword, Name"
+                    type="text"
                     value={keyword}
                     onChange={this.handleChange}
+                    onKeyPress={this.handleKeyPress}
                   />
                   <Link to={`/search?keyword=${keyword}`}>
                     <button type="button">
@@ -82,7 +92,7 @@ class LandingPage extends Component {
                     </button>
                   </Link>
                   <h3 onClick={this.showAdvanceModel}>Advanced Search</h3>
-                  <a name="advanced" title="advanced"/>
+                  <a name="advanced" title="advanced" />
                 </div>
               </div>
             )}
