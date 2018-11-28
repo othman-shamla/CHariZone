@@ -33,3 +33,8 @@
     bottom: 5%;
     left: 10px;
 }
+
+.place {
+    bottom: 50px;
+    padding: 5px !important;
+}
