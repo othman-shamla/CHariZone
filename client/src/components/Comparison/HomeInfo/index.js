@@ -1,68 +1,42 @@
-import CircularProgressbar from 'react-circular-progressbar';
-import React, { Component } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import './index.css';
 
-class HomeInfo extends Component {
-  render() {
-
-    const percentage = 66;
-    return (
-      <div className="compare-div">
-        <div className="column-div">
-          <div className="table-column">
-            <div className="table-cell">
-              <h5 >
-                latest_fye
-              </h5>
-            </div>
-            <div className="table-cell">
-              <h5 >
-              income
-              </h5>
-            </div>
-            <div className="table-cell">
-              <h5>
-              expend
-              </h5>
-            </div>
-
-            <div className="table-cell">
-              <h5 >
-            submit gap months
-              </h5>
-            </div>
-
-
+const HomeInfo = props => {
+  const { arrayOfCharity } = props;
+  return (
+    <div className="compare-div">
+      <div className="column-div">
+        <div className="table-column">
+          <div className="table-cell">
+            <h5>name</h5>
+          </div>
+          <div className="table-cell">
+            <h5>latest_fye</h5>
+          </div>
+          <div className="table-cell">
+            <h5>income</h5>
+          </div>
+          <div className="table-cell">
+            <h5>expend</h5>
           </div>
         </div>
-        <div className="content-div">
-
-            <div className="charity-column">
-              <div className="column-cell"> 3/31/2017</div>
-              <div className="column-cell">159830000</div>
-              <div className="column-cell">156841000</div>
-                <div className="column-cell">8.5902</div>
-            </div>
-
-            <div className="charity-column">
-              <div className="column-cell"> 6/30/2016</div>
-              <div className="column-cell">694519</div>
-              <div className="column-cell">887380</div>
-                <div className="column-cell">5.7377</div>
-            </div>
-
-            <div className="charity-column">
-              <div className="column-cell"> 3/31/2017</div>
-              <div className="column-cell">2140953</div>
-              <div className="column-cell">2627438</div>
-                <div className="column-cell">6.1967</div>
-            </div>
-
-
-        </div>
       </div>
-    );
-  }
-}
+      <div className="content-div">
+        {arrayOfCharity.map(charity => {
+          const { name, latest_fye: latestFye, income, expend } = charity;
+          return (
+            <div className="charity-column">
+              <div className="name-cell column-cell">{name}</div>
+              <div className="column-cell">{latestFye}</div>
+              <div className="column-cell">{income}</div>
+              <div className="column-cell">{expend}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default HomeInfo;
