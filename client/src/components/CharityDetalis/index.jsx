@@ -9,7 +9,7 @@ import MainDetails from './MainDetails';
 import Kpis from './Kpis';
 import Contact from './Contact';
 import Header from '../Header';
-import Footer from '../Footer';
+import Footer from '../HomePage/Footer';
 
 class CharityDetalis extends Component {
   state = {
