@@ -21,14 +21,14 @@ const HomeInfo = props => {
       </div>
       <div className="content-div">
         <div className="cname-div">
-        {arrayOfCharity.map(charity => {
-          const { name } = charity;
-          return (
-            <div className="name-column">
-              <h3>{name}</h3>
-            </div>
-          )
-        })}
+          {arrayOfCharity.map(charity => {
+            const { name } = charity;
+            return (
+              <div className="name-column">
+                <h3>{name}</h3>
+              </div>
+            );
+          })}
         </div>
         <div className="columns-div">
           {arrayOfCharity.map(charity => {
