@@ -36,6 +36,5 @@
 
 .place {
     bottom: 50px;
-    left: 5px;
-    padding: 5px;
+    padding: 5px !important;
 }
