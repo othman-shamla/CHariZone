@@ -17,7 +17,6 @@ const Governance = props => {
   return (
     <div className="compare-div">
       <div className="column-div">
-  
         <div className="table-column">
           <div className="table-cell">
             <h5 className="tooltip">
@@ -55,36 +54,52 @@ const Governance = props => {
         </div>
       </div>
       <div className="content-div">
-        {arrayOfCharity.map(charity => {
-          const {
-            numberOfTrustees,
-            trusteesBiography,
-            tob,
-            executiveCompensation,
-            policyGeneral,
-            policyWhistleblowing,
-            policyHealth,
-            safeGuarding,
-            fundraisingPromise,
-          } = charity;
-          return (
-            <div className="charity-column">
-              <div className="column-cell">{returnFlag(numberOfTrustees)}</div>
-              <div className="column-cell">{returnFlag(trusteesBiography)}</div>
-              <div className="column-cell">{returnFlag(tob)}</div>
-              <div className="column-cell">{executiveCompensation}</div>
-              <div className="column-cell">{returnFlag(policyGeneral)}</div>
-              <div className="column-cell">
-                {returnFlag(policyWhistleblowing)}
+        <div className="cname-div">
+          {arrayOfCharity.map(charity => {
+            const { name } = charity;
+            return (
+              <div className="name-column">
+                <h3>{name}</h3>
               </div>
-              <div className="column-cell">{returnFlag(policyHealth)}</div>
-              <div className="column-cell">{returnFlag(safeGuarding)}</div>
-              <div className="column-cell">
-                {returnFlag(fundraisingPromise)}
+            );
+          })}
+        </div>
+        <div className="columns-div">
+          {arrayOfCharity.map(charity => {
+            const {
+              numberOfTrustees,
+              trusteesBiography,
+              tob,
+              executiveCompensation,
+              policyGeneral,
+              policyWhistleblowing,
+              policyHealth,
+              safeGuarding,
+              fundraisingPromise,
+            } = charity;
+            return (
+              <div className="charity-column">
+                <div className="column-cell">
+                  {returnFlag(numberOfTrustees)}
+                </div>
+                <div className="column-cell">
+                  {returnFlag(trusteesBiography)}
+                </div>
+                <div className="column-cell">{returnFlag(tob)}</div>
+                <div className="column-cell">{executiveCompensation}</div>
+                <div className="column-cell">{returnFlag(policyGeneral)}</div>
+                <div className="column-cell">
+                  {returnFlag(policyWhistleblowing)}
+                </div>
+                <div className="column-cell">{returnFlag(policyHealth)}</div>
+                <div className="column-cell">{returnFlag(safeGuarding)}</div>
+                <div className="column-cell">
+                  {returnFlag(fundraisingPromise)}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
