@@ -40,26 +40,40 @@ const Impact = props => {
         </div>
       </div>
       <div className="content-div">
-        {arrayOfCharity !== undefined
-          ? arrayOfCharity.map(charity => {
-              const {
-                impactResults,
-                impactReporting,
-                mentionOfTheory,
-              } = charity;
-              return (
-                <div className="charity-column">
-                  <div className="column-cell">{returnFlag(impactResults)}</div>
-                  <div className="column-cell">
-                    {returnFlag(impactReporting)}
+        <div className="cname-div">
+          {arrayOfCharity.map(charity => {
+            const { name } = charity;
+            return (
+              <div className="name-column">
+                <h3>{name}</h3>
+              </div>
+            );
+          })}
+        </div>
+        <div className="columns-div">
+          {arrayOfCharity !== undefined
+            ? arrayOfCharity.map(charity => {
+                const {
+                  impactResults,
+                  impactReporting,
+                  mentionOfTheory,
+                } = charity;
+                return (
+                  <div className="charity-column">
+                    <div className="column-cell">
+                      {returnFlag(impactResults)}
+                    </div>
+                    <div className="column-cell">
+                      {returnFlag(impactReporting)}
+                    </div>
+                    <div className="column-cell">
+                      {returnFlag(mentionOfTheory)}
+                    </div>
                   </div>
-                  <div className="column-cell">
-                    {returnFlag(mentionOfTheory)}
-                  </div>
-                </div>
-              );
-            })
-          : ''}
+                );
+              })
+            : ''}
+        </div>
       </div>
     </div>
   );
