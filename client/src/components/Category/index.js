@@ -109,7 +109,6 @@ class Category extends Component {
                 text={detales.length === 0 ? '' : detales[0].text}
               />
             </div>
-            <Footer />
           </div>
         )}
       </React.Fragment>
