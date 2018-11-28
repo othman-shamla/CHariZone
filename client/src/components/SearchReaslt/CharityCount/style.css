@@ -33,3 +33,9 @@
     bottom: 5%;
     left: 10px;
 }
+
+.place {
+    bottom: 50px;
+    left: 5px;
+    padding: 5px;
+}
