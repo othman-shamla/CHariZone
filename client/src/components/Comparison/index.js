@@ -13,6 +13,7 @@ import Impact from './Impact';
 import HomeInfo from './HomeInfo';
 import Header from '../Header';
 import Footer from '../HomePage/Footer';
+import BoxIndicator from '../BoxIndicator';
 
 class Comparison extends Component {
   state = {
@@ -69,6 +70,7 @@ class Comparison extends Component {
     return (
       <React.Fragment>
         <Header />
+
         <div className="compare-body">
           <div className="compare-container">
             <div className="logos">
@@ -122,6 +124,7 @@ class Comparison extends Component {
             {this.renderTab()}
           </div>
         </div>
+          <BoxIndicator/>
         <Footer />
       </React.Fragment>
     );
