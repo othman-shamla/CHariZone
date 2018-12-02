@@ -90,43 +90,44 @@ z-index: 10;
 }
 .landing-page{
     width: 100%;
-    height:95vh;
+    height:70vh;
     background: url(http://www.charity-works.co.uk/wp-content/uploads/2015/11/partner_logos-1.jpg);
 }
 .rgba{
   width: 100%;
-  height:95vh;
+  height:70vh;
   background: rgba(0,0,0,.9);
 }
 .logo{
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 16%;
+    left: 30%;
     text-align: center;
     z-index: 13;
     margin: -16px auto;
 }
 .logoOne{
-    font-size: 48px;
+    font-size: 45px;
     color: #EFF0F2;
+    animation: moveLeft 1s;
 }
 .subLogo{
     font-size: 25px;
     color: #F89963;
-    margin-top: 10px;
-    margin-left: 250px;
     position: relative;
+    left: 100px;
+    animation: moveRight 1s;
 }
 .search {
     z-index:13;
     position: absolute;
-    top: 40%;
+    top: 36%;
     left: 30%;
     text-align: center;
 }
 .search input {
-    width: 390px;
-    height: 30px;
+    width: 370px;
+    height: 26px;
     border-radius: 5px;
     border: none;
     padding:10px;
@@ -139,7 +140,7 @@ z-index: 10;
     color: #EFF0F2;
     cursor: pointer;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: uppercase;
 }
 .search h3:hover{
@@ -147,9 +148,9 @@ z-index: 10;
 }
 .search button {
     font-family: "Spectral";
-    margin: 20px;
+    margin: 18px;
     width: 70px;
-    padding: 11px;
+    padding: 8px;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -167,4 +168,35 @@ z-index: 10;
 .fa-search{
     font-size: 25px;
     color: white;
+}
+@keyframes moveLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

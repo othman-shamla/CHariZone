@@ -75,7 +75,7 @@ class LandingPage extends Component {
                     </p>
                   </div>
                   <div className="subLogo">
-                    <p>All charities in one place</p>
+                    <p>Search, compare and donate</p>
                   </div>
                 </div>
                 <div className="search">
