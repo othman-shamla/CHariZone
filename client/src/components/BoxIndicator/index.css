@@ -1,0 +1,32 @@
+.box-indicator{
+  width: 150px;
+  height: 150px;
+  background-color: #FFF;
+  border: 1px dashed #D76F35;
+  position: absolute;
+  top: 49%;
+  left: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items:center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flags-column, .flagsDescr-column{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  height: 130px;
+
+}
+.flagsDescr-column{
+  padding-left: 4px;
+  border-left: 1px dashed #D76F35;
+}
+
+.flagsDescr-column h5{
+
+text-transform: capitalize;
+}
