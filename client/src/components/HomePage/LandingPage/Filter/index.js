@@ -79,14 +79,7 @@ class Filter extends Component {
   handleSubmit = event => {
     event.preventDefault();
     let url = '';
-    const {
-      income,
-      category,
-      valueSelectCategory,
-      from,
-      to,
-      error,
-    } = this.state;
+    const { income, category, valueSelectCategory, from, to } = this.state;
 
     if (income && category) {
       url = `/search?incfrom=${from}&incto=${to}&category='${valueSelectCategory}`;
@@ -98,9 +91,7 @@ class Filter extends Component {
       url = `/search?incfrom=-1&incto=-1&category=-1`;
     }
     const { history } = this.props;
-    console.log(url);
-    
-    // history.push(url);
+    history.push(url);
   };
 
   render() {
@@ -201,8 +192,8 @@ class Filter extends Component {
                     disabled={!category ? 'disabled' : ''}
                   >
                     <option value="0">Select catgery:</option>
-                    {categoryList.map(item => (
-                      <option value={item} className="opition-div">
+                    {categoryList.map((item, index) => (
+                      <option key={index} value={item} className="opition-div">
                         {item}
                       </option>
                     ))}
