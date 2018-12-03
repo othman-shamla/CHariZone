@@ -18,10 +18,7 @@ class Filter extends Component {
     ],
     fromInc: '',
     toInc: '',
-    fromEx: '',
-    toEx: '',
     income: false,
-    expend: false,
     category: false,
     valueSelect: '',
     error: '',
@@ -48,36 +45,31 @@ class Filter extends Component {
     const {
       fromInc,
       toInc,
-      fromEx,
-      toEx,
       income,
-      expend,
       category,
       valueSelect,
       error,
     } = this.state;
 
-    if (income || expend) {
-      if (fromInc > toInc || fromEx > toEx) {
+    if (income) {
+      if (fromInc > toInc) {
         return this.setState({ error: 'Error Input To less than Form ' });
       }
     }
-    if (income && expend && category) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category='${valueSelect}'`;
+    if (income  && category) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
     } else if (income && category) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category='${valueSelect}'`;
-    } else if (expend && category) {
-      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category='${valueSelect}'`;
-    } else if (income && expend) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=${fromEx}&exto=${toEx}&category=-1`;
-    } else if (income) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&exform=-1&exto=-1&category=-1`;
-    } else if (expend) {
-      url = `/search?incfrom=-1&incto=-1&exform=${fromEx}&exto=${toEx}&category=-1`;
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
     } else if (category) {
-      url = `/search?incfrom=-1&incto=-1&exform=-1&exto=-1&category='${valueSelect}'`;
+      url = `/search?incfrom=-1&incto=-1&category='${valueSelect}'`;
+    } else if (income ) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
+    } else if (income) {
+      url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
+    } else if (category) {
+      url = `/search?incfrom=-1&incto=-1&category='${valueSelect}'`;
     } else {
-      url = `/search?incfrom=-1&incto=-1&exform=-1&exto=-1&category=-1`;
+      url = `/search?incfrom=-1&incto=-1&category=-1`;
     }
     const { history } = this.props;
     history.push(url);
@@ -89,10 +81,7 @@ class Filter extends Component {
       categoryList,
       fromInc,
       toInc,
-      fromEx,
-      toEx,
       income,
-      expend,
       category,
       valueSelect,
       error,
@@ -163,64 +152,6 @@ class Filter extends Component {
                   </label>
                 </div>
               </div>
-
-              <div className="filter">
-                <div className="part2">
-                  <label
-                    htmlFor="expend"
-                    className={
-                      expend
-                        ? 'container-modal active-check'
-                        : 'container-modal'
-                    }
-                  >
-                    Expenditure
-                    <input
-                      id="expend"
-                      type="checkbox"
-                      name="expend"
-                      checked={expend}
-                      onChange={this.handleChange}
-                    />
-                    <span className="checkmark" />
-                  </label>
-                </div>
-
-                <div className="numbers2">
-                  <label
-                    htmlFor="expend"
-                    className={expend ? ' active-check' : null}
-                  >
-                    From
-                    <input
-                      name="fromEx"
-                      value={fromEx}
-                      onChange={this.handleChange}
-                      type="number"
-                      className="from"
-                      disabled={!expend ? 'disabled' : ''}
-                    />
-                    <span className="euro3">&euro;</span>
-                  </label>
-                  <br />
-                  <label
-                    htmlFor="expend"
-                    className={expend ? ' active-check' : null}
-                  >
-                    To
-                    <input
-                      name="toEx"
-                      value={toEx}
-                      onChange={this.handleChange}
-                      type="number"
-                      className="to"
-                      disabled={!expend ? 'disabled' : ''}
-                    />
-                    <span className="euro4">&euro;</span>
-                  </label>
-                </div>
-              </div>
-
               <div className="filter">
                 <div className="part2">
                   <label
