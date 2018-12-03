@@ -16,6 +16,32 @@ class Filter extends Component {
       'Disability',
       'Environment',
     ],
+    incomeList: [
+      {
+        key: 1,
+        name: '£100k - £1m',
+        from: 100000,
+        to: 1000000,
+      },
+      {
+        key: 2,
+        name: '£1m -£5m',
+        from: 1000000,
+        to: 5000000,
+      },
+      {
+        key: 3,
+        name: '£5m-£20m',
+        from: 5000000,
+        to: 20000000,
+      },
+      {
+        key: 4,
+        name: '£20m',
+        from: 20000000,
+        to: 1000000000,
+      },
+    ],
     fromInc: '',
     toInc: '',
     income: false,
@@ -42,27 +68,20 @@ class Filter extends Component {
   handleSubmit = event => {
     event.preventDefault();
     let url = '';
-    const {
-      fromInc,
-      toInc,
-      income,
-      category,
-      valueSelect,
-      error,
-    } = this.state;
+    const { fromInc, toInc, income, category, valueSelect, error } = this.state;
 
     if (income) {
       if (fromInc > toInc) {
         return this.setState({ error: 'Error Input To less than Form ' });
       }
     }
-    if (income  && category) {
+    if (income && category) {
       url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
     } else if (income && category) {
       url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
     } else if (category) {
       url = `/search?incfrom=-1&incto=-1&category='${valueSelect}'`;
-    } else if (income ) {
+    } else if (income) {
       url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
     } else if (income) {
       url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
