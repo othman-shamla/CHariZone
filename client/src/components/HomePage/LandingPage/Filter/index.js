@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import './index.css';
@@ -42,11 +44,12 @@ class Filter extends Component {
         to: 1000000000,
       },
     ],
-    fromInc: '',
-    toInc: '',
     income: false,
     category: false,
-    valueSelect: '',
+    valueSelectCategory: -1,
+    valueSelectIncome: '',
+    from: -1,
+    to: -1,
     error: '',
   };
 
@@ -61,37 +64,43 @@ class Filter extends Component {
     this.setState({ [target.name]: values });
   };
 
-  handleSelect = event => {
-    this.setState({ valueSelect: event.target.value });
+  handleSelectIncome = event => {
+    this.setState({
+      valueSelectIncome: event.target.value,
+      from: event.target.value.split('-')[0],
+      to: event.target.value.split('-')[1],
+    });
+  };
+
+  handleSelectCategory = event => {
+    this.setState({ valueSelectCategory: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     let url = '';
-    const { fromInc, toInc, income, category, valueSelect, error } = this.state;
+    const {
+      income,
+      category,
+      valueSelectCategory,
+      from,
+      to,
+      error,
+    } = this.state;
 
-    if (income) {
-      if (fromInc > toInc) {
-        return this.setState({ error: 'Error Input To less than Form ' });
-      }
-    }
     if (income && category) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
-    } else if (income && category) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&category='${valueSelect}'`;
-    } else if (category) {
-      url = `/search?incfrom=-1&incto=-1&category='${valueSelect}'`;
+      url = `/search?incfrom=${from}&incto=${to}&category='${valueSelectCategory}`;
     } else if (income) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
-    } else if (income) {
-      url = `/search?incfrom=${fromInc}&incto=${toInc}&category=-1`;
+      url = `/search?incfrom=${from}&incto=${to}&category=-1`;
     } else if (category) {
-      url = `/search?incfrom=-1&incto=-1&category='${valueSelect}'`;
+      url = `/search?incfrom=-1&incto=-1&category='${valueSelectCategory}'`;
     } else {
       url = `/search?incfrom=-1&incto=-1&category=-1`;
     }
     const { history } = this.props;
-    history.push(url);
+    console.log(url);
+    
+    // history.push(url);
   };
 
   render() {
@@ -101,10 +110,10 @@ class Filter extends Component {
       incomeList,
       income,
       category,
-      valueSelect,
+      valueSelectCategory,
+      valueSelectIncome,
       error,
     } = this.state;
-
     return (
       <React.Fragment>
         <div className="cover">
@@ -138,18 +147,20 @@ class Filter extends Component {
                 </div>
                 <div className="numbers2">
                   <select
-                    value={valueSelect}
-                    onChange={this.handleSelect}
+                    value={valueSelectIncome}
+                    onChange={this.handleSelectIncome}
                     name=""
                     id=""
                     className="select-catgery"
                     disabled={!income ? 'disabled' : ''}
                   >
-                    <option value="0">Select catgery:</option>
+                    <option key="0" from="0" to="0">
+                      Select catgery:
+                    </option>
                     {incomeList.map(item => (
                       <option
-                        from={item.from}
-                        to={item.to}
+                        value={`${item.from}-${item.to}`}
+                        key={item.key}
                         className="opition-div"
                       >
                         {item.name}
@@ -182,8 +193,8 @@ class Filter extends Component {
 
                 <div className="numbers2">
                   <select
-                    value={valueSelect}
-                    onChange={this.handleSelect}
+                    value={valueSelectCategory}
+                    onChange={this.handleSelectCategory}
                     name=""
                     id=""
                     className="select-catgery"
