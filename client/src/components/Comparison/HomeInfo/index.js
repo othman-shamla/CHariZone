@@ -30,6 +30,20 @@ const HomeInfo = props => {
             );
           })}
         </div>
+        <div className="cLogo-div">
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+        </div>
         <div className="columns-div">
           {arrayOfCharity.map(charity => {
             const { latest_fye: latestFye, income, expend } = charity;
@@ -41,6 +55,11 @@ const HomeInfo = props => {
               </div>
             );
           })}
+        </div>
+        <div className="donate-buttons">
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
         </div>
       </div>
     </div>

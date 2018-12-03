@@ -14,7 +14,7 @@
 .charty-names {
   background-color: #FFF;
   height: 100px;
-  width: 600px;
+  width: 700px;
   padding: 40px 20px;
   box-shadow: 1px 1px 10px 1px #5a6e7b47;
   border-radius: 15px;
@@ -139,7 +139,7 @@
 .compare-div {
   background-color: #FFF;
   /* margin: 0 auto; */
-  height: 600px;
+  height: 700px;
   width: 800px;
   /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
@@ -152,7 +152,7 @@
   display: inline-block;
   width: 20%;
   background-color: #DEDEDE;
-  height: 600px;
+  height:700px;
   padding-top: 92px;
   box-sizing: border-box;
 }
@@ -234,7 +234,7 @@
   display: flex;
   width: 79.9%;
   background-color: #E7E7E7;
-  height: 600px;
+  height: 700px;
   /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
   flex-direction: column;
@@ -243,12 +243,13 @@
   border-left: .7px dashed #F89963;
 }
 
-.cname-div {
+.cname-div , .cLogo-div {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  align-items:center;
   width: 100%;
-  height: 100px;
+  height: 70px;
 }
 
 .name-column {
@@ -264,6 +265,11 @@
 .name-column h3 {
   font-size: 12px;
   font-weight: 700px;
+}
+.charity-logo{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
 }
 
 .columns-div {
@@ -302,4 +308,29 @@
 
 .column-cell:last-child {
   border-bottom: none
+}
+.donate-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:center;
+  width: 100%;
+  height:50px;
+
+}
+.donate-b{
+background-color: #D76F35;
+padding: 8px 58px;
+outline: none;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-transform: uppercase;
+font-weight: 800;
+color: #FFF;
+}
+.donate-b:hover{
+background-color: #FFF;
+color: #000;
+border: 2px solid #D76F35;
 }
