@@ -70,8 +70,8 @@ class SearchReaslt extends Component {
     const array = [];
     let url = '';
     if (values.category) {
-      const { category, exform, exto, incfrom, incto } = values;
-      url = `/api/v1/filter?incfrom=${incfrom}&incto=${incto}&exform=${exform}&exto=${exto}&category=${category}`;
+      const { category, incfrom, incto } = values;
+      url = `/api/v1/filter?incfrom=${incfrom}&incto=${incto}&category=${category}`;
     } else {
       const { keyword } = values;
       url = `/api/v1/search?q=${keyword}`;
