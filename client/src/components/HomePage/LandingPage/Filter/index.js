@@ -25,13 +25,13 @@ class Filter extends Component {
       },
       {
         key: 2,
-        name: '£1m -£5m',
+        name: '£1m - £5m',
         from: 1000000,
         to: 5000000,
       },
       {
         key: 3,
-        name: '£5m-£20m',
+        name: '£5m - £20m',
         from: 5000000,
         to: 20000000,
       },
@@ -98,8 +98,7 @@ class Filter extends Component {
     const { Hide } = this.props;
     const {
       categoryList,
-      fromInc,
-      toInc,
+      incomeList,
       income,
       category,
       valueSelect,
@@ -137,38 +136,26 @@ class Filter extends Component {
                     <span className="checkmark" />
                   </label>
                 </div>
-                <div className="numbers">
-                  <label
-                    htmlFor="income"
-                    className={income ? ' active-check' : null}
+                <div className="numbers2">
+                  <select
+                    value={valueSelect}
+                    onChange={this.handleSelect}
+                    name=""
+                    id=""
+                    className="select-catgery"
+                    disabled={!income ? 'disabled' : ''}
                   >
-                    From
-                    <input
-                      name="fromInc"
-                      value={fromInc}
-                      onChange={this.handleChange}
-                      type="number"
-                      className="from"
-                      disabled={!income ? 'disabled' : ''}
-                    />
-                    <span className="euro1">&euro;</span>
-                  </label>
-                  <br />
-                  <label
-                    htmlFor="income"
-                    className={income ? ' active-check' : null}
-                  >
-                    To
-                    <input
-                      name="toInc"
-                      value={toInc}
-                      onChange={this.handleChange}
-                      type="number"
-                      className="to"
-                      disabled={!income ? 'disabled' : ''}
-                    />
-                    <span className="euro2">&euro;</span>
-                  </label>
+                    <option value="0">Select catgery:</option>
+                    {incomeList.map(item => (
+                      <option
+                        from={item.from}
+                        to={item.to}
+                        className="opition-div"
+                      >
+                        {item.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
               <div className="filter">
