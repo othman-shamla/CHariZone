@@ -4,16 +4,44 @@
 import React from 'react';
 import './style.css';
 
-const CharityHeader = props => {
-  const { changeTab, name, tabs } = props;
+const ClassNameCompareBtn = charityNumber => {
+  const arraySelect = JSON.parse(localStorage.getItem('listCharity')) || [];
+  let ChangeCompareColor = 'compareBtn';
+  if (arraySelect.includes(`${charityNumber}`)) {
+    ChangeCompareColor += ' active';
+  }
+  return ChangeCompareColor;
+};
 
+const GetImgUrl = img => {
+  let url = '';
+  if (img === undefined) {
+    url =
+      'https://www.atlrewards.net/cwa-nearby-areas-portlet/images/nologo.png';
+  } else {
+    [{ url }] = img;
+  }
+  return url;
+};
+
+const Donate = history => {
+  history.push('/under-construction');
+};
+
+const CharityHeader = props => {
+  const {
+    changeTab,
+    name,
+    tabs,
+    ChangeCompare,
+    charityNumber,
+    img,
+    history,
+  } = props;
+  console.log('histoyry', history);
   return (
     <div>
-      <img
-        alt=""
-        id="charity--img"
-        src="https://files.gitter.im/othman-shamla/gvyl/image.png"
-      />
+      <img alt="" id="charity--img" src={GetImgUrl(img)} />
       <span id="charity--name">{name}</span>
       <div className="tabs">
         <ul>
@@ -26,6 +54,22 @@ const CharityHeader = props => {
             </li>
           ))}
         </ul>
+        <div style={{ margin: 23 }}>
+          <button
+            className={ClassNameCompareBtn(charityNumber)}
+            onClick={ChangeCompare}
+            type="button"
+          >
+            add to compare
+          </button>
+          <button
+            className="compareBtn active"
+            onClick={() => Donate(history)}
+            type="button"
+          >
+            Donate
+          </button>
+        </div>
       </div>
     </div>
   );
