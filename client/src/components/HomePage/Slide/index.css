@@ -40,10 +40,12 @@
 .mainTitle {
   z-index: 22;
   width: 50%;
-  font-size: 30px;
   margin: 40px auto;
   color: #0067bb;
   text-align: center;
+  text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
 }
 
 .alice-carousel__prev-btn {
