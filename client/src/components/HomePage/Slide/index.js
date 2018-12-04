@@ -28,7 +28,7 @@ class Slide extends React.Component {
         title: 'Disability',
       },
       {
-        link: 'https://static.thenounproject.com/png/30970-200.png',
+        link: 'https://imgur.com/kS7wOLb.png',
         title: 'Overseas Aid and Relief',
       },
       {
