@@ -38,7 +38,6 @@ const CharityHeader = props => {
     img,
     history,
   } = props;
-  console.log('histoyry', history);
   return (
     <div>
       <img alt="" id="charity--img" src={GetImgUrl(img)} />
