@@ -205,6 +205,7 @@ class CharityDetalis extends Component {
       charity: { name, charityNumber, img },
       charityCountrefresh,
     } = this.state;
+    const { history } = this.props;
     const Contant = this.renderTab(tabs);
     if (found) {
       return <h1 style={{ margin: '160px' }}>No charity Found</h1>;
@@ -213,6 +214,7 @@ class CharityDetalis extends Component {
       <>
         <div style={{ margin: '110px auto', width: '80%' }}>
           <CharityHeader
+            history={history}
             img={img}
             charityNumber={charityNumber}
             ChangeCompare={this.refreshCount}
