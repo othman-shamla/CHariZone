@@ -12,6 +12,7 @@ import HeaderSearch from './HeaderSearch';
 import CharityCount from './CharityCount';
 import Header from '../Header';
 import Footer from '../HomePage/Footer';
+import ResultCard from '../ResultCard';
 
 class SearchReaslt extends Component {
   state = {
@@ -126,6 +127,7 @@ class SearchReaslt extends Component {
           ) : (
             <React.Fragment>
               <HeaderSearch numberOfResult={data.length} />
+              <ResultCard />
               <CharityCount count={count} select={select} />
               <div className="result-cards">
                 {data.slice(0, 3).map(item => (
