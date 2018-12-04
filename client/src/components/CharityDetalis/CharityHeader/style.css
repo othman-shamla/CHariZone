@@ -15,10 +15,10 @@
 }
 
 #charity--img {
-  margin-top: 20px;
-  margin-left: 40px;
-  margin-right: 20px;
-  height: 30px;
+  margin-top: 15px;
+  margin-left: 25px;
+  margin-right: 15px;
+  height: 70px;
 }
 
 #charity--name {
@@ -34,4 +34,24 @@
   display: flex;
   justify-content: flex-start;
   list-style: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs .compareBtn {
+  background:  #ffd4bb;
+  color: #fff;
+  margin: 5px 3px;
+  letter-spacing: 1px;
+  padding: 1px 6px;
+  border: 0px;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.tabs .active {
+  background: #f89963 !important;
 }
