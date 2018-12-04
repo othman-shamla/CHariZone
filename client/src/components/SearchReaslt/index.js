@@ -62,11 +62,10 @@ class SearchReaslt extends Component {
     } = this.props;
     const values = queryString.parse(search);
     let url = '';
-    if (values.category) {
-      const { category, incfrom, incto } = values;
+    const { category, incfrom, incto, keyword } = values;
+    if (category) {
       url = `/api/v1/filter?incfrom=${incfrom}&incto=${incto}&category=${category}`;
     } else {
-      const { keyword } = values;
       url = `/api/v1/search?q=${keyword}`;
     }
     fetch(url)
@@ -77,7 +76,7 @@ class SearchReaslt extends Component {
           this.setState({ isData: true });
           return;
         }
-        const array = data.map((item, index) => {
+        let array = data.map((item, index) => {
           const object = {};
           object.id = index + 1;
           object.idChirty = item.regno;
@@ -93,6 +92,17 @@ class SearchReaslt extends Component {
           }
           return object;
         });
+        if (keyword) {
+          array = array.reduce((arr, item) => {
+            if (item.name.includes(keyword.toUpperCase())) {
+              arr.unshift(item);
+              return arr;
+            }
+            arr.push(item);
+            return arr;
+          }, []);
+        }
+
         this.setState({
           data: array,
           isData: true,

@@ -6,7 +6,7 @@ exports.get = (req, res) => {
     res.send('q not found');
   }
   const obj = {
-    filterByFormula: `(SEARCH('${q.toUpperCase()}',{name}))`,
+    filterByFormula: `OR((SEARCH('${q.toUpperCase()}',{objective})),(SEARCH('${q.toUpperCase()}',{name})))`,
   };
   airtable(obj, (err, records) => {
     if (err) {
