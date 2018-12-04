@@ -24,14 +24,13 @@
   align-self: center;
   background-color: #FAFAFA;
   padding: 20px 20px;
-  /* border: 3px solid #FF915D; */
   border-radius: 5px;
   height: 89%;
   z-index: 50;
 }
 
 .close {
-  color: #FF915D;
+  color: #0067bb;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -47,7 +46,6 @@
 .modal-desc {
   color: #000;
   text-transform: capitalize;
-  /* border-bottom: 4px dashed #FF915D; */
 }
 
 .euro1 {
@@ -121,7 +119,7 @@
 
 .container-modal input:checked~.checkmark {
   border-radius: 5px;
-  background-color: #FF915D;
+  background-color: #0067bb;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -219,12 +217,12 @@
   padding: 10px 60px;
   border-radius: 5px;
   border: none;
-  color: #000;
+  color: rgb(255, 255, 255);
   font-weight: 300;
   letter-spacing: 1.5px;
-  background-color: #FF915D;
+  background-color: #0067bb;
   display: block;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .search-button:hover {

@@ -8,85 +8,52 @@ class Slide extends React.Component {
   galleryItems = imgLinks => {
     imgLinks = [
       {
-        link: 'http://cdn.onlinewebfonts.com/svg/img_544040.png',
+        link: 'https://imgur.com/lAc1uvj.png',
         title: 'General',
       },
       {
-        link: 'https://image.flaticon.com/icons/svg/182/182327.svg',
+        link: 'https://imgur.com/QEaZ6Ic.png',
         title: 'Education',
       },
       {
-        link: 'https://image.flaticon.com/icons/svg/1021/1021799.svg',
-        title: 'Health',
+        link: 'https://imgur.com/5TiSSRy.png',
+        title: 'Medical Research',
       },
       {
-        link: 'http://cdn.onlinewebfonts.com/svg/img_491768.png',
+        link: 'https://imgur.com/BjqXDvf.png',
+        title: 'Hospitals & Hospices ',
+      },
+      {
+        link: 'https://imgur.com/3CYfoGT.png',
         title: 'Disability',
       },
       {
-        link: 'https://image.flaticon.com/icons/svg/883/883403.svg',
-        title: 'Overseas Aid',
+        link: 'https://static.thenounproject.com/png/30970-200.png',
+        title: 'Overseas Aid and Relief',
       },
       {
-        link: 'https://static.thenounproject.com/png/221476-200.png',
-        title: 'Poverty Relief',
+        link: 'https://imgur.com/KwTbAWP.png',
+        title: 'Homelessness',
       },
       {
-        link:
-          'https://cdn2.iconfinder.com/data/icons/apple-inspire-black/100/Apple-83-512.png',
-        title: 'Housing',
+        link: 'https://imgur.com/lfuRPqq.png',
+        title: 'Children',
       },
       {
-        link: 'https://image.flaticon.com/icons/svg/182/182482.svg',
-        title: 'Religious activities',
-      },
-      {
-        link: 'https://png.pngtree.com/svg/20170718/paint_plate_690441.png',
-        title: 'Art/culture',
-      },
-      {
-        link: 'https://image.flaticon.com/icons/svg/53/53283.svg',
-        title: 'Amateur sport',
-      },
-      {
-        link:
-          'https://cdn2.iconfinder.com/data/icons/font-awesome/1792/paw-512.png',
+        link: 'https://imgur.com/1yPdi06.png',
         title: 'Animals',
       },
       {
-        link: ' https://image.flaticon.com/icons/svg/1231/1231898.svg',
+        link: 'https://imgur.com/n10hQDa.png',
         title: 'Environment',
-      },
-      {
-        link:
-          ' https://cdn1.iconfinder.com/data/icons/monocromatic-vol-1/24/economy-down-512.png',
-        title: 'Economic',
-      },
-      {
-        link:
-          'https://png2.kisspng.com/20180710/cks/kisspng-medal-computer-icons-five-pointed-star-symbol-bronze-medal-icon-5b449cd10984f7.516293541531223249039.png',
-        title: 'Armed Forces',
-      },
-      {
-        link:
-          ' https://www.directlink.coop/img/icons/111069-trading/svg/imbalanced-scale.svg',
-        title: 'Human rights',
-      },
-      {
-        link: 'https://image.flaticon.com/icons/svg/992/992604.svg',
-        title: 'Recreation',
-      },
-      {
-        link: 'http://cdn.onlinewebfonts.com/svg/img_191941.png',
-        title: 'Others',
-      },
+      }
     ];
 
     return imgLinks.map((img, index) => (
       <div>
         <Link to={`category?category=${imgLinks[index].title}`}>
           <img
-            style={{ height: '50px', width: '50px' }}
+            style={{ height: '70px', width: '70px' }}
             alt={imgLinks[index]}
             key={img.id}
             src={imgLinks[index].link}
@@ -103,7 +70,7 @@ class Slide extends React.Component {
     const items = this.galleryItems();
     return (
       <div className="movingSlider">
-        <p className="main"> Categories</p>
+        <p className="mainTitle"> Categories</p>
         <a name="Slider" title="slider" />
         <AliceCarousel
           items={items}
