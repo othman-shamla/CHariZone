@@ -12,6 +12,7 @@ import HeaderSearch from './HeaderSearch';
 import CharityCount from '../CommonComponents/CharityCount';
 import Header from '../Header';
 import Footer from '../HomePage/Footer';
+import ResultCard from '../ResultCard';
 
 class SearchReaslt extends Component {
   state = {
