@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 
 class Slide extends React.Component {
   galleryItems = imgLinks => {
-    imgLinks = [
+    let images = imgLinks;
+    images = [
       {
         link: 'https://imgur.com/lAc1uvj.png',
         title: 'General',
@@ -46,21 +47,21 @@ class Slide extends React.Component {
       {
         link: 'https://imgur.com/n10hQDa.png',
         title: 'Environment',
-      }
+      },
     ];
 
-    return imgLinks.map((img, index) => (
+    return images.map((img, index) => (
       <div>
-        <Link to={`category?category=${imgLinks[index].title}`}>
+        <Link to={`category?category=${images[index].title}`}>
           <img
             style={{ height: '70px', width: '70px' }}
-            alt={imgLinks[index]}
+            alt={images[index]}
             key={img.id}
-            src={imgLinks[index].link}
+            src={images[index].link}
             onDragStart={this.handleOnDragStart}
             className="yours-custom-class"
           />
-          <h4 className="yours-custom-class">{imgLinks[index].title}</h4>
+          <h4 className="yours-custom-class">{images[index].title}</h4>
         </Link>
       </div>
     ));
@@ -70,7 +71,7 @@ class Slide extends React.Component {
     const items = this.galleryItems();
     return (
       <div className="movingSlider">
-        <p className="mainTitle"> Categories</p>
+        <h1 className="mainTitle"> Categories</h1>
         <a name="Slider" title="slider" />
         <AliceCarousel
           items={items}
