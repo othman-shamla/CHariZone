@@ -1,0 +1,35 @@
+.count-charity {
+    position: fixed;
+    right: 4%;
+    bottom: 16%;
+    cursor: pointer;
+    display: flex;
+    background: #ccc;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+}
+
+.count {
+    background-color: rgb(247, 96, 9);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    bottom: 10%;
+    left: 50px;
+}
+
+.img-charity {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    bottom: 5%;
+    left: 10px;
+}
