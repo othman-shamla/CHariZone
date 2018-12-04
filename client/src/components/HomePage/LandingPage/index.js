@@ -43,7 +43,7 @@ class LandingPage extends Component {
     const { toggle, defaultShow, keyword } = this.state;
     const { history } = this.props;
     const spanStyle = {
-      color: '#F89963',
+      color: '#fff',
     };
     return (
       <React.Fragment>

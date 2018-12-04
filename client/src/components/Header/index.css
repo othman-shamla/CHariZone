@@ -24,13 +24,13 @@
 }
 
 .colored-name {
-  color: #F89963;
+  color: #0067bb;
 }
 
 .description {
   display: inline-block;
   font-family: "Spectral",sans-serif;
-  color: #F89963;
+  color: rgb(255, 255, 255);
   text-transform:capitalize;
   font-size: 10px;
   margin-left: 118px;
