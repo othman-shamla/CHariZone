@@ -9,7 +9,7 @@ import './style.css';
 import CardResult from './CardResult';
 import More from './More';
 import HeaderSearch from './HeaderSearch';
-import CharityCount from './CharityCount';
+import CharityCount from '../CommonComponents/CharityCount';
 import Header from '../Header';
 import Footer from '../HomePage/Footer';
 import ResultCard from '../ResultCard';
@@ -17,10 +17,9 @@ import ResultCard from '../ResultCard';
 class SearchReaslt extends Component {
   state = {
     data: [],
-    count: 0,
     activeMore: false,
-    select: [],
     isData: false,
+    refresh: false,
   };
 
   capitalFirst = string =>
@@ -29,34 +28,27 @@ class SearchReaslt extends Component {
   stringIsMore = string =>
     string.length > 100 ? `${string.slice(0, 100)} more..` : string;
 
-  changeActive = id => {
-    const index = id - 1;
-    const { count, data, select } = this.state;
-    const arraySelect = select;
-    const dataAfter = data.map(x => {
-      if (id === x.id) {
-        if (x.isActive || count < 3) {
-          x.isActive = !x.isActive;
-          if (x.isActive === true) {
-            arraySelect.push(data[index].idChirty);
-            this.setState(prevState => ({
-              count: prevState.count + 1,
-              select: arraySelect,
-            }));
-          } else {
-            arraySelect.splice(arraySelect.indexOf(data[index].idChirty), 1);
-            this.setState(prevState => ({
-              count: prevState.count - 1,
-              select: arraySelect,
-            }));
-          }
-        } else {
-          return x;
-        }
+  changeActive = (id, idChirty) => {
+    const { data, refresh } = this.state;
+    const arraySelect = JSON.parse(localStorage.getItem('listCharity')) || [];
+    const charitylist = arraySelect.filter(charity => charity !== idChirty);
+    if (charitylist.length === arraySelect.length) {
+      charitylist.push(idChirty);
+    }
+    const count = charitylist.length;
+    const charities = data.map(charity => {
+      if (id === charity.id && (charity.isActive || count <= 3)) {
+        charity.isActive = !charity.isActive;
       }
-      return x;
+      return charity;
     });
-    this.setState({ data: dataAfter });
+    if (charitylist.length <= 3) {
+      localStorage.setItem('listCharity', JSON.stringify(charitylist));
+      this.setState({
+        data: charities,
+        refresh: !refresh,
+      });
+    }
   };
 
   specificٍSize = array => array.length > 3;
@@ -65,27 +57,27 @@ class SearchReaslt extends Component {
     this.setState({ activeMore: true });
   };
 
-  getData = () => {
-    const { search } = this.props.location;
+  getData = listCharity => {
+    const {
+      location: { search },
+    } = this.props;
     const values = queryString.parse(search);
-    const array = [];
     let url = '';
-    if (values.category) {
-      const { category, incfrom, incto } = values;
+    const { category, incfrom, incto, keyword } = values;
+    if (category) {
       url = `/api/v1/filter?incfrom=${incfrom}&incto=${incto}&category=${category}`;
     } else {
-      const { keyword } = values;
       url = `/api/v1/search?q=${keyword}`;
     }
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        if (response.error) {
+        const { data, error } = response;
+        if (error) {
           this.setState({ isData: true });
           return;
         }
-        const { data } = response;
-        data.map((item, index) => {
+        let array = data.map((item, index) => {
           const object = {};
           object.id = index + 1;
           object.idChirty = item.regno;
@@ -96,9 +88,26 @@ class SearchReaslt extends Component {
           object.logo =
             'https://www.atlrewards.net/cwa-nearby-areas-portlet/images/nologo.png';
           object.isActive = false;
-          return array.push(object);
+          if (listCharity.includes(item.regno)) {
+            object.isActive = true;
+          }
+          return object;
         });
-        this.setState({ data: array, isData: true });
+        if (keyword) {
+          array = array.reduce((arr, item) => {
+            if (item.name.includes(keyword.toUpperCase())) {
+              arr.unshift(item);
+              return arr;
+            }
+            arr.push(item);
+            return arr;
+          }, []);
+        }
+
+        this.setState({
+          data: array,
+          isData: true,
+        });
       })
       .catch(err => {
         swal('Oops!', 'Something went wrong!', 'error');
@@ -106,11 +115,12 @@ class SearchReaslt extends Component {
   };
 
   componentWillMount = () => {
-    this.getData();
+    const listCharity = JSON.parse(localStorage.getItem('listCharity')) || [];
+    this.getData(listCharity);
   };
 
   render() {
-    const { data, activeMore, count, select, isData } = this.state;
+    const { data, activeMore, isData, refresh } = this.state;
     return (
       <React.Fragment>
         <Header />
@@ -125,24 +135,36 @@ class SearchReaslt extends Component {
               />
             </div>
           ) : (
-            <React.Fragment>
+            <>
               <HeaderSearch numberOfResult={data.length} />
+              <CharityCount refresh={refresh} />
               <ResultCard />
-              <CharityCount count={count} select={select} />
               <div className="result-cards">
-                {data.slice(0, 3).map(item => (
-                  <CardResult
-                    idChirty={item.idChirty}
-                    key0={item.id}
-                    isActive={item.isActive}
-                    onClick={() => this.changeActive(item.id)}
-                    logo={item.logo}
-                    classification={item.classification}
-                    website={item.website}
-                    name={this.capitalFirst(item.name)}
-                    text={this.capitalFirst(this.stringIsMore(item.text))}
-                  />
-                ))}
+                {data.slice(0, 3).map(item => {
+                  const {
+                    idChirty,
+                    id,
+                    isActive,
+                    logo,
+                    classification,
+                    website,
+                    name,
+                    text,
+                  } = item;
+                  return (
+                    <CardResult
+                      idChirty={idChirty}
+                      key0={id}
+                      isActive={isActive}
+                      onClick={() => this.changeActive(id, idChirty)}
+                      logo={logo}
+                      classification={classification}
+                      website={website}
+                      name={this.capitalFirst(name)}
+                      text={this.capitalFirst(this.stringIsMore(text))}
+                    />
+                  );
+                })}
               </div>
               {!activeMore && (
                 <More
@@ -158,7 +180,7 @@ class SearchReaslt extends Component {
                       idChirty={item.idChirty}
                       key0={item.id}
                       isActive={item.isActive}
-                      onClick={() => this.changeActive(item.id)}
+                      onClick={() => this.changeActive(item.id, item.idChirty)}
                       logo={item.logo}
                       classification={item.classification}
                       website={item.website}
@@ -166,7 +188,7 @@ class SearchReaslt extends Component {
                       text={this.capitalFirst(this.stringIsMore(item.text))}
                     />
                   ))}
-            </React.Fragment>
+            </>
           )}
           <Footer />
         </div>
