@@ -18,7 +18,7 @@ class Works extends Component {
                   alt="icon"
                 />
               </div>
-              <h4 className="worksInnerTitle">1-Search</h4>
+              <h4 className="worksInnerTitle">Search</h4>
               <span className="cardContent">For a charity or a cause</span>
             </div>
             <div className="inner">
@@ -29,7 +29,7 @@ class Works extends Component {
                   alt="icon"
                 />
               </div>
-              <h4 className="worksInnerTitle">2-Compare</h4>
+              <h4 className="worksInnerTitle">Compare</h4>
               <span className="cardContent">To find the best fit</span>
             </div>
             <div className="inner">
@@ -40,7 +40,7 @@ class Works extends Component {
                   alt="icon"
                 />
               </div>
-              <h4 className="worksInnerTitle">3-Donate Confidently</h4>
+              <h4 className="worksInnerTitle">Donate Confidently</h4>
               <span className="cardContent">and make a difference</span>
             </div>
           </div>
