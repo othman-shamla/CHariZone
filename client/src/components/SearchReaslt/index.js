@@ -6,6 +6,7 @@ import queryString from 'query-string';
 import ReactLoading from 'react-loading';
 import swal from 'sweetalert';
 import './style.css';
+import { format } from 'util';
 import More from './More';
 import HeaderSearch from './HeaderSearch';
 import CharityCount from '../CommonComponents/CharityCount';
@@ -25,12 +26,14 @@ class SearchReaslt extends Component {
     string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 
   stringIsMore = (name, string) => {
-    console.log(name.length);
     if (name.length > 28) {
       return string.length > 100 ? `${string.slice(0, 100)} more..` : string;
     }
     return string.length > 130 ? `${string.slice(0, 130)} more..` : string;
   };
+
+  handleFromat = (value, str, number) =>
+    value === str ? value : `${value} / ${number}`;
 
   changeActive = (id, idChirty) => {
     const { data, refresh } = this.state;
@@ -86,7 +89,9 @@ class SearchReaslt extends Component {
           object.id = index + 1;
           object.idChirty = item.regno;
           object.name = item.name;
-          object.website = item.WebsiteAddress;
+          object.governance = item.Governance;
+          object.financial = item.Financial;
+          object.impact = item.Impact;
           object.classification = item.what['0'];
           object.text = item.objective;
           if (item.img) {
@@ -148,7 +153,17 @@ class SearchReaslt extends Component {
               <CharityCount refresh={refresh} />
               <div className="result-cards">
                 {data.slice(0, 3).map(item => {
-                  const { idChirty, id, isActive, logo, name, text } = item;
+                  const {
+                    idChirty,
+                    id,
+                    isActive,
+                    logo,
+                    name,
+                    text,
+                    governance,
+                    impact,
+                    financial,
+                  } = item;
                   return (
                     <ResultCard
                       idChirty={idChirty}
@@ -158,6 +173,9 @@ class SearchReaslt extends Component {
                       logo={logo}
                       name={this.capitalFirst(name)}
                       text={this.capitalFirst(this.stringIsMore(name, text))}
+                      financial={this.handleFromat(financial, '#DIV/0!', 6)}
+                      governance={this.handleFromat(governance, ' -   ', 8)}
+                      impact={this.handleFromat(impact, ' -   ', 3)}
                     />
                   );
                 })}
@@ -182,6 +200,17 @@ class SearchReaslt extends Component {
                       text={this.capitalFirst(
                         this.stringIsMore(item.name, item.text)
                       )}
+                      financial={this.handleFromat(
+                        item.financial,
+                        '#DIV/0!',
+                        6
+                      )}
+                      governance={this.handleFromat(
+                        item.governance,
+                        ' -   ',
+                        8
+                      )}
+                      impact={this.handleFromat(item.impact, ' -   ', 3)}
                     />
                   ))}
             </>
