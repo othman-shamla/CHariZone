@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
 .about-us{
     width: 100vw;
     height:60vh;  
     text-align: center;
-    background-image: url(https://image.freepik.com/free-photo/paper-textured-background_53876-30486.jpg);
-    font-family: "Spectral";
+    background-image:linear-gradient(to right, #00203a, #000911);
+    
 }
 .innerCards{
     width: 70%;
@@ -21,8 +22,11 @@
     top: 30px;
     margin-bottom: 60px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     font-size: 25px;
+    color: rgb(238, 238, 238);
+    font-family: "Bitter";
+    font-weight: 100;
 }
 .inner{
     border-radius: 15px;
@@ -33,7 +37,8 @@
     flex-flow: column;
     margin: 20px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    background-color: rgba(255, 250, 240, 0.568);
+    background-color: rgb(255, 250, 240);
+    
 }
 .inner:hover{
     transform: scale(1.1);
@@ -56,7 +61,9 @@
 .worksInnerTitle{
     width: 200px;
     margin: 15px auto;
+    font-family: "Bitter";
 }
-.carContent{
+.cardContent{
     display: inline-block;
+    font-family: "Bitter";
 }

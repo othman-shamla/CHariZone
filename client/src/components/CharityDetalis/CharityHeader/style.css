@@ -1,7 +1,7 @@
 
 .tabs ul li {
   font-weight: bold;
-  background: #ffd4bb;
+  background: #9bd2ff ;
   color: #fff;
   margin: 0 1px;
   letter-spacing: 1px;
@@ -11,7 +11,7 @@
 }
 
 .tabActive {
-  background: #f89963 !important;
+  background: #0067bb !important;
 }
 
 #charity--img {
@@ -42,7 +42,7 @@
 }
 
 .tabs .compareBtn {
-  background:  #ffd4bb;
+  background:  #9bd2ff;
   color: #fff;
   margin: 5px 3px;
   letter-spacing: 1px;
@@ -53,5 +53,5 @@
 }
 
 .tabs .active {
-  background: #f89963 !important;
+  background: #0067bb !important;
 }
