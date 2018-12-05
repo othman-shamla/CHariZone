@@ -4,7 +4,18 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 const ResultCard = props => {
-  const { idChirty, key0, name, text, isActive, logo, onClick } = props;
+  const {
+    idChirty,
+    key0,
+    name,
+    text,
+    isActive,
+    logo,
+    onClick,
+    financial,
+    governance,
+    impact,
+  } = props;
   return (
     <div className="div--card-result" key={key0}>
       <Link to={`/charity/${idChirty}`} className="div--logo">
@@ -12,13 +23,13 @@ const ResultCard = props => {
         <div className="div--hidden">
           <ul>
             <li>
-              Financial: <span>3 / 6</span>
+              Financial: <span>{financial}</span>
             </li>
             <li>
-              Governance: <span>3 / 8</span>
+              Governance: <span>{governance}</span>
             </li>
             <li>
-              Impact: <span>3 / 3</span>
+              Impact: <span>{impact}</span>
             </li>
           </ul>
         </div>
