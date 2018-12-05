@@ -11,7 +11,8 @@ const ResultCard = props => {
     text,
     isActive,
     logo,
-    onClick,
+    onClickCompare,
+    onClickDonate,
     financial,
     governance,
     impact,
@@ -39,11 +40,13 @@ const ResultCard = props => {
         <p>" {text} "</p>
       </Link>
       <div className="div--two-button">
-        <button type="button">Donate</button>
+        <button type="button" onClick={() => onClickDonate()}>
+          Donate
+        </button>
         <button
           type="button"
           className={isActive ? 'active' : null}
-          onClick={() => onClick()}
+          onClick={() => onClickCompare()}
         >
           Compare
         </button>
