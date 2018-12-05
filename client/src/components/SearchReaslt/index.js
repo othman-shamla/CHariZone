@@ -31,8 +31,12 @@ class SearchReaslt extends Component {
     return string.length > 130 ? `${string.slice(0, 130)} more..` : string;
   };
 
-  handleFromat = (value, str, number) =>
-    value === str ? value : `${value} / ${number}`;
+  handleFromat = (valueStr, value, str, number) => {
+    if (valueStr === 'financial') {
+      return value === str ? value : `${value} / ${number}`;
+    }
+    return value === str ? 'Not analyzed yet' : `${value} / ${number}`;
+  };
 
   changeActive = (id, idChirty) => {
     const { data, refresh } = this.state;
@@ -156,7 +160,7 @@ class SearchReaslt extends Component {
               <HeaderSearch numberOfResult={data.length} />
               <CharityCount refresh={refresh} />
               <div className="result-cards">
-                {data.slice(0, 3).map(item => {
+                {data.slice(0, 5).map(item => {
                   const {
                     idChirty,
                     id,
@@ -180,9 +184,19 @@ class SearchReaslt extends Component {
                       logo={logo}
                       name={this.capitalFirst(name)}
                       text={this.capitalFirst(this.stringIsMore(name, text))}
-                      financial={this.handleFromat(financial, '#DIV/0!', 6)}
-                      governance={this.handleFromat(governance, ' -   ', 8)}
-                      impact={this.handleFromat(impact, ' -   ', 3)}
+                      financial={this.handleFromat(
+                        'financial',
+                        financial,
+                        '#DIV/0!',
+                        6
+                      )}
+                      governance={this.handleFromat(
+                        'governance',
+                        governance,
+                        ' -   ',
+                        8
+                      )}
+                      impact={this.handleFromat('impact', impact, ' -   ', 3)}
                     />
                   );
                 })}
@@ -195,7 +209,7 @@ class SearchReaslt extends Component {
               )}
               {activeMore &&
                 data
-                  .slice(3, data.length)
+                  .slice(5, data.length)
                   .map(item => (
                     <ResultCard
                       idChirty={item.idChirty}
@@ -211,16 +225,23 @@ class SearchReaslt extends Component {
                         this.stringIsMore(item.name, item.text)
                       )}
                       financial={this.handleFromat(
+                        'financial',
                         item.financial,
                         '#DIV/0!',
                         6
                       )}
                       governance={this.handleFromat(
+                        'governance',
                         item.governance,
                         ' -   ',
                         8
                       )}
-                      impact={this.handleFromat(item.impact, ' -   ', 3)}
+                      impact={this.handleFromat(
+                        'impact',
+                        item.impact,
+                        ' -   ',
+                        3
+                      )}
                     />
                   ))}
             </>
