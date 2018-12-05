@@ -124,6 +124,10 @@
     font-weight: bold;
 }
 
+.div--card-result .div--two-button button span {
+    font-size: 20px;
+}
+
 .div--card-result .div--two-button button:hover {
     background-color: #fff;
     color: #0067bb;
