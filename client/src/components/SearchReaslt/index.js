@@ -6,7 +6,6 @@ import queryString from 'query-string';
 import ReactLoading from 'react-loading';
 import swal from 'sweetalert';
 import './style.css';
-import { format } from 'util';
 import More from './More';
 import HeaderSearch from './HeaderSearch';
 import CharityCount from '../CommonComponents/CharityCount';
@@ -56,6 +55,11 @@ class SearchReaslt extends Component {
         refresh: !refresh,
       });
     }
+  };
+
+  handlerPageDonate = () => {
+    const { history } = this.props;
+    history.push('/under-construction');
   };
 
   specificٍSize = array => array.length > 3;
@@ -169,7 +173,10 @@ class SearchReaslt extends Component {
                       idChirty={idChirty}
                       key0={id}
                       isActive={isActive}
-                      onClick={() => this.changeActive(id, idChirty)}
+                      onClickCompare={() =>
+                        this.changeActive(item.id, item.idChirty)
+                      }
+                      onClickDonate={() => this.handlerPageDonate()}
                       logo={logo}
                       name={this.capitalFirst(name)}
                       text={this.capitalFirst(this.stringIsMore(name, text))}
@@ -194,7 +201,10 @@ class SearchReaslt extends Component {
                       idChirty={item.idChirty}
                       key0={item.id}
                       isActive={item.isActive}
-                      onClick={() => this.changeActive(item.id, item.idChirty)}
+                      onClickCompare={() =>
+                        this.changeActive(item.id, item.idChirty)
+                      }
+                      onClickDonate={() => this.handlerPageDonate()}
                       logo={item.logo}
                       name={this.capitalFirst(item.name)}
                       text={this.capitalFirst(
