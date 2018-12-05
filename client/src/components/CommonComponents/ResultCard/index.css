@@ -52,7 +52,7 @@
 }
 
 .div--card-result .div--logo .div--hidden {
-    background: rgba(27, 26, 26, 0.7);
+    background: rgba(27, 26, 26, 0.8);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -81,7 +81,11 @@
 .div--card-result:hover .div--hidden {
     transform: translateY(0);
 }
-  
+
+.div--card-result:hover .div--logo img {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+} 
 
 .div--card-result .div--logo img:hover {
     background-color: rgba(0,1,0,0.1);
