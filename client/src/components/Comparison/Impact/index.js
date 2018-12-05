@@ -20,18 +20,18 @@ const Impact = props => {
         <div className="table-column">
           <div className="table-cell">
             <h5 className="tooltip">
-              I: R<span className="tooltiptext">Impact: Results reporting</span>
+              Results<span className="tooltiptext">Impact: Results reporting</span>
             </h5>
           </div>
           <div className="table-cell">
             <h5 className="tooltip">
-              I:I
+              Impact
               <span className="tooltiptext">Impact reporting</span>
             </h5>
           </div>
           <div className="table-cell">
             <h5 className="tooltip">
-              I: Measure
+            Measurement Framework
               <span className="tooltiptext">
                 Mention of Theory/ Model / measurement
               </span>
@@ -49,6 +49,20 @@ const Impact = props => {
               </div>
             );
           })}
+        </div>
+        <div className="cLogo-div">
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
         </div>
         <div className="columns-div">
           {arrayOfCharity !== undefined
@@ -73,6 +87,11 @@ const Impact = props => {
                 );
               })
             : ''}
+        </div>
+        <div className="donate-buttons">
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
         </div>
       </div>
     </div>

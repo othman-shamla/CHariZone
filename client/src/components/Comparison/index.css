@@ -2,12 +2,16 @@
   margin-top: 107px;
   background-color: #F7F7F7;
   padding: 5px;
-  margin-bottom: 200px;
+padding-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .compare-box {
   position: relative;
-  margin: 40px auto;
+  /* margin: 40px auto; */
   width: 60%;
 }
 
@@ -88,7 +92,7 @@
 
 .logos {
   height: 50px;
-  width:800px;
+  width:880px;
   /* margin: 0px 12.6%; */
   display: flex;
   flex-direction: row;
@@ -99,9 +103,9 @@
 .logo-span {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 50px;
-  width:197px;
+  width:217px;
   color: #FFF;
   /* background-color: #D76F35; */
   background-color: #FFD2BC;
@@ -140,7 +144,7 @@
   background-color: #FFF;
   /* margin: 0 auto; */
   height: 700px;
-  width: 800px;
+  width: 880px;
   /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
   /* box-shadow: 1px 1px 3px 2px #5a6e7b47; */
@@ -153,7 +157,7 @@
   width: 20%;
   background-color: #DEDEDE;
   height:700px;
-  padding-top: 92px;
+  padding-top: 174px;
   box-sizing: border-box;
 }
 
@@ -186,7 +190,7 @@
 }
 
 .table-cell {
-  width: 80%;
+  width: 95%;
   height: 30px;
   /* background-color: yellow; */
   box-sizing: border-box;
@@ -303,7 +307,7 @@
   max-height: 45px;
   margin: 3px 0;
   text-align: center;
-  border-bottom: 1px dashed #F89963;
+  border-bottom: 1px solid #F89963;
 }
 
 .column-cell:last-child {

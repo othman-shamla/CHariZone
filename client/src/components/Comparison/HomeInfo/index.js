@@ -8,14 +8,21 @@ const HomeInfo = props => {
     <div className="compare-div">
       <div className="column-div">
         <div className="table-column">
+
           <div className="table-cell">
-            <h5>latest_fye</h5>
+            <h5>Incoming p.a.:</h5>
           </div>
           <div className="table-cell">
-            <h5>income</h5>
+            <h5>Expenditure p.a.:</h5>
           </div>
           <div className="table-cell">
-            <h5>expend</h5>
+            <h5>Overall Financial:</h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
+          </div>
+          <div className="table-cell">
+            <h5>Overall Governance:</h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
+          </div>
+          <div className="table-cell">
+            <h5>Overall Impact:</h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
         </div>
       </div>
@@ -49,9 +56,13 @@ const HomeInfo = props => {
             const { latest_fye: latestFye, income, expend } = charity;
             return (
               <div className="charity-column">
-                <div className="column-cell">{latestFye}</div>
+              {  // <div className="column-cell">{latestFye}</div>
+            }
                 <div className="column-cell">{income}</div>
                 <div className="column-cell">{expend}</div>
+                  <div className="column-cell">2<span>/6</span></div>
+                    <div className="column-cell">3<span>/8</span></div>
+                      <div className="column-cell">1<span>/3</span></div>
               </div>
             );
           })}
