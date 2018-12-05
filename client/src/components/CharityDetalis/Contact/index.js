@@ -2,12 +2,12 @@
 import React from 'react';
 import './style.css';
 import 'react-circular-progressbar/dist/styles.css';
+import areaOfOperationRow from './AreaOfOperation';
 
 const Contact = props => {
   const {
     charityNumber,
     phoneNumber,
-    faxNumber,
     email,
     website,
     address,
@@ -25,6 +25,7 @@ const Contact = props => {
               <td className="header--items">
                 <span>{charityNumber}</span>
               </td>
+              <td className="header--items" />
             </tr>
             <tr>
               <td>
@@ -34,14 +35,6 @@ const Contact = props => {
                 <span>{phoneNumber}</span>
               </td>
             </tr>
-            {/* <tr>
-              <td>
-                <span className="header">Fax Number </span>
-              </td>
-              <td className="header--items">
-                <span>{faxNumber}</span>
-              </td>
-            </tr> */}
             <tr>
               <td>
                 <span className="header">Email </span>
@@ -74,10 +67,8 @@ const Contact = props => {
               <td>
                 <span className="header">Area Of Opereration </span>
               </td>
-              <td className="header--items">
-                {areaOfOperation.map((x, i) => (
-                  <span key={x + i}>{x}</span>
-                ))}
+              <td className="header--row">
+                {areaOfOperationRow(areaOfOperation)}
               </td>
             </tr>
           </tbody>

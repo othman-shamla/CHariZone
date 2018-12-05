@@ -40,6 +40,11 @@ background-color: #ffd4bb;
   padding-left: 10px;
 }
 
+.mainDetails .header--row {
+  display: flex;
+  flex-direction: row !important;
+}
+
 .mainDetails .header--items {
   margin-left:20px; 
   padding-left: 15px;
