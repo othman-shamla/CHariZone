@@ -1,9 +1,8 @@
 .div-header {
-    margin: 30px auto;
-    width: 58%;
+    margin: 40px auto 20px auto;
+    width: 60%;
     position: relative;
     height: 10vh;
-    font-family: "Spectral";
 }
 
 .div-header h1 {
@@ -19,8 +18,13 @@
 .div-header p {
     line-height: 3;
     display: inline-block;
-    color: #999;
+    color: #0067dd;
     position: absolute;
-    right: 60px;
-    top: 15px;
+    right: 0px;
+    font-size: 20px;
+}
+
+.link-not-found {
+    text-decoration: none;
+    color: #0076dd;
 }
