@@ -1,14 +1,25 @@
 .more {
     color: #EDEDEE;
-    background-color: #FF9752;
+    background-color: #0067bb;
     display: block;
     font-size: 20px;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 5%;
     margin-left: 75%;
     margin-bottom: 10px;
     outline: none;
     border: none;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 5%;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    padding: 10px;
+}
+
+.more:hover {
+    background-color: #fff;
+    color: #0067bb;
+    border: 1px solid #0067bb;
 }
