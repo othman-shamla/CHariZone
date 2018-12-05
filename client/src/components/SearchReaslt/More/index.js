@@ -19,7 +19,7 @@ class More extends Component {
             onClick={() => getAllData()}
             onKeyDown={this.handleKeyDown}
           >
-            More
+            More..
           </button>
         )}
       </React.Fragment>
