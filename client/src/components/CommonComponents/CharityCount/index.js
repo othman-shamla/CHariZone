@@ -22,18 +22,26 @@ class CharityCount extends Component {
     let str = '/compare?';
     str += `${select.map((x, i) => `charity${i + 1}=${x}`).join('&')}`;
     return (
-      <Link to={str}>
+      <Link to={count > 1 && str}>
         <div className="count-charity">
           <div className="tooltip">
             <img
               className="img-charity"
-              src="https://image.flaticon.com/icons/svg/1170/1170651.svg"
+              src="http://www7.0zz0.com/2018/12/05/10/361893112.png"
               alt="img charity"
             />
             <div className="count">
               <strong>{count}</strong>
             </div>
-            <span className="tooltiptext">Compare</span>
+            <span className="tooltiptext place">
+              {count > 1 ? (
+                <span>compare</span>
+              ) : (
+                <span>
+                  Add and compare at least <strong>two maximum three</strong>
+                </span>
+              )}
+            </span>
           </div>
         </div>
       </Link>
