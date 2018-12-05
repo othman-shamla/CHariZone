@@ -6,7 +6,7 @@
 }
 
 .kpi--titleBox {
-  background-color: #ffd4bb;
+  background-color: #cfcdcd  ;
   padding: 10px 0;
 }
 
@@ -16,12 +16,17 @@
 
 .kpi--title {
   display: block;
+  position: relative;
+  top: -10px;
   padding-left: 20px;
   font-size: 22px;
+  color: white;
+  background-color:#0067bb;
 }
 .kpi--description {
   display: block;
   padding-left: 40px;
+  color: rgb(0, 0, 0);
 }
 
 .kpi--children {

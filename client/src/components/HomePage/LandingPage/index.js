@@ -56,8 +56,8 @@ class LandingPage extends Component {
             >
               <div className="hamburger" />
               <div className="items" id="items">
-                <a href="#Works">HOW IT WORKS</a>
                 <a href="#Slider">CATEGORIES</a>
+                <a href="#Works">HOW IT WORKS</a>
                 <a href="#Contact">CONTACT US</a>
               </div>
             </div>
