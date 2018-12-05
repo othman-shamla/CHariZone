@@ -24,3 +24,8 @@
     right: 60px;
     top: 15px;
 }
+
+.link-not-found {
+    text-decoration: none;
+    color: #0076dd;
+}
