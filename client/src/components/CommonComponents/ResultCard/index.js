@@ -48,7 +48,7 @@ const ResultCard = props => {
           className={isActive ? 'active' : null}
           onClick={() => onClickCompare()}
         >
-          Compare
+          {isActive ? <span>-</span> : <span>+</span>} Compare
         </button>
       </div>
     </div>
