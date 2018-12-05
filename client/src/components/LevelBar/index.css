@@ -1,0 +1,24 @@
+.LevelBar-box{
+
+  width: 130px;
+  height: 7px;
+  box-sizing: border-box;
+  /* border: 1px solid #000; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emptyBar{
+  width: 30%;
+  height: 7px;
+  border:1px solid #84ADE1;
+  box-sizing: border-box;
+}
+.fillBar{
+width: 30%;
+  height: 7px;
+background-color: #3C56CC;
+box-sizing: border-box;
+}

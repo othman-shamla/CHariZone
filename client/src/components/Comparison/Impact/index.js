@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './index.css';
+import { CircularLevel0, CircularLevel50, CircularLevel100 } from '../../CircularLevel';
 
 const returnFlag = flag => {
   if (flag === '1') {
@@ -75,13 +76,20 @@ const Impact = props => {
                 return (
                   <div className="charity-column">
                     <div className="column-cell">
-                      {returnFlag(impactResults)}
+                    <CircularLevel0/>
+                    { // {returnFlag(impactResults)}
+                  }
                     </div>
                     <div className="column-cell">
-                      {returnFlag(impactReporting)}
+                      <CircularLevel50/>
+                    {  // {returnFlag(impactReporting)}
+                  }
                     </div>
                     <div className="column-cell">
-                      {returnFlag(mentionOfTheory)}
+                      <CircularLevel100/>
+                    {  // {returnFlag(mentionOfTheory)}
+                  }
+
                     </div>
                   </div>
                 );

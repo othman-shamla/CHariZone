@@ -7,7 +7,6 @@ const splitPercentage = x => x.split('%')[0];
 
 const Financial = props => {
   const { arrayOfCharity } = props;
-
   return (
     <div className="compare-div">
       <div className="column-div">

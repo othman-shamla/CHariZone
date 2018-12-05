@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './index.css';
+import { LevelBar0, LevelBar1,LevelBar2,LevelBar3 } from '../../LevelBar';
 
 const returnFlag = flag => {
   if (flag === '1') {
@@ -94,13 +95,23 @@ const Governance = props => {
             return (
               <div className="charity-column">
                 <div className="column-cell">
-                  {returnFlag(numberOfTrustees)}
+                  <LevelBar0/>
                 </div>
                 <div className="column-cell">
-                  {returnFlag(trusteesBiography)}
+                <LevelBar1/>
+                  {// {returnFlag(trusteesBiography)}
+                }
                 </div>
-                <div className="column-cell">{returnFlag(tob)}</div>
-                <div className="column-cell">{executiveCompensation}</div>
+                <div className="column-cell">
+                <LevelBar2/>
+              {  // {returnFlag(tob)}
+            }
+                </div>
+                <div className="column-cell">
+                {// {executiveCompensation}
+              }
+              <LevelBar3/>
+                </div>
                 <div className="column-cell">{returnFlag(policyGeneral)}</div>
                 <div className="column-cell">
                   {returnFlag(policyWhistleblowing)}
