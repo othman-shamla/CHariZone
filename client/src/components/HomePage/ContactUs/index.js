@@ -42,20 +42,6 @@ const ContactUS = () => (
               </button>
             </form>
           </div>
-          <div className="contactUsSection">
-            <div className="contact-div">
-              <img src="https://imgur.com/vPSLDju.png" alt="icon" />
-              <h3>+999-9999-9999</h3>
-            </div>
-            <div className="contact-div">
-              <img src="https://imgur.com/tkLsAgy.png" alt="icon" />
-              <h3>sara-cahriZone@gmail.com</h3>
-            </div>
-            <div className="contact-div">
-              <img src="https://imgur.com/hahEuHs.png" alt="icon" />
-              <h3>@ChariZone</h3>
-            </div>
-          </div>
         </div>
       </div>
     </section>
