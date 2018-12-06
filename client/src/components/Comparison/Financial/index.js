@@ -7,50 +7,49 @@ const splitPercentage = x => x.split('%')[0];
 
 const Financial = props => {
   const { arrayOfCharity } = props;
-
   return (
     <div className="compare-div">
       <div className="column-div">
         <div className="table-column">
           <div className="table-cell">
             <h5 className="tooltip">
-              EMR
+              Expense and Managment
               <span className="tooltiptext">
                 3YR AVERAGE EXPENSE & MANAGEMENT RATIO Admin Cost Ratio = (Total
                 Fundraising, General, and admin expense) ÷ (Total expense) flag
                 over 20%
               </span>
-            </h5>
+            </h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
           <div className="table-cell">
             <h5 className="tooltip">
-              3y av FundraisI%
+            Fundraising Effeiciancy
               <span className="tooltiptext">
                 3YEAR AVERAGE FUNDRAISING EFFECIENCY : Vol_exp/ Vol-income flag
                 over 20%
               </span>
-            </h5>
+            </h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
           <div className="table-cell">
             <h5 className="tooltip">
-              ECR
+              Capacity Ratio
               <span className="tooltiptext">
                 EFFICIENCY & CAPACITY RATIO Expense Growth = (Expense(n)
                 -Expense (n-1) ) ÷ (Total resources used(n-1))
               </span>
-            </h5>
+            </h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
           <div className="table-cell">
-            <h5>Donor dependency</h5>
+            <h5>Donor dependency</h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
           <div className="table-cell">
             <h5 className="tooltip">
-              CurrR
+              Working Captial Ratio
               <span className="tooltiptext">
                 Current Ratio = (net current assets-/net current liability)
                 healthy between 2-10
               </span>
-            </h5>
+            </h5><img src="https://i.ibb.co/ZVPLVtB/information.png"/>
           </div>
         </div>
       </div>
@@ -64,6 +63,20 @@ const Financial = props => {
             </div>
           )
         })}
+        </div>
+        <div className="cLogo-div">
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
         </div>
         <div className="columns-div">
         {arrayOfCharity.map(charity => {
@@ -154,6 +167,11 @@ const Financial = props => {
             </div>
           );
         })}
+      </div>
+      <div className="donate-buttons">
+      <button className="donate-b">Donate</button>
+      <button className="donate-b">Donate</button>
+      <button className="donate-b">Donate</button>
       </div>
     </div>
     </div>

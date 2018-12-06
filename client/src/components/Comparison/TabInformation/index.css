@@ -1,0 +1,17 @@
+.Tab-iformation{
+height:750px;
+width: 200px;
+background-color:#FFF;
+margin-right: 50px;
+border-radius: 6px 6px 0 0;
+padding: 10px;
+box-sizing: border-box;
+border: 1px dashed #9bd2ff;
+
+}
+.Tab-iformation h3{
+  padding: 4px;
+  font-size: 15px;
+  border: 1px solid #9bd2ff;
+  border-bottom: none;
+}

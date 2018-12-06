@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './index.css';
+import { LevelBar0, LevelBar1,LevelBar2,LevelBar3 } from '../../LevelBar';
 
 const returnFlag = flag => {
   if (flag === '1') {
@@ -20,7 +21,7 @@ const Governance = props => {
         <div className="table-column">
           <div className="table-cell">
             <h5 className="tooltip">
-              T:NO
+              Number of Trustees
               <span className="tooltiptext">
                 NUMBER OF TRUSTEES recommend under 15 trustees and over 2
                 trustees
@@ -28,28 +29,28 @@ const Governance = props => {
             </h5>
           </div>
           <div className="table-cell">
-            <h5>T:Bio</h5>
+            <h5>Trustees Biography</h5>
           </div>
           <div className="table-cell">
-            <h5>T:ToB</h5>
+            <h5>Tearm on Board</h5>
           </div>
           <div className="table-cell">
-            <h5>EC</h5>
+            <h5>ECR</h5>
           </div>
           <div className="table-cell">
-            <h5>P:GDPR</h5>
+            <h5>Compliance with GDPR</h5>
           </div>
           <div className="table-cell">
-            <h5>P:W</h5>
+            <h5>Whistleblowing</h5>
           </div>
           <div className="table-cell">
-            <h5>P:H&S</h5>
+            <h5>Health & Safety</h5>
           </div>
           <div className="table-cell">
-            <h5>P:SG</h5>
+            <h5>Saveguarding policy</h5>
           </div>
           <div className="table-cell">
-            <h5>P: FP</h5>
+            <h5>Fundraising Promise</h5>
           </div>
         </div>
       </div>
@@ -63,6 +64,20 @@ const Governance = props => {
               </div>
             );
           })}
+        </div>
+        <div className="cLogo-div">
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
+          <img
+            className="charity-logo"
+            src="https://files.gitter.im/othman-shamla/dbdB/image.png"
+          />
         </div>
         <div className="columns-div">
           {arrayOfCharity.map(charity => {
@@ -80,13 +95,23 @@ const Governance = props => {
             return (
               <div className="charity-column">
                 <div className="column-cell">
-                  {returnFlag(numberOfTrustees)}
+                  <LevelBar0/>
                 </div>
                 <div className="column-cell">
-                  {returnFlag(trusteesBiography)}
+                <LevelBar1/>
+                  {// {returnFlag(trusteesBiography)}
+                }
                 </div>
-                <div className="column-cell">{returnFlag(tob)}</div>
-                <div className="column-cell">{executiveCompensation}</div>
+                <div className="column-cell">
+                <LevelBar2/>
+              {  // {returnFlag(tob)}
+            }
+                </div>
+                <div className="column-cell">
+                {// {executiveCompensation}
+              }
+              <LevelBar3/>
+                </div>
                 <div className="column-cell">{returnFlag(policyGeneral)}</div>
                 <div className="column-cell">
                   {returnFlag(policyWhistleblowing)}
@@ -99,6 +124,11 @@ const Governance = props => {
               </div>
             );
           })}
+        </div>
+        <div className="donate-buttons">
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
+        <button className="donate-b">Donate</button>
         </div>
       </div>
     </div>

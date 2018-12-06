@@ -14,6 +14,7 @@ import HomeInfo from './HomeInfo';
 import Header from '../Header';
 import Footer from '../HomePage/Footer';
 import BoxIndicator from '../BoxIndicator';
+import TabInformation from './TabInformation';
 
 class Comparison extends Component {
   state = {
@@ -83,7 +84,7 @@ class Comparison extends Component {
                   className="basic-img"
                   src="https://imgur.com/labp2lA.png"
                 />
-                <span>Home</span>
+                <span>Quick Glance</span>
               </span>
 
               <span
@@ -123,8 +124,9 @@ class Comparison extends Component {
 
             {this.renderTab()}
           </div>
+        <TabInformation/>
         </div>
-          <BoxIndicator/>
+
         <Footer />
       </React.Fragment>
     );
