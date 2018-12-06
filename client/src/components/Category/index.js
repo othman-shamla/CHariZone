@@ -21,55 +21,9 @@ class Category extends Component {
     refresh: false,
   };
 
-  capitalFirst = string =>
-    string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-
-  stringIsMore = (name, string) => {
-    if (name.length > 28) {
-      return string.length > 100 ? `${string.slice(0, 100)} more..` : string;
-    }
-    return string.length > 130 ? `${string.slice(0, 130)} more..` : string;
-  };
-
-  handleFromat = (valueStr, value, str, number) => {
-    if (valueStr === 'financial') {
-      return value === str ? value : `${value} / ${number}`;
-    }
-    return value === str ? 'Not analyzed yet' : `${value} / ${number}`;
-  };
-
-  changeActive = (id, idChirty) => {
-    const { data, refresh } = this.state;
-    const arraySelect = JSON.parse(localStorage.getItem('listCharity')) || [];
-    const charitylist = arraySelect.filter(charity => charity !== idChirty);
-    if (charitylist.length === arraySelect.length) {
-      charitylist.push(idChirty);
-    }
-    const count = charitylist.length;
-    const charities = data.map(charity => {
-      if (id === charity.id && (charity.isActive || count <= 3)) {
-        charity.isActive = !charity.isActive;
-      }
-      return charity;
-    });
-    if (charitylist.length <= 3) {
-      localStorage.setItem('listCharity', JSON.stringify(charitylist));
-      this.setState({
-        data: charities,
-        refresh: !refresh,
-      });
-    }
-  };
-
-  handlerPageDonate = () => {
-    const { history } = this.props;
-    history.push('/under-construction');
-  };
-
-  specificٍSize = array => array.length > 3;
-
-  getAllData = () => {
-    this.setState({ activeMore: true });
+  componentWillMount = () => {
+    const listCharity = JSON.parse(localStorage.getItem('listCharity')) || [];
+    this.getData(listCharity);
   };
 
   getData = listCharity => {
@@ -141,10 +95,56 @@ class Category extends Component {
       });
   };
 
-  componentWillMount = () => {
-    const listCharity = JSON.parse(localStorage.getItem('listCharity')) || [];
-    this.getData(listCharity);
+  getAllData = () => {
+    this.setState({ activeMore: true });
   };
+
+  handlerPageDonate = () => {
+    const { history } = this.props;
+    history.push('/under-construction');
+  };
+
+  changeActive = (id, idChirty) => {
+    const { data, refresh } = this.state;
+    const arraySelect = JSON.parse(localStorage.getItem('listCharity')) || [];
+    const charitylist = arraySelect.filter(charity => charity !== idChirty);
+    if (charitylist.length === arraySelect.length) {
+      charitylist.push(idChirty);
+    }
+    const count = charitylist.length;
+    const charities = data.map(charity => {
+      if (id === charity.id && (charity.isActive || count <= 3)) {
+        charity.isActive = !charity.isActive;
+      }
+      return charity;
+    });
+    if (charitylist.length <= 3) {
+      localStorage.setItem('listCharity', JSON.stringify(charitylist));
+      this.setState({
+        data: charities,
+        refresh: !refresh,
+      });
+    }
+  };
+
+  capitalFirst = string =>
+    string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+
+  stringIsMore = (name, string) => {
+    if (name.length > 28) {
+      return string.length > 100 ? `${string.slice(0, 100)} more..` : string;
+    }
+    return string.length > 130 ? `${string.slice(0, 130)} more..` : string;
+  };
+
+  handleFromat = (valueStr, value, str, number) => {
+    if (valueStr === 'financial') {
+      return value === str ? value : `${value} / ${number}`;
+    }
+    return value === str ? 'Not analyzed yet' : `${value} / ${number}`;
+  };
+
+  specificٍSize = array => array.length > 3;
 
   render() {
     const { data, activeMore, isData, refresh, detales } = this.state;
