@@ -23,11 +23,11 @@
 }
 
 .CircularProgressbar-path {
-  stroke: #f89963;
+  stroke: #0067bb;
 }
 
 .CircularProgressbar-text {
-  fill: #f89963;
+  fill: #0067bb;
 }
 
 .kpi--item .progressBar {
@@ -42,5 +42,5 @@
 
 .descrip-def {
   font-size: 13px;
-  color: #2795c4;
+  color: #0896d3;
 }
