@@ -1,31 +1,79 @@
-.table {
-  margin: 20px;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 1);
-  padding: 20px;
+.mainDetails table tr td:first-child {
+background-color: #9bd2ff;
+  margin: 0 0px;
+  padding: 34px 77px;
+  margin-bottom: 20px;
 }
 
-.table td {
-  padding-bottom:15px;
+.mainDetails td span:first-child {
+  padding-top: 10px;
 }
 
-.table tr td:first-child {
-  min-width: 150px;
+.mainDetails {
+  margin-left: 40px;
+}
+
+.mainDetails tr td:first-child {
+  padding-top: 20px;
   position: relative;
 }
 
-.table tr td:first-child span{
+.mainDetails tr td:first-child span{
+  position: absolute;
+  top: 0;
+  left:10px;
+  padding-left: 20px;
+}
+
+.mainDetails tr td:first-child span{
   font-weight: bold;
   position: absolute;
   top: 0;
   left:10px;
 }
 
-.box{
-  min-width: 400px;
-  margin: 20px;
+.mainDetails tr td:last-child span:last-child{
+  margin-bottom: 15px;
 }
 
-.header--items {
+.mainDetails .header--item {
+  padding-left: 10px;
+}
+
+.mainDetails .header--row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row !important;
+}
+
+.mainDetails .header--items {
+  margin-left:20px; 
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.mainDetails .header--items span {
+  margin-left : 20px; 
+
+}
+
+.mainDetails.header--items:last-child {
+  margin-bottom: 10px;
+}
+
+.mainDetails table {
+  border-spacing: 0px;
+}
+
+.mainDetails table tr {
+  padding-bottom: 20px;
+  margin-bottom: 20px; 
+}
+
+.row {
+  display: flex;
+}
+
+.header {
+  padding-left: 15px;
 }

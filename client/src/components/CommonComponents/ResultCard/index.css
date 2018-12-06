@@ -1,0 +1,147 @@
+.div--card-result {
+    display: flex;
+    justify-content: space-around;
+    background: #cfcdcd;
+    width: 60%;
+    height: 150px ;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0.1,0.1,01,0.1);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.div--card-result:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+}
+
+.div--card-result .div--name-des {
+    width: 50%;
+    padding: 20px;
+    padding-right: 0px;
+    text-align: left;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.div--card-result .div--name-des h2 {
+    margin-bottom: 10px;
+    color: #0067bb;
+}
+
+.div--card-result .div--name-des p {
+    text-align: center;
+    white-space: wrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    color: #000;
+}
+
+.div--card-result .div--logo {
+    width: 30%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    float: right;
+}
+
+.div--card-result .div--logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.div--card-result .div--logo .div--hidden {
+    background: rgba(27, 26, 26, 0.8);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: #fff;
+    font-family: "Farsan", cursive;
+    transition: all 0.3s ease-out;
+    transform: translateY(-100%);
+}
+
+.div--card-result .div--logo .div--hidden ul {
+    padding: 25px;
+}
+
+.div--card-result .div--logo .div--hidden ul li{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.div--card-result .div--logo .div--hidden ul li span{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.div--card-result:hover .div--hidden {
+    transform: translateY(0);
+}
+
+.div--card-result:hover .div--logo img {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+} 
+
+.div--card-result .div--logo img:hover {
+    background-color: rgba(0,1,0,0.1);
+}
+
+.div--card-result .div--logo ul li {
+    font-size: 15px;
+    transition: 0.3s ease;
+    margin-left: 10%;
+  }
+  
+  .info ul li:hover {
+    transform: translateX(20px) scale(1.1);
+  }
+
+.div--card-result .div--two-button {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-left:0px;
+    margin-top: 25px;
+}
+
+.div--card-result .div--two-button button {
+    height: 30%;
+    width: 60%;
+    margin: 5% auto;
+    font-size: 15px;
+    color: #fff;
+    background-color: #0067bb;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border-radius: 5%;
+    outline: none;
+    font-weight: bold;
+}
+
+.div--card-result .div--two-button button span {
+    font-size: 20px;
+}
+
+.div--card-result .div--two-button button:hover {
+    background-color: #fff;
+    color: #0067bb;
+    border: 1px solid #0067bb;
+    border-radius: 5%;
+}
+
+.div--card-result .div--two-button .active {
+    background-color: #fff;
+    color: #0067bb;
+    border: 1px solid #0067bb;
+    border-radius: 5%; 
+}

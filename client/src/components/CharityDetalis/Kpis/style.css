@@ -1,4 +1,4 @@
-.kpi--tables{
+.kpi--tables {
   display: flex;
   flex-direction: column;
 }
@@ -7,7 +7,7 @@
   height: 40px;
 }
 
-.kpi--tables table tr td:first-child{
+.kpi--tables table tr td:first-child {
   width: 170px;
 }
 
@@ -15,28 +15,32 @@
   padding-bottom: 15px;
 }
 
-.kpi--tables table tr td:last-child{
+.kpi--tables table tr td:last-child {
   text-align: center;
 }
-.CircularProgressbar{
+.CircularProgressbar {
   width: 60px;
 }
 
 .CircularProgressbar-path {
-  stroke: #f89963; 
+  stroke: #0067bb;
 }
 
-.CircularProgressbar-text { 
-  fill: #f89963;
+.CircularProgressbar-text {
+  fill: #0067bb;
 }
 
-.kpi--item .progressBar{
+.kpi--item .progressBar {
   max-width: 80px;
   min-width: 80px;
 }
 
 .kpi--item {
   min-width: 120px;
-  min-height: 80px
-  
+  min-height: 80px;
+}
+
+.descrip-def {
+  font-size: 13px;
+  color: #0896d3;
 }

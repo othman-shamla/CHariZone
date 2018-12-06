@@ -2,6 +2,7 @@
   margin-top: 107px;
   background-color: #F7F7F7;
   padding: 5px;
+  margin-bottom: 200px;
 }
 
 .compare-box {
@@ -22,24 +23,26 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   /* border: 1px dashed #F89963; */
 }
-.page-desc{
-align-self: flex-start;
-margin-top: 25px;
-}
-.charityc-name{
-  font-weight: 300;
-  text-transform:uppercase;
-border-bottom: 1px solid #ccc;
 
+.page-desc {
+  align-self: flex-start;
+  margin-top: 25px;
 }
-.charityc-name-hovered{
-background-color: #FB956B;
-padding: 2px ;
-border-radius: 5px;
+
+.charityc-name {
+  font-weight: 300;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
 }
+
+.charityc-name-hovered {
+  background-color: #FB956B;
+  padding: 2px;
+  border-radius: 5px;
+}
+
 .circule {
   position: absolute;
   text-align: center;
@@ -52,18 +55,21 @@ border-radius: 5px;
   background-color: #FFF;
   box-shadow: -3px 0px 4px 0px #5a6e7b47;
 }
-.charity-counter{
+
+.charity-counter {
   position: absolute;
   top: 2px;
-  left:57px;
+  left: 57px;
   height: 30px;
   width: 30px;
-  background-color:#D76F35;
+  background-color: #D76F35;
   border-radius: 50%;
 }
-.compare-num{
+
+.compare-num {
   color: #FFF;
 }
+
 .counter-img {
   position: absolute;
   top: 16px;
@@ -76,48 +82,66 @@ border-radius: 5px;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logos {
   height: 50px;
-  width: 200px;
-  margin: 0 auto;
+  width:800px;
+  /* margin: 0px 12.6%; */
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .logo-span {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 50px;
-  width: 50px;
-  background-color: #D76F35;
-    border: solid .5px #FB956B;
+  width:197px;
+  color: #FFF;
+  /* background-color: #D76F35; */
+  background-color: #FFD2BC;
+  /* border: solid .5px #FB956B; */
   line-height: 5;
+  box-sizing: border-box;
+  padding: 2px 7px;
   cursor: pointer;
   transition: all 0.4s ease-out;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 6px 6px 0 0;
+  text-align: left;
 }
-.logo-span:first-child{
+
+.basic-logo {
+  background-color: #FB936B;
+}
+
+/* .logo-span:first-child{
   border-top-left-radius: 5px;
 }
 .logo-span:last-child{
   border-top-right-radius: 5px;
-}
+} */
 
-.logo-span:hover {
+/* .logo-span:hover {
   transform: scale(1.1, 1.1);
-  background-color: #FB956B;
+  background-color: #FB936B;
   border: solid 1px #D76F35;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 2px #5a6e7b47;
-}
+} */
 
 .compare-div {
   background-color: #FFF;
-  margin: 0 auto;
-  height: 500px;
+  /* margin: 0 auto; */
+  height: 600px;
   width: 800px;
-  border-top-right-radius: 15px;
+  /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
   /* box-shadow: 1px 1px 3px 2px #5a6e7b47; */
   border: 1px solid #F89963;
@@ -128,7 +152,9 @@ border-radius: 5px;
   display: inline-block;
   width: 20%;
   background-color: #DEDEDE;
-  height: 500px;
+  height: 600px;
+  padding-top: 92px;
+  box-sizing: border-box;
 }
 
 .table-logo {
@@ -138,7 +164,7 @@ border-radius: 5px;
   margin: 10px auto;
   box-sizing: border-box;
   padding: 9px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -161,10 +187,11 @@ border-radius: 5px;
 
 .table-cell {
   width: 80%;
-  height: 40px;
+  height: 30px;
   /* background-color: yellow; */
   box-sizing: border-box;
-  margin: 3px auto;
+  margin: 16px auto;
+  font-size: 18px;
   padding-top: 12px;
 }
 
@@ -207,13 +234,43 @@ border-radius: 5px;
   display: flex;
   width: 79.9%;
   background-color: #E7E7E7;
-  height: 500px;
-  border-top-right-radius: 15px;
+  height: 600px;
+  /* border-top-right-radius: 15px; */
   border-bottom-right-radius: 15px;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-left: .7px dashed #F89963;
+}
+
+.cname-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+}
+
+.name-column {
+  margin: 25px 25px;
+  width: 30%;
+  height: 80px;
+  padding: 5px;
+  /* background-color: #FFF; */
+  box-sizing: border-box;
+  /* border: 1px solid #FFF; */
+}
+
+.name-column h3 {
+  font-size: 12px;
+  font-weight: 700px;
+}
+
+.columns-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
 .charity-column {
@@ -222,7 +279,7 @@ border-radius: 5px;
   border-radius: 5px;
   display: flex;
   margin: 25px 25px;
-  width: 20%;
+  width: 30%;
   background-color: #FFF;
   height: 450px;
   flex-direction: column;
@@ -232,11 +289,17 @@ border-radius: 5px;
 
 .charity-column:hover {
   transform: scale(1.08, 1.08);
-box-shadow: 0 1px 15px 2px #FB956B;
+  box-shadow: 0 1px 15px 2px #FB956B;
 }
 
 .column-cell {
   /* background-color: blue; */
+  max-height: 45px;
   margin: 3px 0;
+  text-align: center;
   border-bottom: 1px dashed #F89963;
+}
+
+.column-cell:last-child {
+  border-bottom: none
 }

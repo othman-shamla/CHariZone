@@ -1,32 +1,14 @@
 .div-header {
-    margin: 30px auto;
-    width: 58%;
+    margin: 40px auto 20px auto;
+    width: 60%;
     position: relative;
     height: 10vh;
-    font-family: "Spectral";
 }
 
-.div-header h1{
+.div-header h1 {
     display: inline-block;
     position: absolute;
     left: 0;
-}
-
-.div-header button {
-    display: inline-block;
-    background-color: #f76009;
-    color: #fff;
-    width: 50px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    position: absolute;
-    right: 0;
-    top: 25px;
-    outline: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 800;
 }
 
 .div-header button:active {
@@ -34,10 +16,15 @@
 }
 
 .div-header p {
-  line-height: 3;
+    line-height: 3;
     display: inline-block;
-    color: #999;
+    color: #0067dd;
     position: absolute;
-    right: 60px;
-    top: 15px;
+    right: 0px;
+    font-size: 20px;
+}
+
+.link-not-found {
+    text-decoration: none;
+    color: #0076dd;
 }

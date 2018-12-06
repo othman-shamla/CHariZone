@@ -1,13 +1,27 @@
 .body-category {
     margin-top: 140px;
     display: flex;
+    padding-bottom: 50px;
 }
 
 .result-card {
-  width: 60%;
+    width: 60%;
+    padding-bottom: 100px;
 }
 
 .category-details {
-    width: 40%;
-    padding: 2%;
+    width: 100%;
+}
+
+.result-cards-caregory {
+    margin-right: 10px;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-column-gap: 5%;
 }

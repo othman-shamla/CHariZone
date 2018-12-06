@@ -2,12 +2,12 @@
 import React from 'react';
 import './style.css';
 import 'react-circular-progressbar/dist/styles.css';
+import areaOfOperationRow from './AreaOfOperation';
 
 const Contact = props => {
   const {
     charityNumber,
     phoneNumber,
-    faxNumber,
     email,
     website,
     address,
@@ -15,52 +15,47 @@ const Contact = props => {
   } = props;
   return (
     <div>
-      <div className="box">
-        <table className="table">
+      <div className="mainDetails">
+        <table>
           <tbody>
             <tr>
               <td>
-                <span>Charity Number</span>
+                <span className="header">Charity Number</span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{charityNumber}</span>
               </td>
+              <td className="header--items" />
             </tr>
             <tr>
               <td>
-                <span>Phone Number </span>
+                <span className="header">Phone Number </span>
               </td>
-              <td>
+              <td className="header--items">
                 <span>{phoneNumber}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Fax Number </span>
+                <span className="header">Email </span>
               </td>
-              <td>
-                <span>{faxNumber}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span>Email </span>
-              </td>
-              <td>
+              <td className="header--items">
                 <span>{email}</span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Website </span>
+                <span className="header">Website </span>
               </td>
-              <td>
-                <span>{website}</span>
+              <td className="header--items">
+                <span>
+                  <a href="{website}">{website}</a>
+                </span>
               </td>
             </tr>
             <tr>
               <td>
-                <span>Address </span>
+                <span className="header">Address </span>
               </td>
               <td className="header--items">
                 {address.map((x, i) => (
@@ -70,12 +65,10 @@ const Contact = props => {
             </tr>
             <tr>
               <td>
-                <span>Area Of Opereration </span>
+                <span className="header">Area Of Opereration </span>
               </td>
-              <td className="header--items">
-                {areaOfOperation.map((x, i) => (
-                  <span key={x + i}>{x}</span>
-                ))}
+              <td className="header--row">
+                {areaOfOperationRow(areaOfOperation)}
               </td>
             </tr>
           </tbody>

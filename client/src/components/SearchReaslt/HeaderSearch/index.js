@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const HeaderSearch = props => {
@@ -10,11 +10,17 @@ const HeaderSearch = props => {
       {+numberOfResult > 0 ? (
         <React.Fragment>
           <h1>Search Results</h1>
-          <button type="button">Filter</button>
           <p>{numberOfResult} Results Found</p>
         </React.Fragment>
       ) : (
-        <h1>Oppes no result!</h1>
+        <React.Fragment>
+          <h1>
+            No charities found, Go back to{' '}
+            <Link className="link-not-found" to="/">
+              Home page
+            </Link>
+          </h1>
+        </React.Fragment>
       )}
     </div>
   );

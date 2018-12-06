@@ -1,13 +1,16 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+import ReactLoading from 'react-loading';
 
 import CharityHeader from './CharityHeader';
 import MainDetails from './MainDetails';
 import Kpis from './Kpis';
 import Contact from './Contact';
 import Header from '../Header';
-import Footer from '../Footer';
+import Footer from '../HomePage/Footer';
+import CharityCount from '../CommonComponents/CharityCount';
 
 class CharityDetalis extends Component {
   state = {
@@ -47,6 +50,8 @@ class CharityDetalis extends Component {
       impactResults: '',
       mentionOfTheory: '',
     },
+    loading: true,
+    found: false,
   };
 
   componentDidMount() {
@@ -54,22 +59,34 @@ class CharityDetalis extends Component {
     fetch(`/api/v1/charity/${id}`)
       .then(response => response.json())
       .then(json => {
+        const { data, err } = json;
+        if (err === 'NO-CHARITY') {
+          return this.setState({
+            loading: false,
+            found: true,
+          });
+        }
         const {
           regno,
           EmailAddress,
           PublicTelephoneNumber,
           WebsiteAddress,
-        } = json.data;
-        delete json.data.regno;
+          Address,
+          AreaOfOperation,
+          img,
+        } = data;
+        delete data.regno;
         this.setState({
+          loading: false,
           charity: {
+            img,
             charityNumber: regno,
             email: EmailAddress,
             phoneNumber: PublicTelephoneNumber,
             website: WebsiteAddress,
-            address: JSON.parse(json.data.Address),
-            areaOfOperation: JSON.parse(json.data.AreaOfOperation),
-            ...json.data,
+            address: JSON.parse(Address),
+            areaOfOperation: JSON.parse(AreaOfOperation),
+            ...data,
           },
         });
       });
@@ -128,7 +145,7 @@ class CharityDetalis extends Component {
         <Kpis
           EMR={EMR}
           averageFundraising={averageFundraising}
-          Ect={Ecr}
+          Ecr={Ecr}
           Currr={Currr}
           donerDependency={donerDependency}
           numberOfTrustees={numberOfTrustees}
@@ -157,21 +174,71 @@ class CharityDetalis extends Component {
     );
   };
 
-  render() {
+  refreshCount = () => {
+    const { charityNumber } = this.state.charity;
+    const arraySelect = JSON.parse(localStorage.getItem('listCharity')) || [];
+    const charitylist = arraySelect.filter(
+      charity => charity !== charityNumber
+    );
+    if (charitylist.length === arraySelect.length) {
+      charitylist.push(charityNumber);
+    }
+    localStorage.setItem('listCharity', JSON.stringify(charitylist));
+    this.setState(state => {
+      const { charityCountrefresh } = state;
+      return {
+        charityCountrefresh: !charityCountrefresh,
+      };
+    });
+  };
+
+  renderLoadingBubbles = () => (
+    <div className="loading-bubbles">
+      <ReactLoading type="bubbles" color="#f76009" height="20%" width="20%" />
+    </div>
+  );
+
+  renderContent = () => {
     const {
+      found,
       tabs,
-      charity: { name },
+      charity: { name, charityNumber, img },
+      charityCountrefresh,
     } = this.state;
+    const { history } = this.props;
     const Contant = this.renderTab(tabs);
+    if (found) {
+      return <h1 style={{ margin: '160px' }}>No charity Found</h1>;
+    }
     return (
-      <React.Fragment>
-        <Header />
+      <>
         <div style={{ margin: '110px auto', width: '80%' }}>
-          <CharityHeader changeTab={this.changeTab} tabs={tabs} name={name} />
+          <CharityHeader
+            history={history}
+            img={img}
+            charityNumber={charityNumber}
+            ChangeCompare={this.refreshCount}
+            changeTab={this.changeTab}
+            tabs={tabs}
+            name={name}
+          />
           {Contant}
         </div>
+        <div>
+          <CharityCount refresh={charityCountrefresh} />
+        </div>
         <Footer />
-      </React.Fragment>
+      </>
+    );
+  };
+
+  render() {
+    const { loading } = this.state;
+    return (
+      <>
+        <Header />
+        {loading ? this.renderLoadingBubbles() : this.renderContent()}
+      </>
     );
   }
 }

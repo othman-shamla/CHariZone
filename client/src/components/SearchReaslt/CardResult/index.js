@@ -31,34 +31,40 @@ class CardResult extends Component {
               className={isActive ? 'btn active' : 'btn'}
               onClick={() => onClick()}
             >
-              <span className="add">ADD</span>
+              <span className="add">{!isActive ? 'ADD' : 'DEL'}</span>
               <span className="add-cart">
-                <i className="fa fa-plus-square" aria-hidden="true" />
+                {!isActive ? (
+                  <i className="fa fa-plus-square" aria-hidden="true" />
+                ) : (
+                  <i className="fa fa-minus-square" aria-hidden="true" />
+                )}
               </span>
               <span className="compare">Compare</span>
             </button>
           </div>
         </div>
-        <div className="card-image">
-          <img src={logo} alt="Logo defult" />
-          <div className="info">
-            <h2>The Description</h2>
-            <ul>
-              <li>
-                <strong>Name: </strong>
-                {name}
-              </li>
-              <li>
-                <strong>Classification: </strong>
-                {classification}
-              </li>
-              <li>
-                <strong>Website: </strong>
-                {website}
-              </li>
-            </ul>
+        <Link to={`/charity/${idChirty}`}>
+          <div className="card-image">
+            <img src={logo} alt="Logo defult" />
+            <div className="info">
+              <h2>The Description</h2>
+              <ul>
+                <li>
+                  <strong>Name: </strong>
+                  {name}
+                </li>
+                <li>
+                  <strong>Classification: </strong>
+                  {classification}
+                </li>
+                <li>
+                  <strong>Website: </strong>
+                  {website}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }

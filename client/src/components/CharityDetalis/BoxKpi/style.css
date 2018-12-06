@@ -1,12 +1,13 @@
 .kpi--box {
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
 
 .kpi--titleBox {
-  background-color: #F89963;
+  background-color: #cfcdcd  ;
+  padding: 10px 0;
 }
 
 .kpi {
@@ -15,8 +16,17 @@
 
 .kpi--title {
   display: block;
+  position: relative;
+  top: -10px;
   padding-left: 20px;
   font-size: 22px;
+  color: white;
+  background-color:#0067bb;
+}
+.kpi--description {
+  display: block;
+  padding-left: 40px;
+  color: rgb(0, 0, 0);
 }
 
 .kpi--children {
@@ -30,7 +40,7 @@
   grid-template-columns: 30% 30% 30%;
   grid-gap: 5%;
 }
-.kpi--row span{
+.kpi--row span {
   display: inline-block;
   padding-top: 15px;
 }

@@ -13,14 +13,14 @@ class More extends Component {
     return (
       <React.Fragment>
         {specificٍSize && (
-          <p
-            role="button"
+          <button
+            type="button"
             className="more"
             onClick={() => getAllData()}
             onKeyDown={this.handleKeyDown}
           >
-            more ...
-          </p>
+            More..
+          </button>
         )}
       </React.Fragment>
     );

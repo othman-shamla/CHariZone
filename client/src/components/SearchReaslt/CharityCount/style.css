@@ -22,14 +22,19 @@
     color: #fff;
     font-size: 20px;
     position: absolute;
-    right: 5%;
     bottom: 10%;
+    left: 50px;
 }
 
 .img-charity {
     height: 60px;
     width: 60px;
     position: absolute;
-    right: 8%;
     bottom: 5%;
+    left: 10px;
+}
+
+.place {
+    bottom: 50px;
+    padding: 5px !important;
 }

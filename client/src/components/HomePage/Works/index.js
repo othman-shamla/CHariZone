@@ -13,41 +13,35 @@ class Works extends Component {
             <div className="inner">
               <div className="iconContainer">
                 <img
-                  src="https://image.flaticon.com/icons/svg/1141/1141964.svg"
-                  className="cardIcon"  alt="icon"
+                  src="https://imgur.com/YALJ9NO.png"
+                  className="cardIcon"
+                  alt="icon"
                 />
-                <h4 className="worksInnerTitle">Pick by category</h4>
               </div>
-              <span className="cardContent">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doeiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </span>
+              <h4 className="worksInnerTitle">Search</h4>
+              <span className="cardContent">For a charity or a cause</span>
             </div>
             <div className="inner">
               <div className="iconContainer">
                 <img
-                  src="https://image.flaticon.com/icons/svg/60/60954.svg"
-                  className="cardIcon"  alt="icon"
+                  src="https://imgur.com/K8AOJkS.png"
+                  className="cardIcon"
+                  alt="icon"
                 />
-                <h4 className="worksInnerTitle">Filter</h4>
               </div>
-              <span className="cardContent">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doeiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </span>
+              <h4 className="worksInnerTitle">Compare</h4>
+              <span className="cardContent">To find the best fit</span>
             </div>
             <div className="inner">
               <div className="iconContainer">
                 <img
-                  src="https://image.flaticon.com/icons/svg/503/503011.svg"
-                  className="cardIcon" alt="icon"
+                  src="https://imgur.com/5SW2D6j.png"
+                  className="cardIcon"
+                  alt="icon"
                 />
-                <h4 className="worksInnerTitle">Compare</h4>
               </div>
-              <span className="cardContent">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                doeiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </span>
+              <h4 className="worksInnerTitle">Donate Confidently</h4>
+              <span className="cardContent">and make a difference</span>
             </div>
           </div>
         </section>
