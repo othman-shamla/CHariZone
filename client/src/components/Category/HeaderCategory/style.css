@@ -1,0 +1,55 @@
+.div-header-category {
+    margin: 40px auto 20px auto;
+    width: 90%;
+    position: relative;
+    height: 10vh;
+}
+
+.div-header-category h1 {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.div-header-category button:active {
+    background-color: rgb(216, 84, 7);
+}
+
+.div-header-category p {
+    line-height: 3;
+    display: inline-block;
+    color: #0067dd;
+    position: absolute;
+    right: 70px;
+    font-size: 20px;
+}
+
+.link-not-found {
+    text-decoration: none;
+    color: #0076dd;
+}
+
+.sort-but {
+    color: #EDEDEE;
+    background-color: #0067bb;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5%;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    padding: 10px;
+    position: absolute;
+    right: 0px;
+    font-size: 20px;
+}
+
+.sort-but:hover {
+    background-color: #fff;
+    color: #0067bb;
+    border: 1px solid #0067bb;
+}
