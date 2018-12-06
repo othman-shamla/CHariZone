@@ -16,9 +16,15 @@ const ResultCard = props => {
     financial,
     governance,
     impact,
+    extraClass,
   } = props;
   return (
-    <div className="div--card-result" key={key0}>
+    <div
+      className={
+        extraClass ? `div--card-result ${extraClass}` : 'div--card-result'
+      }
+      key={key0}
+    >
       <Link to={`/charity/${idChirty}`} className="div--logo">
         <img src={logo} alt="logo default" />
         <div className="div--hidden">
