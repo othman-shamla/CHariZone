@@ -27,7 +27,7 @@ class CharityCount extends Component {
           <div className="tooltip">
             <img
               className="img-charity"
-              src="http://www7.0zz0.com/2018/12/05/10/361893112.png"
+              src="https://imgur.com/UjU4ZGb.png"
               alt="img charity"
             />
             <div className="count">

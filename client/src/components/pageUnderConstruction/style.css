@@ -1,7 +1,8 @@
 .notFoundSection{
+    position: absolute;
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .notFoundTitle{
     display: inline;
@@ -9,7 +10,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
-    color: rgb(255, 141, 75);
+    color: #0067bb;
     font-size: 90px;
     letter-spacing: 5px;
 }
@@ -18,12 +19,12 @@
     top: 50%;
     left: 50%;
     transform: translate( -50%, -30%); 
-    font-size: 40px; 
+    font-size: 35px; 
 }
 .circle1{
     width: 260px;
     height: 260px;
-    background-color: #F89963;
+    background-color: #0067bb;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
     position: absolute;
     bottom: -40px;
@@ -52,7 +53,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #F7AE85; 
+    background-color: #9bd2ff; 
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
     position: absolute;
     bottom: 220px;
@@ -65,7 +66,7 @@
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    background-color: #F7AE85; 
+    background-color: #9bd2ff; 
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.3);
     position: absolute;
     bottom: 350px;

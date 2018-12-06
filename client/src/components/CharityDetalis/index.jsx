@@ -194,7 +194,7 @@ class CharityDetalis extends Component {
 
   renderLoadingBubbles = () => (
     <div className="loading-bubbles">
-      <ReactLoading type="bubbles" color="#f76009" height="20%" width="20%" />
+      <ReactLoading type="bubbles" color="#0067bb" height="20%" width="20%" />
     </div>
   );
 
