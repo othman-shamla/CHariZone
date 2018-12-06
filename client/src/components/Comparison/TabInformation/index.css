@@ -6,12 +6,12 @@ margin-right: 50px;
 border-radius: 6px 6px 0 0;
 padding: 10px;
 box-sizing: border-box;
-border: 1px dashed #D76F35;
+border: 1px dashed #9bd2ff;
 
 }
 .Tab-iformation h3{
   padding: 4px;
   font-size: 15px;
-  border: 1px solid #D76F35;
+  border: 1px solid #9bd2ff;
   border-bottom: none;
 }
