@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": {
-    "name": "othman-shamla"
+    "name": "othman-shamla-project"
   },
   "scripts": {
     "client": "cd client && npm run start",
